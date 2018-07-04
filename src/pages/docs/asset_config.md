@@ -3,7 +3,6 @@ title: Asset Folder Structure
 sidebars:
   - Config
 ---
-
 Assets in Thorium must be imported by Thorium and placed in specific folders to be used by the controls. You can create these folders in the 'Asset Config' page. Simulator specifc assets should be added on the Simulator Config.
 
 ```
@@ -26,6 +25,8 @@ assets
     ├── Tactical Backgrounds - Used for tactical maps
     ├── Tactical Icons - Used for tactical maps
     └── Videos - Used for the Videos viewscreen
-
 ```
+
 ![Asset Folders](/docs/asset_config.jpg)
+
+![](/squirrel.jpg)
