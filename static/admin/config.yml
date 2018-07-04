@@ -10,6 +10,7 @@ public_folder: /
 collections: # A list of collections the CMS should be able to edit
   - name: "docs" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Docs" # Used in the UI, ie.: "New Post"
+    label_singular: "Doc"
     folder: "src/pages/docs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
@@ -18,7 +19,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "blog"
     label: "Blog"
-    label_singular: "Post"
+    label_singular: "Blog Post"
     folder: "src/pages/blog"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
@@ -30,13 +31,50 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list", required: false}
-  - name: "pages"
-    label: "Pages"
+  - name: updates
+    label: Updates
     files:
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
+      - name: releases
+        label: Releases
+        file: src/data/updates.yml
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - name: updates
+            label: Releases
+            widget: list
+            fields:
+              - {name: version, label: Version}
+              - {name: date, label: Date, widget: date}
+              - {name: description, label: Description}
+      - name: notifications
+        label: Notifications
+        file: src/data/notifications.yml
+        description: Site-top notifications - publish one at a time
+        fields:
+          - name: notifications
+            label: Notifications
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string, tagname: h1}
+              - {label: Published, name: published, widget: boolean}
+              - {label: Loud, name: loud, widget: boolean}
+              - {label: Message, name: message, widget: text}
+              - {label: URL, name: url}
+  - label: Settings
+    name: settings
+    files:
+      - name: sidebars
+        label: Sidebars
+        file: src/data/sidebars.yml
+        description: Sidebar Configuration
+        fields:
+          - name: sidebars
+            label: Sidebars
+            widget: list
+            fields:
+              - name: title
+                label: Title
+              - name: contents
+                label: Contents
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
