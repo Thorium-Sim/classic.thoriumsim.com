@@ -1,6 +1,6 @@
 ---
 id: card_cargo_control
-title:Cargo Control
+title: Cargo Control
 ---
 
 ![Cargo Control Card Image](/docs/card_cargo.jpg)

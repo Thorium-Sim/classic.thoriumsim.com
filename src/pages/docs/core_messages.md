@@ -1,6 +1,6 @@
 ---
 id: core_messages
-title:Messages Core
+title: Messages Core
 ---
 
 Messages

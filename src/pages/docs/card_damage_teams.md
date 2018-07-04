@@ -1,4 +1,4 @@
 ---
 id: card_damage_teams
-title:Damage Teams
+title: Damage Teams
 ---

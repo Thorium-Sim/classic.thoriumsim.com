@@ -1,6 +1,6 @@
 ---
 id: card_comm_internal
-title:Comm Internal
+title: Comm Internal
 ---
 
 ![Internal Comm](/docs/card_internalComm_1.jpg)

@@ -1,6 +1,6 @@
 ---
 id: core_iifx
-title:IIFX Core
+title: IIFX Core
 ---
 
 IIFX

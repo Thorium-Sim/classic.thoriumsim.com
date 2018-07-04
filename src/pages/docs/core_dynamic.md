@@ -1,6 +1,6 @@
 ---
 id: core_dynamic
-title:Dynamic Core
+title: Dynamic Core
 ---
 
 Dynamic Core

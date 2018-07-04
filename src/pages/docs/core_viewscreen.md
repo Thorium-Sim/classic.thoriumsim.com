@@ -1,6 +1,6 @@
 ---
 id: core_viewscreen
-title:Viewscreen Core
+title: Viewscreen Core
 ---
 
 ![Viewscreen Core](/docs/core_viewscreen.jpg)

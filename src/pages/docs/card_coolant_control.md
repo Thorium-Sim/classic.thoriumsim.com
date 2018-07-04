@@ -1,4 +1,4 @@
 ---
 id: card_coolant_control
-title:Coolant Control
+title: Coolant Control
 ---

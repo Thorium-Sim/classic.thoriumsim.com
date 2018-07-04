@@ -1,6 +1,6 @@
 ---
 id: card_comm_decoding
-title:Comm Decoding
+title: Comm Decoding
 ---
 
 ![Comm Decoding](/docs/card_commEncoding.jpg)

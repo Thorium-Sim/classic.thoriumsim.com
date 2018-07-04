@@ -1,4 +1,4 @@
 ---
 id: card_interception
-title:Interception
+title: Interception
 ---

@@ -1,4 +1,4 @@
 ---
 id: card_offline
-title:Offline
+title: Offline
 ---

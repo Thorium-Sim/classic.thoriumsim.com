@@ -1,6 +1,6 @@
 ---
-id:simulator_config
-title:Simulator Config
+id: simulator_config
+title: Simulator Config
 ---
 
 Redirecting...

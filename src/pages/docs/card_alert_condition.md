@@ -1,6 +1,6 @@
 ---
 id: card_alert_condition
-title:Alert Condition
+title: Alert Condition
 ---
 
 ![Alert Condition Card Image](/docs/card_alertCondition.jpg)

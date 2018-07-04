@@ -1,6 +1,6 @@
 ---
 id: client
-title:Thorium Client
+title: Thorium Client
 ---
 
 ![Thorium Client](/docs/thorium_client.jpg)

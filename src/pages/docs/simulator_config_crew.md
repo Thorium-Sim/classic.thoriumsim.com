@@ -1,5 +1,5 @@
 ---
-id:simulator_config_crew
+id: simulator_config_crew
 title: Crew
 ---
 

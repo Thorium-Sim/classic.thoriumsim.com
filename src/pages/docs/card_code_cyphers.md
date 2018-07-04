@@ -1,6 +1,6 @@
 ---
 id: card_code_cyphers
-title:Code Cyphers
+title: Code Cyphers
 ---
 
 ![Code Cyphers](/docs/card_codeCyphers.jpg)

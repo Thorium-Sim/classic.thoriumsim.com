@@ -1,4 +1,4 @@
 ---
 id: card_status
-title:Status
+title: Status
 ---

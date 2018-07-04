@@ -3,6 +3,7 @@ title: The Birth of Thorium
 author: Alex Anderson
 authorURL: http://twitter.com/ralex1993
 authorFBID: 764853781
+date: '2017-06-01T6:00:00-06:00'
 ---
 
 

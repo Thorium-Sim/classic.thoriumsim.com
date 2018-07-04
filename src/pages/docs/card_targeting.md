@@ -1,6 +1,6 @@
 ---
 id: card_targeting
-title:Targeting
+title: Targeting
 ---
 
 ![Targeting](/docs/card_targeting_1.jpg)

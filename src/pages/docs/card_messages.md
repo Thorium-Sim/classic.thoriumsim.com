@@ -1,4 +1,4 @@
 ---
 id: card_messages
-title:Messages
+title: Messages
 ---

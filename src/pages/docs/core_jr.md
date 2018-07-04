@@ -1,6 +1,6 @@
 ---
 id: core_jr
-title:Jr Core
+title: Jr Core
 ---
 
 JR

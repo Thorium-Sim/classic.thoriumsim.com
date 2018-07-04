@@ -1,6 +1,6 @@
 ---
-id:simulator_config_overview
-title:Simulator Config
+id: simulator_config_overview
+title: Simulator Config
 ---
 
 Thorium aims to be usable in any type of fictional universe with any kind of

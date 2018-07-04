@@ -1,6 +1,6 @@
 ---
 id: core_next
-title:Next Core
+title: Next Core
 ---
 
 ![Next Core](/docs/core_next.jpg)

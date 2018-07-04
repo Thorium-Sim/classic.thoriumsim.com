@@ -1,4 +1,4 @@
 ---
 id: card_probe_construction
-title:Probe Construction
+title: Probe Construction
 ---

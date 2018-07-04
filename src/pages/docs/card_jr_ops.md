@@ -1,4 +1,4 @@
 ---
 id: card_jr_ops
-title:Jr Ops
+title: Jr Ops
 ---

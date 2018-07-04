@@ -1,6 +1,6 @@
 ---
 id: card_long_range_comm
-title:Long Range Comm
+title: Long Range Comm
 ---
 
 ![Long Range Comm Card Image](/docs/card_longRangeComm.jpg)

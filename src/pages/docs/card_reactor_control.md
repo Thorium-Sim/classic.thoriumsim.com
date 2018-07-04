@@ -1,4 +1,4 @@
 ---
 id: card_reactor_control
-title:Reactor Control
+title: Reactor Control
 ---

@@ -1,6 +1,6 @@
 ---
-id:sets
-title:Client Sets
+id: sets
+title: Client Sets
 ---
 
 ![Set Config](/docs/set_config.jpg)

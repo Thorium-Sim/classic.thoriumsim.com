@@ -1,6 +1,6 @@
 ---
 id: core_default
-title:Default Core
+title: Default Core
 ---
 
 ![Main Core](/docs/core_mainCore.jpg)

@@ -1,6 +1,6 @@
 ---
 id: card_sensor_scans
-title:Sensor Scans
+title: Sensor Scans
 ---
 
 Scans are requests made to the sensors system to give the requester aditional

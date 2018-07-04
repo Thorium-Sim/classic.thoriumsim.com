@@ -1,4 +1,4 @@
 ---
 id: card_security_decks
-title:Security Decks
+title: Security Decks
 ---
