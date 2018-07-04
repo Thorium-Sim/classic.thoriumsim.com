@@ -4,8 +4,8 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: static/
-public_folder: /
+media_folder: static/img
+public_folder: /img
 
 collections: # A list of collections the CMS should be able to edit
   - name: "docs" # Used in routes, ie.: /admin/collections/:slug/edit
@@ -15,14 +15,8 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Position", name: "position", widget: "number"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Sidebar"
-        name: "sidebar"
-        widget: "relation"
-        collection: "sidebars"
-        searchFields: ["sidebars"]
-        valueField: "sidebars"
+      - {label: "Sidebars", name: "sidebars", widget: "list", required: true}
   - name: "blog"
     label: "Blog"
     label_singular: "Blog Post"
@@ -37,17 +31,3 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list", required: false}
-  - label: Settings
-    name: settings
-    files:
-      - name: sidebars
-        label: Sidebars
-        file: src/data/sidebars.yml
-        description: Sidebar Configuration
-        fields:
-          - name: sidebars
-            label: Sidebars
-            widget: list
-            fields:
-              - name: title
-                label: Title
