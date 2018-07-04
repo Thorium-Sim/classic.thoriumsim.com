@@ -1,12 +1,8 @@
 sidebars:
-  - contents:
-      - title: Overview
-      - title: Flight Directing
-      - title: Cores
-      - title: Cards
-      - title: Config
-      - title: Viewscreens
-    title: docs
-  - contents:
-      - title: Simulator Config
-    title: config
+  - title: Overview
+  - title: Flight Directing
+  - title: Cores
+  - title: Cards
+  - title: Simulator Config
+  - title: Generic Config
+  - title: Viewscreens
