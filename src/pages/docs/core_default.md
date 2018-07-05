@@ -3,7 +3,7 @@ id: core_default
 title: Default Core
 ---
 
-![Main Core](/docs/core_mainCore.jpg)
+![Main Core](/img/core_mainCore.jpg)
 
 This is the default, or main, core. It has all of the most urgent, important
 cores for the Flight Director to control the mission.

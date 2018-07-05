@@ -3,4 +3,4 @@ id: simulator_config_systems
 title: Systems
 ---
 
-![Systems](/docs/simulator_config_systems.jpg)
+![Systems](/img/simulator_config_systems.jpg)

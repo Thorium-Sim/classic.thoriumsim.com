@@ -3,7 +3,7 @@ id: core_next
 title: Next Core
 ---
 
-![Next Core](/docs/core_next.jpg)
+![Next Core](/img/core_next.jpg)
 
 Next Core was designed from the ground up to give you the best experience as a
 flight director. It includes several persistent components with a dynamic

@@ -3,7 +3,7 @@ id: card_cargo_control
 title: Cargo Control
 ---
 
-![Cargo Control Card Image](/docs/card_cargo.jpg)
+![Cargo Control Card Image](/img/card_cargo.jpg)
 
 ## Summary
 

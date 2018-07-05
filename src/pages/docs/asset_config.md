@@ -28,4 +28,4 @@ assets
     └── Videos - Used for the Videos viewscreen
 
 ```
-![Asset Folders](/docs/asset_config.jpg)
+![Asset Folders](/img/asset_config.jpg)

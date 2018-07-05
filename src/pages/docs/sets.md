@@ -3,7 +3,7 @@ id: sets
 title: Client Sets
 ---
 
-![Set Config](/docs/set_config.jpg)
+![Set Config](/img/set_config.jpg)
 
 Sets are connections between clients and a specific station in a specific
 station set on a specific simulator. They are called sets because they should

@@ -3,7 +3,7 @@ id: client
 title: Thorium Client
 ---
 
-![Thorium Client](/docs/thorium_client.jpg)
+![Thorium Client](/img/thorium_client.jpg)
 
 While Thorium can run in any modern web browser, Thorium comes with a special
 client application which can be installed on any computer you run a station on.

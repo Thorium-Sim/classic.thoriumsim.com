@@ -20,7 +20,7 @@ own documentation page.
 
 ## Core Feed
 
-![Core Feed](/docs/core_feed.jpg)
+![Core Feed](/img/core_feed.jpg)
 
 One of the most powerful features of the core is the core feed. This is
 available on the main screen of the Next core layout and on the side bar of the
@@ -32,7 +32,7 @@ events without having to search for the necessary core component.
 
 ## Timeline
 
-![Core Timeline](/docs/core_timeline.jpg)
+![Core Timeline](/img/core_timeline.jpg)
 
 Another powerful feature of Core is the timeline. This allows the flight
 director to automate parts of the mission through a mission timeline system.

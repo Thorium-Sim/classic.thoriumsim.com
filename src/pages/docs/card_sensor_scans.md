@@ -20,7 +20,7 @@ those modes will be addressed below.
 
 ## Standard Mode
 
-![Standard Mode](/docs/card_sensor_scans2.jpg)
+![Standard Mode](/img/card_sensor_scans2.jpg)
 
 In standard mode, there can only be one active scan per sensor system. A scan is
 made by typing the query into the box on top. For internal sensors, the option
@@ -33,7 +33,7 @@ _**Note:** Sensor Scans made from the Sensor Grid card will always be in
 standard mode. History mode is not available for sensor scans made from the
 Sensor Grid card_
 
-![Standard Mode Core](/docs/core_sensor_scans2.jpg)
+![Standard Mode Core](/img/core_sensor_scans2.jpg)
 
 At the top of the core, you can choose between 'External' and 'Internal'
 sensors. A checkbox allows you to toggle between standard and history mode.
@@ -60,7 +60,7 @@ response text as probe processed data to the
 
 ## History Mode
 
-![History Mode](/docs/card_sensor_scans1.jpg)
+![History Mode](/img/card_sensor_scans1.jpg)
 
 History mode is almost identical to standard mode with one exception. Multiple
 scans can be requested at the same time. Requested scans appear in a list on the
@@ -69,7 +69,7 @@ Red scans indicate scans which have been cancelled. Green scans indicate that
 the scan has been answered. Previous scans can be referenced after the fact.
 Clicking the 'New Scan' button will initiate a new scan.
 
-![History Mode Core](/docs/core_sensor_scans_1.jpg)
+![History Mode Core](/img/core_sensor_scans_1.jpg)
 
 History mode on the core also has a sidebar of previous and current scans on the
 left with the same color-coding as the card. Clicking on a scan allows the

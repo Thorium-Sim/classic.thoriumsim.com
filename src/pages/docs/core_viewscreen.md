@@ -3,7 +3,7 @@ id: core_viewscreen
 title: Viewscreen Core
 ---
 
-![Viewscreen Core](/docs/core_viewscreen.jpg)
+![Viewscreen Core](/img/core_viewscreen.jpg)
 
 The viewscreen core allows the flight director to control what is displaying on
 the viewscreen. It is split into four sections:

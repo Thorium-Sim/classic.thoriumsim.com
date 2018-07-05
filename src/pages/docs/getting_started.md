@@ -10,7 +10,7 @@ To get started with Thorium, you first have to download and install it. A built 
 
 The controls have no dependencies and should start right up when you start the program.
 
-![The starting window](/docs/getting_started_1.jpg)
+![The starting window](/img/getting_started_1.jpg)
 
 ```
 Client Server is now running on http://192.168.1.4:3000/client
@@ -21,7 +21,7 @@ Access GraphiQL developer tool on http://192.168.1.4:3001/graphiql
 
 Since Thorium is run inside a web browser, you need to navigate to the URL which it showed you. That will bring you to the welcome screen.
 
-![The welcome screen](/docs/getting_started_2.jpg)
+![The welcome screen](/img/getting_started_2.jpg)
 
 ## Importing Simulators, Missions, and Assets
 

@@ -19,7 +19,7 @@ Tactical maps can be created from the main tactical map editor, accessed from th
 
 ## Create and Edit Tactical Maps
 
-![Tactical Maps](/docs/tactical_maps_1.jpg)
+![Tactical Maps](/img/tactical_maps_1.jpg)
 
 1) A list of saved maps. You can choose a map to edit by clicking on it in the list.
 2) Click this button to create a new map.
@@ -31,7 +31,7 @@ Tactical maps can be created from the main tactical map editor, accessed from th
 
 ## Grid Layer
 
-![Tactical Maps](/docs/tactical_maps_2.jpg)
+![Tactical Maps](/img/tactical_maps_2.jpg)
 
 1) Use this to switch between the different layer types.
 2) Change the number of grid columns with this slider.
@@ -41,14 +41,14 @@ Tactical maps can be created from the main tactical map editor, accessed from th
 
 ## Image Layer
 
-![Tactical Maps](/docs/tactical_maps_3.jpg)
+![Tactical Maps](/img/tactical_maps_3.jpg)
 
 1) Use this to switch between the different layer types.
 2) This is a file browser for the files located in the `/Viewscreen/Tactical Backgrounds` asset folder. You can navigate the files in this folder by clicking on folders or the 'Back' button. Clicking on one of the images will set the layer's image to that image.
 
 ## Object Layer
 
-![Tactical Maps](/docs/tactical_maps_4.jpg)
+![Tactical Maps](/img/tactical_maps_4.jpg)
 
 1) Use this to switch between the different layer types.
 2) Click this button to add an iconless label to the map.
@@ -57,7 +57,7 @@ Tactical maps can be created from the main tactical map editor, accessed from th
 
 ## Configuring Objects
 
-![Tactical Maps](/docs/tactical_maps_5.jpg)
+![Tactical Maps](/img/tactical_maps_5.jpg)
 
 1) This slider scales both the icon and the label, making them both larger or smaller.
 2) This changes the speed at which the icon moves. **Note: To move icons with an animation of any kind, you must change this value.** Otherwise, icons will instantly move to the place you drag them.
@@ -71,7 +71,7 @@ Tactical maps can be created from the main tactical map editor, accessed from th
 
 ## Tactical Map Control
 
-![Tactical Maps](/docs/tactical_maps_6.jpg)
+![Tactical Maps](/img/tactical_maps_6.jpg)
 
 To activate a tactical map during a flight, use the Viewscreen core layout with the 'TacticalMap' viewscreen. 
 
@@ -83,7 +83,7 @@ To activate a tactical map during a flight, use the Viewscreen core layout with 
 
 ## Mission Macro
 
-![Tactical Maps](/docs/tactical_maps_7.jpg)
+![Tactical Maps](/img/tactical_maps_7.jpg)
 
 The mission macro for tactical maps is called 'Set a tactical on the viewscreen'
 The mission macro is configured by selecting the saved tactical map you would like to show.

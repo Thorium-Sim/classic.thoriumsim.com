@@ -7,9 +7,9 @@ Thorium differentiates Flights from simulators. A flight represents a single,
 self-contained instance of a simulator. Flights can be paused, resumed, and
 removed entirely.
 
-![Welcome Screen](/docs/starting_flight_1.jpg)
+![Welcome Screen](/img/starting_flight_1.jpg)
 
-![Flight Startup](/docs/starting_flight_2.jpg)
+![Flight Startup](/img/starting_flight_2.jpg)
 
 Creating a flight is simple:
 
@@ -43,11 +43,11 @@ The IP address of the computer running Thorium would be shown in place of the IP
 address above. Type that URL into the web browser of your client and the client
 page should load.
 
-![Client Screen](/docs/client_screen_1.jpg)
+![Client Screen](/img/client_screen_1.jpg)
 
 Clicking on the Thorium logo will show more information.
 
-![Client Screen](/docs/client_screen_2.jpg)
+![Client Screen](/img/client_screen_2.jpg)
 
 On this screen, you can download a standalone client which will automatically
 connect to Thorium Server, lock the screen so the controls window cannot be
@@ -61,7 +61,7 @@ wanted a more descriptive name for the client.
 
 ## Assigning Clients to the Flight
 
-![Assigning Clients](/docs/starting_flight_3.jpg)
+![Assigning Clients](/img/starting_flight_3.jpg)
 
 Once clients have been connected, they will appear in the client lobby. To use
 the stations for a flight, you must assign clients to the flight and simulator.

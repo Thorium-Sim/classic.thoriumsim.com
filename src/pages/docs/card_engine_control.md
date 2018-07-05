@@ -12,7 +12,7 @@ exist on a given starship, based on the size and type of ship. Additional types
 of engines may also be configured based on the needs of the simulator and the
 universe.
 
-![Engine Control](/docs/card_engineControl.jpg)
+![Engine Control](/img/card_engineControl.jpg)
 
 ## Impulse Engines
 
@@ -60,7 +60,7 @@ engines are engaged.
 
 ## Core Control
 
-![Engine Control Core](/docs/core_engineControl.jpg)
+![Engine Control Core](/img/core_engineControl.jpg)
 
 Use the simple drop-down in the Engine Control Core to set the speed of the ship
 from behind the scenes. The settings here are subject to the limitations of

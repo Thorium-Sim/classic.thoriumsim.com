@@ -3,7 +3,7 @@ id: card_code_cyphers
 title: Code Cyphers
 ---
 
-![Code Cyphers](/docs/card_codeCyphers.jpg)
+![Code Cyphers](/img/card_codeCyphers.jpg)
 
 The code cyphers card is very simple. On the right side of the screen are a list
 of cyphers which might be used to encode a message that is sent to the ship.
