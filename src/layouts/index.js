@@ -15,7 +15,7 @@ const Container = styled('div')`
 const Wrapper = styled('div')`
   margin-top: 50px;
   flex: 1;
-  background-color: white;
+  background-color: #333;
 `
 // const Content = styled('div')`
 //   margin: 0 auto;

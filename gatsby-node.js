@@ -13,17 +13,17 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
 
-  return graphql(`
-  {
-    allMarkdownRemark(filter: {fileAbsolutePath: {glob: "**/blog/**"}}) {
-      edges {
-        node {
-          id
-         fileAbsolutePath
+  graphql(`
+    {
+      allMarkdownRemark(filter: { fileAbsolutePath: { glob: "**/blog/**" } }) {
+        edges {
+          node {
+            id
+            fileAbsolutePath
+          }
         }
       }
     }
-  }  
   `).then(result => {
     if (result.errors) {
       result.errors.forEach(e => console.error(e.toString()))
@@ -37,6 +37,37 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       createPage({
         path: edge.node.fileAbsolutePath.replace(regex, '/blog/$1/$2/$3/$4'),
         component: path.resolve(`src/templates/blog.js`),
+        // additional data can be passed via context
+        context: {
+          id,
+        },
+      })
+    })
+  })
+  graphql(`
+    {
+      allMarkdownRemark(filter: { fileAbsolutePath: { glob: "**/docs/**" } }) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      result.errors.forEach(e => console.error(e.toString()))
+      return Promise.reject(result.errors)
+    }
+    const posts = result.data.allMarkdownRemark.edges
+    posts.forEach(edge => {
+      const id = edge.node.id
+      createPage({
+        path: edge.node.fields.slug,
+        component: path.resolve(`src/templates/docs.js`),
         // additional data can be passed via context
         context: {
           id,
