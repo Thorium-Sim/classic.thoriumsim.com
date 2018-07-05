@@ -3,13 +3,10 @@ title: The Birth of Thorium
 author: Alex Anderson
 authorURL: http://twitter.com/ralex1993
 authorFBID: 764853781
-date: '2017-06-01T6:00:00-06:00'
+date: 2017-06-01T6:00:00.000Z
 ---
 
-
-<figure>
-  <img src="/posts/banner.png" alt="Banner" />
-</figure>
+![Thorium](../../img/banner.png)
 
 Thorium as a project began in June of 2016. After the partial failure of [Flint](https://github.com/infinitedg/flint), I wanted to develop a set of controls that I could be proud of. Flint had a pie-in-the-sky vision of what was possible. However, in the day-to-day development, that vision didn't translate well. Ultimately, due to lack of focus and poor developer experience, Flint fell by the wayside.
 

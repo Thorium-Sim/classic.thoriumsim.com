@@ -4,7 +4,7 @@ backend:
 
 publish_mode: editorial_workflow
 
-media_folder: static/img
+media_folder: src/img
 public_folder: /img
 
 collections: # A list of collections the CMS should be able to edit
@@ -16,7 +16,7 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Sidebars", name: "sidebars", widget: "list", required: true}
+      - {label: "Category", name: "category", widget: "list", required: true}
   - name: "blog"
     label: "Blog"
     label_singular: "Blog Post"
