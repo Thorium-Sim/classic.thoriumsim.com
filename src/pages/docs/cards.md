@@ -1,6 +1,8 @@
 ---
 id: cards
 title: Cards
+category: docs
+subcategory: Cards
 ---
 
 * [Alert Condition](/docs/card_alert_condition.html)

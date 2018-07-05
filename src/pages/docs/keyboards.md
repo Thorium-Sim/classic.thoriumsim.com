@@ -1,6 +1,8 @@
 ---
 id: keyboards
 title: Keyboards
+category: docs
+subcategory: Config
 ---
 
 ![Keyboards](/img/keyboards_1.jpg)

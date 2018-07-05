@@ -1,6 +1,8 @@
 ---
 id: core_viewscreen
 title: Viewscreen Core
+category: docs
+subcategory: Cores
 ---
 
 ![Viewscreen Core](/img/core_viewscreen.jpg)

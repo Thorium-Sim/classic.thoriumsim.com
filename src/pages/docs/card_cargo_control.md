@@ -1,6 +1,8 @@
 ---
 id: card_cargo_control
 title: Cargo Control
+category: cards
+subcategory: Operations
 ---
 
 ![Cargo Control Card Image](/img/card_cargo.jpg)

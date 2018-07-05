@@ -1,6 +1,8 @@
 ---
 id: card_sensors
 title: Sensors
+category: cards
+subcategory: Sensors
 ---
 
 Sensors is easily one of the most complicated, neuanced screens in Thorium.

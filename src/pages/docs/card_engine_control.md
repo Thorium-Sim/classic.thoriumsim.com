@@ -1,6 +1,8 @@
 ---
 id: card_engine_control
 title: Engine Control
+category: cards
+subcategory: Navigation
 ---
 
 ## Overview

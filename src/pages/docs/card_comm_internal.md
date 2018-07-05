@@ -1,6 +1,8 @@
 ---
 id: card_comm_internal
 title: Comm Internal
+category: cards
+subcategory: Communications
 ---
 
 ![Internal Comm](/img/card_internalComm_1.jpg)

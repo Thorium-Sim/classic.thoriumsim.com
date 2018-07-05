@@ -1,6 +1,8 @@
 ---
 id: card_self_destruct
 title: Self-Destruct
+category: cards
+subcategory: Command
 ---
 
 ## Overview

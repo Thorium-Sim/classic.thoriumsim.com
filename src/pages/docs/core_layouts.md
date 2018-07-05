@@ -1,6 +1,8 @@
 ---
 id: core_layouts
 title: Core Layouts
+category: docs
+subcategory: Cores
 ---
 
 Thorium supports the ability to switch between multiple core layouts. This

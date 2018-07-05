@@ -1,6 +1,8 @@
 ---
 id: developers
 title: Guide for Developers
+category: developers
+subcategory: Developers
 ---
 
 Thorium is built on a number of technologies and tools:

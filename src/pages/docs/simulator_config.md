@@ -1,6 +1,8 @@
 ---
 id: simulator_config
 title: Simulator Config
+category: docs
+subcategory: Config
 ---
 
 Redirecting...

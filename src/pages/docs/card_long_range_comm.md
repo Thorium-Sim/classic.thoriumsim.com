@@ -1,6 +1,8 @@
 ---
 id: card_long_range_comm
 title: Long Range Comm
+category: cards
+subcategory: Communications
 ---
 
 ![Long Range Comm Card Image](/img/card_longRangeComm.jpg)

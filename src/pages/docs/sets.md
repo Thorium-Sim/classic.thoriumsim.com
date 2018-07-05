@@ -1,6 +1,8 @@
 ---
 id: sets
 title: Client Sets
+category: docs
+subcategory: Config
 ---
 
 ![Set Config](/img/set_config.jpg)

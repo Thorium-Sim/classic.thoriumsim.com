@@ -1,6 +1,8 @@
 ---
 id: card_targeting
 title: Targeting
+category: cards
+subcategory: Tactical
 ---
 
 ![Targeting](/img/card_targeting_1.jpg)

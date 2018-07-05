@@ -1,6 +1,8 @@
 ---
 id: card_code_cyphers
 title: Code Cyphers
+category: cards
+subcategory: Communications
 ---
 
 ![Code Cyphers](/img/card_codeCyphers.jpg)

@@ -1,6 +1,8 @@
 ---
 id: card_comm_decoding
 title: Comm Decoding
+category: cards
+subcategory: Communications
 ---
 
 ![Comm Decoding](/img/card_commEncoding.jpg)

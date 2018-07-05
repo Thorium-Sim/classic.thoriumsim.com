@@ -2,6 +2,8 @@
 id: fd_training
 title: Flight Directing — Training
 sidebar_label: Training
+category: docs
+subcategory: Flight Directing
 ---
 
 Training makes a huge difference between a smooth mission and a rocky mission.

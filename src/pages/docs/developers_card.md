@@ -1,6 +1,8 @@
 ---
 id: developers_card
 title: Developing a Frontend Card
+category: developers
+subcategory: Developers
 ---
 
 # Creating a New Frontend Card

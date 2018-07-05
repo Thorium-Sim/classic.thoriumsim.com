@@ -1,6 +1,8 @@
 ---
 id: damage_reports_config
 title: Auto-Generated Damage Reports
+category: docs
+subcategory: Config
 ---
 
 Thorium supports both pre-written plaintext damage reports and auto-generated damage reports. In the case of auto-generated reports, it creates those reports on-the-fly when the report is requested.

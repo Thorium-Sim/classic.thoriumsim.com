@@ -1,6 +1,8 @@
 ---
 id: tactical_maps
 title: Tactical Maps
+category: docs
+subcategory: Viewscreens
 ---
 
 ## Overview

@@ -1,6 +1,8 @@
 ---
 id: core_default
 title: Default Core
+category: docs
+subcategory: Cores
 ---
 
 ![Main Core](/img/core_mainCore.jpg)

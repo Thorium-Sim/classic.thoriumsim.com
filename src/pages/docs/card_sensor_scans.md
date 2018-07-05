@@ -1,6 +1,8 @@
 ---
 id: card_sensor_scans
 title: Sensor Scans
+category: cards
+subcategory: Sensors
 ---
 
 Scans are requests made to the sensors system to give the requester aditional

@@ -1,6 +1,8 @@
 ---
 id: client
 title: Thorium Client
+category: docs
+subcategory: Config
 ---
 
 ![Thorium Client](/img/thorium_client.jpg)

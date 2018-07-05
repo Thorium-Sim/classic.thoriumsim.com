@@ -1,6 +1,8 @@
 ---
 id: card_thx
 title: THX-1138
+category: cards
+subcategory: Hypercards
 ---
 
 The THX-1138 is a hypercard (meaning it is intended to be used on many or all of

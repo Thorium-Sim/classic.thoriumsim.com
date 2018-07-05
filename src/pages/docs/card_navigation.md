@@ -1,6 +1,8 @@
 ---
 id: card_navigation
 title: Navigation
+category: cards
+subcategory: Navigation
 ---
 
 ## Overview

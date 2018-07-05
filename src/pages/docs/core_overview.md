@@ -1,6 +1,8 @@
 ---
 id: core_overview
 title: Core Overview
+category: docs
+subcategory: Cores
 ---
 
 What is the core? It is the main control screen for the entire simulator. The
