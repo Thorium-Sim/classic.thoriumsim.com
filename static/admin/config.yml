@@ -16,7 +16,10 @@ collections: # A list of collections the CMS should be able to edit
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Category", name: "category", widget: "list", required: true}
+      - {label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false}
+      - {label: "Category", name: "category", widget: "category", required: true}
+      - {label: "Sub-Category", name: "subcategory", widget: "string", required: false}
+      - {label: "Position", name: "position", widget: "number", required: false}
   - name: "blog"
     label: "Blog"
     label_singular: "Blog Post"

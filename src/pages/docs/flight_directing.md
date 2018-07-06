@@ -1,8 +1,8 @@
 ---
 id: flight_directing
 title: Flight Directing Overview
-category: docs
-subcategory: Flight Directing
+category: flight_directing
+position: 1
 ---
 
 The flight director is probably the most important person in a Thorium mission.

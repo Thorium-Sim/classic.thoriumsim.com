@@ -2,8 +2,7 @@
 id: fd_briefing
 title: Flight Directing — Briefing
 sidebar_label: Briefing
-category: docs
-subcategory: Flight Directing
+category: flight_directing
 ---
 
 Before a mission can begin, the crew has to know what their mission is in the

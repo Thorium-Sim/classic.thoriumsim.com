@@ -1,10 +1,8 @@
-import styled from 'react-emotion'
+import React from 'react'
+import styled, { css } from 'react-emotion'
 
-export const Wrapper = styled('div')`
-  background-color: #333;
-  padding: 50px 0;
-  color: white;
-`
+export const Wrapper = props => <div {...props} />
+
 export const Page = styled('div')`
   max-width: 960px;
   width: 100%;

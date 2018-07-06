@@ -28,7 +28,6 @@ const RecentPosts = ({ data }) => {
       }
     )
     .slice(0, 5)
-  console.log(posts)
   return (
     <div>
       <h4>Recent Posts</h4>

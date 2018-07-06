@@ -1,12 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import {
-  Wrapper,
-  Page,
-  FlexArea,
-  FlexAside,
-  FlexSection,
-} from '../components/styles'
+import { Page, FlexArea, FlexAside, FlexSection } from '../components/styles'
 import RecentPosts from '../components/recentPosts'
 import BlogHeader from '../components/blogHeader'
 
@@ -24,7 +18,7 @@ const BlogTemplate = ({
   const regex = /.*\/blog\/(\d{4})-(\d{2})-(\d{2})-(.*)\.md/i
   const url = fileAbsolutePath.replace(regex, '/blog/$1/$2/$3/$4')
   return (
-    <Wrapper className="wrapper">
+    <div className="outerContainer">
       <Page>
         <FlexSection>
           <FlexAside>
@@ -44,7 +38,7 @@ const BlogTemplate = ({
           </FlexArea>
         </FlexSection>
       </Page>
-    </Wrapper>
+    </div>
   )
 }
 

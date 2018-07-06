@@ -1,19 +1,40 @@
-body, html {
+body,
+html {
   background-color: #111;
 }
 a {
   border-color: #b99bd8;
   color: #b99bd8;
   text-decoration: none;
-  
 }
 a:hover {
   text-decoration: underline;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #b99bd8;
   font-weight: 400;
 }
-.wrapper h1,.wrapper h2,.wrapper h3,.wrapper h4,.wrapper h5,.wrapper h6 {
-  margin-bottom:0;
+.outerContainer {
+  background-color: #333;
+  padding: 50px 0;
+  color: white;
+}
+.outerContainer h1,
+.outerContainer h2,
+.outerContainer h3,
+.outerContainer h4,
+.outerContainer h5,
+.outerContainer h6 {
+  margin-bottom: 0;
+}
+pre {
+  line-height: 1;
+  background-color: #444;
+  padding: 10px;
+  border-radius: 5px;
 }

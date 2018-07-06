@@ -2,7 +2,7 @@
 id: developers_core
 title: Developing a Core Control
 category: developers
-subcategory: Developers
+
 ---
 
 # Creating a Core Control

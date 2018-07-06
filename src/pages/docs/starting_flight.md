@@ -2,7 +2,7 @@
 id: starting_flight
 title: Starting a Flight
 category: docs
-subcategory: Overview
+subcategory: An Overview
 ---
 
 Thorium differentiates Flights from simulators. A flight represents a single,

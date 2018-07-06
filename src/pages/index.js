@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import Link from 'gatsby-link'
 import styled, { css } from 'react-emotion'
 import Carousel from '../components/carousel'
+import { users, A, Img } from './users'
+import { FlexSection } from '../components/styles'
 
 const Hero = styled('div')`
   width: 100%;
@@ -17,63 +19,64 @@ const Hero = styled('div')`
   flex-direction: column;
 `
 const HeroImage = styled('img')`
-width: 10rem;
+  width: 10rem;
 `
 const HeroHeader1 = styled('h1')`
-color: #eee;
-font-size: 5rem;
-text-shadow:2px 2px 2px rgba(0,0,0,.5);
+  color: #eee;
+  font-size: 5rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 `
 const HeroHeader2 = styled('h2')`
-color: #eee;
-font-size: 2rem;
-text-shadow:2px 2px 2px rgba(0,0,0,.5);
-text-align: center;
+  color: #eee;
+  font-size: 2rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
 `
 const ButtonContainer = styled('div')`
-display: flex;
-justify-content: center;
-align-items: center;
-flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 `
 const buttonStyle = css`
-    font-size: 1.5rem;
-    text-shadow: 3px 3px 5px rgba(0,0,0,.5);
-    box-shadow: 3px 3px 5px rgba(0,0,0,.5), inset 3px 3px 5px rgba(0,0,0,.5);
-    color: #eee;
-    border: solid 2px #eee;
-    background-color: transparent;
-    margin: 4px;
-    border-radius: 3px;
-    display: inline-block;
-    font-weight: 400;
-    line-height: 1.2em;
-    padding: 10px;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background .3s,color .3s;
-    &:hover {
-      background: #37203c;
-      color: white;
-    }
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+  color: #eee;
+  border: solid 2px #eee;
+  background-color: transparent;
+  margin: 4px;
+  border-radius: 3px;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.2em;
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+  &:hover {
+    background: #37203c;
+    color: white;
+  }
 `
 const SectionInner = styled('div')`
-    max-width: 960px;
-    width: 100%;
-    margin: 0 auto;
-    line-height: 1.7;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 const SectionOuter = styled('section')`
-    padding: 3rem;
-    background-color: ${props => (props.offset ? '#444' : '#222')};
-    color: white;
+  padding: 3rem;
+  background-color: ${props => (props.offset ? '#444' : '#222')};
+  color: white;
 `
 const sectionImageStyle = css`
-    flex: 1;
+  flex: 1;
 `
 const SectionImage = props => (
   <div css={sectionImageStyle}>
@@ -81,8 +84,8 @@ const SectionImage = props => (
   </div>
 )
 const SectionText = styled('div')`
-flex: 2;
-margin: 0 2rem;
+  flex: 2;
+  margin: 0 2rem;
 `
 const Section = props => (
   <SectionOuter {...props}>
@@ -178,6 +181,23 @@ const IndexPage = () => (
           technologies, your client computers can be anything that runs a modern
           web browser.
         </p>
+      </SectionText>
+    </Section>
+    <Section>
+      <SectionText>
+        <h3>Sponsoring Organizations</h3>
+        <FlexSection>
+          {users.map(u => (
+            <A
+              href={u.infoLink}
+              key={u.caption}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <Img alt={u.caption} src={u.image} />
+            </A>
+          ))}
+        </FlexSection>
       </SectionText>
     </Section>
   </Fragment>

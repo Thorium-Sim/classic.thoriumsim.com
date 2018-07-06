@@ -3,7 +3,7 @@ id: getting_started
 title: Getting Started with Thorium
 sidebar_label: Getting Started
 category: docs
-subcategory: Overview
+subcategory: An Overview
 ---
 
 ## Download and Install

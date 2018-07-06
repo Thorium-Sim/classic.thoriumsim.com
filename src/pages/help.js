@@ -1,9 +1,9 @@
 import React from 'react'
-import { Wrapper, Page, FlexSection, FlexAside } from '../components/styles'
+import { Page, FlexSection, FlexAside } from '../components/styles'
 import Link from 'gatsby-link'
 
 const Help = () => (
-  <Wrapper>
+  <div className="outerContainer">
     <Page>
       <h1>Need Help?</h1>
       <p>Here's how to get the help you need.</p>
@@ -40,6 +40,6 @@ const Help = () => (
         </FlexAside>
       </FlexSection>
     </Page>
-  </Wrapper>
+  </div>
 )
 export default Help

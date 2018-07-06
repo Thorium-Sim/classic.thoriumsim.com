@@ -1,11 +1,5 @@
 import React, { Fragment } from 'react'
-import {
-  Wrapper,
-  Page,
-  FlexSection,
-  FlexAside,
-  FlexArea,
-} from '../components/styles'
+import { Page, FlexSection, FlexAside, FlexArea } from '../components/styles'
 import BlogHeader from '../components/blogHeader'
 import RecentPosts from '../components/recentPosts'
 
@@ -35,7 +29,7 @@ const Blog = ({
     }
   )
   return (
-    <Wrapper className="wrapper">
+    <div className="outerContainer">
       <Page>
         <FlexSection>
           <FlexAside>
@@ -77,7 +71,7 @@ const Blog = ({
           </FlexArea>
         </FlexSection>
       </Page>
-    </Wrapper>
+    </div>
   )
 }
 export default Blog
