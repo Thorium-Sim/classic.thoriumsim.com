@@ -1,31 +1,46 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import styled, { css } from 'react-emotion'
 
+import './style.css'
 import Header from '../components/header'
-import './index.css'
+import Footer from '../components/footer'
 
+const Container = styled('div')`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+`
+const Wrapper = styled('div')`
+  margin-top: 50px;
+  flex: 1;
+  background-color: #333;
+`
+// const Content = styled('div')`
+//   margin: 0 auto;
+//   max-width: 960px;
+//   width: 100%;
+//   padding: 0px 1.0875rem 1.45rem;
+//   padding-top: 1.45rem;
+// `
 const Layout = ({ children, data }) => (
-  <div>
+  <Container>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: data.site.siteMetadata.description },
+        {
+          name: 'keywords',
+          content:
+            'thorium, simulator, starship, controls, space, edventure, education, learning, wonder',
+        },
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
-    </div>
-  </div>
+    <Wrapper>{children()}</Wrapper>
+    <Footer />
+  </Container>
 )
 
 Layout.propTypes = {
@@ -39,6 +54,7 @@ export const query = graphql`
     site {
       siteMetadata {
         title
+        description
       }
     }
   }

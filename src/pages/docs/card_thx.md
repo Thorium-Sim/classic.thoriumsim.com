@@ -1,6 +1,8 @@
 ---
 id: card_thx
 title: THX-1138
+category: cards
+subcategory: Hypercards
 ---
 
 The THX-1138 is a hypercard (meaning it is intended to be used on many or all of
@@ -18,7 +20,7 @@ How is this done? By changing the name of the system. The THX cards only use the
 system's name, so you could name it 'Wormhole Generator' or 'Phase Cloaking
 Device', and that is what the crew would think they are using.
 
-![Crew THX Card](/docs/card_thx1.jpg)
+![Crew THX Card](/img/card_thx1.jpg)
 
 The crew's THX screen shows the ship in the middle and a charging bar on the
 right side. Holding down the 'Charge' button will increase the charge. Once the
@@ -26,7 +28,7 @@ charge bar is at the top, the crewmember can press the 'Lock Sector' button.
 This will lock out their station, making them unable to do anything until the
 device is activated.
 
-![Executive THX Card](/docs/card_thx2.jpg)
+![Executive THX Card](/img/card_thx2.jpg)
 
 The executive officer's screen looks similar. However, they see all of the
 charge statuses of all of the other stations (indicated with yellow bars on the
@@ -37,11 +39,11 @@ also 'Deactivate' the device.
 **Note:** The executive officer station must be configured in the simulator's
 station config, as shown below:
 
-![Executive Station Settings](/docs/config_exec.jpg)
+![Executive Station Settings](/img/config_exec.jpg)
 
 ## Core
 
-![THX Core](/docs/core_thx.jpg)
+![THX Core](/img/core_thx.jpg)
 
 The THX Core is simple. The very top shows the activated or deactivated status.
 Double-clicking will toggle the activated state.

@@ -1,6 +1,8 @@
 ---
 id: simulator_config_stations
 title: Stations
+category: simulator_config
+
 ---
 
-![Stations](/docs/simulator_config_stations.jpg)
+![Stations](/img/simulator_config_stations.jpg)

@@ -1,6 +1,7 @@
 ---
-id: asset_config
 title: Asset Folder Structure
+category: docs
+subcategory: Config
 ---
 
 Assets in Thorium must be imported by Thorium and placed in specific folders to be used by the controls. You can create these folders in the 'Asset Config' page. Simulator specifc assets should be added on the Simulator Config.
@@ -27,4 +28,4 @@ assets
     └── Videos - Used for the Videos viewscreen
 
 ```
-![Asset Folders](/docs/asset_config.jpg)
+![Asset Folders](/img/asset_config.jpg)

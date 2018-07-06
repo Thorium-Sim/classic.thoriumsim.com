@@ -1,6 +1,8 @@
 ---
 id: frequently_asked_questions
 title: Frequently Asked Questions
+category: docs
+subcategory: An Overview
 ---
 
 ## What are the best screen resolutions to run Thorium on?

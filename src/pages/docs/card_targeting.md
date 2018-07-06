@@ -1,9 +1,11 @@
 ---
 id: card_targeting
 title: Targeting
+category: cards
+subcategory: Tactical
 ---
 
-![Targeting](/docs/card_targeting_1.jpg)
+![Targeting](/img/card_targeting_1.jpg)
 
 The targeting screen is where the weapons are fired from. Targets are objects or
 ships which can first be targeted and then fired at. Weapons will not hit an
@@ -24,7 +26,7 @@ Optional system targeting also becomes available.
 
 ### Coordinate Targeting
 
-![Coordinate Targeting](/docs/card_targeting_3.jpg)
+![Coordinate Targeting](/img/card_targeting_3.jpg)
 
 The targeting screen also allows for targeting using coordinates. Coordinates
 are calculated and sent to Tactical when Sensors clicks on a contact on their
@@ -50,7 +52,7 @@ grid shows the currently loaded torpedo and a button to fire it. That's it.
 
 ### Small-ship Layout
 
-![Small Ship Layout](/docs/card_targeting_2.jpg)
+![Small Ship Layout](/img/card_targeting_2.jpg)
 
 On ships with 2 or less phaser banks and 1 torpedo launcher, the configuration
 of this screen is different.
@@ -65,7 +67,7 @@ information.
 
 ## Core
 
-![Targeting Core](/docs/core_targeting.jpg)
+![Targeting Core](/img/core_targeting.jpg)
 
 Targets are added based on classes of targets that are preconfigured. This
 allows you to add a lot of targets of the same variety.

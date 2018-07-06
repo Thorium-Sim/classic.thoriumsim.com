@@ -1,6 +1,8 @@
 ---
 id: sound_player
 title: Sound Player
+category: docs
+subcategory: Config
 ---
 
 Thorium has a special client station called a sound player. This is a station

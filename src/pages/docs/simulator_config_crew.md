@@ -1,6 +1,8 @@
 ---
 id: simulator_config_crew
 title: Crew
+category: simulator_config
+
 ---
 
-![Crew](/docs/simulator_config_crew.jpg)
+![Crew](/img/simulator_config_crew.jpg)

@@ -1,6 +1,8 @@
 ---
 id: simulator_config_library
 title: Library
+category: simulator_config
+
 ---
 
-![Library](/docs/simulator_config_library.jpg)
+![Library](/img/simulator_config_library.jpg)

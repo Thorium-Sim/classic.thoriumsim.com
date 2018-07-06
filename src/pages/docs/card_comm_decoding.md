@@ -1,9 +1,11 @@
 ---
 id: card_comm_decoding
 title: Comm Decoding
+category: cards
+subcategory: Communications
 ---
 
-![Comm Decoding](/docs/card_commEncoding.jpg)
+![Comm Decoding](/img/card_commEncoding.jpg)
 
 This is where incoming long range messages are decoded. Unless specified on the
 Core, every message sent will have to be decoded.
@@ -17,7 +19,7 @@ To decode the message, the frequency and amplitude bars must be lined up with
 the incoming signal wave. Clicking the 'Decode' button will decode the message
 based on the signal waves. If they match, the message is decoded.
 
-![Core Decoding](/docs/core_decoding.jpg)
+![Core Decoding](/img/core_decoding.jpg)
 
 The decoding core is simple. A gray box lets you type in the message you want to
 send. The top yellow box is the message sender. The yellow box can be filled in

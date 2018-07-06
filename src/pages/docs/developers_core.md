@@ -1,6 +1,8 @@
 ---
 id: developers_core
 title: Developing a Core Control
+category: developers
+
 ---
 
 # Creating a Core Control

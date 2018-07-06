@@ -1,6 +1,9 @@
 ---
 id: overview
 title: Overview
+category: docs
+subcategory: An Overview
+position: 1
 ---
 
 Thorium is a platform for running starship simulations. The computer controls

@@ -1,9 +1,11 @@
 ---
 id: keyboards
 title: Keyboards
+category: docs
+subcategory: Config
 ---
 
-![Keyboards](/docs/keyboards_1.jpg)
+![Keyboards](/img/keyboards_1.jpg)
 
 Thorium's keyboard function allows the flight director to use a keyboard
 attached to a special client to run macros at the touch of a button. The main
@@ -20,7 +22,7 @@ Multiple macros can be added to each key combination. This can allow for complex
 actions, such as making the computer screens spark while playing an EMP sound
 effect.
 
-![Keyboard Client Selection](/docs/keyboard_2.jpg)
+![Keyboard Client Selection](/img/keyboard_2.jpg)
 
 On the flight client selection screen, you can choose any of the keyboards as a
 station, making that client into the keyboard. Once assigned, any keys pressed

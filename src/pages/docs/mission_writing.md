@@ -1,6 +1,8 @@
 ---
 id: mission_writing
 title: Mission Writing
+category: mission_writing
+
 ---
 
 This is a link to [another document.](/docs/en/doc3.md)  

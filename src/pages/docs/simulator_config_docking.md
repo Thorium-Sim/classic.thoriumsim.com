@@ -1,6 +1,8 @@
 ---
 id: simulator_config_docking
 title: Docking
+category: simulator_config
+
 ---
 
-![Docking](/docs/simulator_config_docking.jpg)
+![Docking](/img/simulator_config_docking.jpg)

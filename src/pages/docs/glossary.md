@@ -1,6 +1,8 @@
 ---
 id: glossary
 title: Glossary
+category: docs
+subcategory: An Overview
 ---
 
 - **Space Edventure**: An educationl adventure in a simulated spaceship environment.

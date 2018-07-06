@@ -1,17 +1,19 @@
 ---
 id: card_self_destruct
 title: Self-Destruct
+category: cards
+subcategory: Command
 ---
 
 ## Overview
 
 This screen has a big, red button.
 
-![Self-Destruct Button](/docs/card_selfDestruct_1.jpg)
+![Self-Destruct Button](/img/card_selfDestruct_1.jpg)
 
 Click the self-destruct button when you are in dire straits, and the only way out of there is to blow up the whole ship. Clicking the button will trigger a countdown:
 
-![Self-Destruct Countdown](/docs/card_selfDestruct_2.jpg)
+![Self-Destruct Countdown](/img/card_selfDestruct_2.jpg)
 
 Use the countdown fields to input the number of hours, minutes, and seconds before the ship's internal defense systems will detonate. When the timer reaches zero, the ship will blow up.
 

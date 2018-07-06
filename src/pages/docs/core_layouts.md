@@ -1,6 +1,8 @@
 ---
 id: core_layouts
 title: Core Layouts
+category: docs
+subcategory: Cores
 ---
 
 Thorium supports the ability to switch between multiple core layouts. This
@@ -11,7 +13,7 @@ layouts must be added in code. If you want a new core layout,
 
 ## Core Header
 
-![Header](/docs/core_layouts_1.jpg)
+![Header](/img/core_layouts_1.jpg)
 
 Every core layout has a header with the following controls:
 

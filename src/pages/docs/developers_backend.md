@@ -1,6 +1,8 @@
 ---
 id: developers_backend
 title: Developing a Backend System
+category: developers
+
 ---
 
 This video shows a demonstration of creating a new backend system.

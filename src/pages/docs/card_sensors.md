@@ -1,11 +1,13 @@
 ---
 id: card_sensors
 title: Sensors
+category: cards
+subcategory: Sensors
 ---
 
 Sensors is easily one of the most complicated, neuanced screens in Thorium.
 
-![Sensor Grid](/docs/card_sensors.jpg)
+![Sensor Grid](/img/card_sensors.jpg)
 
 The main sensor grid card has three main features:
 
@@ -34,7 +36,7 @@ The sensors grid card also supports an alternate layout. This layout only
 appears when a) the 'Sensor Scans' card is not present on the station and b) the
 simulator does not use history-based scanning.
 
-![Alternate Layout](/docs/card_sensors2.jpg)
+![Alternate Layout](/img/card_sensors2.jpg)
 
 This screen is nearly identical, save for the sensor scan entry and results
 fields. Scans are requests made to the sensors system for additional
@@ -44,7 +46,7 @@ bottom field.
 
 ## Core
 
-![Sensors Core](/docs/core_sensorsGrid1.jpg)
+![Sensors Core](/img/core_sensorsGrid1.jpg)
 
 The core is divided into two sections: the config area and the grid itself. The
 grid is a 1-to-1 analog of the grid shown on the crew's station.
@@ -61,7 +63,7 @@ from the list.
 
 ### Contact Config
 
-![Contact Config](/docs/core_sensorsGrid2.jpg)
+![Contact Config](/img/core_sensorsGrid2.jpg)
 
 You can right-click on the contacts in the contact config to configure them.
 This allows you to change the label, icon, and picture, the size of the contact
@@ -72,7 +74,7 @@ cause the contact to disappear in a small explosion.
 
 ### Extras
 
-![Extras Menu](/docs/core_sensorsGrid2.jpg)
+![Extras Menu](/img/core_sensorsGrid2.jpg)
 
 The extras menu gives you several additional options for the sensor grid.
 
@@ -106,7 +108,7 @@ mostly visible and can be clicked or hovered to see their identification. After
 
 ### Move
 
-![Move Menu](/docs/core_sensorsGrid4.jpg)
+![Move Menu](/img/core_sensorsGrid4.jpg)
 
 The move menu shows a small circle with another circle in it. This allows you to
 move all of the contacts (except locked contacts) continuously in any direction.
@@ -116,7 +118,7 @@ button will re-center the circle and stop movement.
 
 ### Working with the Grid
 
-![Grid in Action](/docs/core_sensorsGrid5.jpg)
+![Grid in Action](/img/core_sensorsGrid5.jpg)
 
 This shows a scene in action, with several contacts and a planet. The contacts
 hilited in blue have been selected. The ghosted transparent contacts indicate

@@ -1,6 +1,8 @@
 ---
 id: simulator_config_panels
 title: Panels
+category: simulator_config
+
 ---
 
-![Panels](/docs/simulator_config_panels.jpg)
+![Panels](/img/simulator_config_panels.jpg)

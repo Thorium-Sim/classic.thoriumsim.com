@@ -1,9 +1,11 @@
 ---
 id: card_alert_condition
 title: Alert Condition
+category: cards
+subcategory: Command
 ---
 
-![Alert Condition Card Image](/docs/card_alertCondition.jpg)
+![Alert Condition Card Image](/img/card_alertCondition.jpg)
 
 ## Summary
 

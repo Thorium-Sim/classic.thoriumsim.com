@@ -1,13 +1,15 @@
 ---
 id: card_navigation
 title: Navigation
+category: cards
+subcategory: Navigation
 ---
 
 ## Overview
 
 The navigation screen uses advanced technology to calculate course coordinates and set course for unlimited interstellar destinations. Based on configurations in the Navigation Core, course coordinates can be given either as XYZ values or as thruster coordinates which must be set using the [Thrusters card](/docs/card_thrusters.html). Additionally, configuration in the Navigation Core may erase the "Calculate Course" options, in which case the coordinates may be retreived from various other sources, such as the [Sensors Scan card](/docs/card_sensors_scans.html), and entered on the Navigation card.
 
-![Navigation](/docs/card_navigation.jpg)
+![Navigation](/img/card_navigation.jpg)
 
 ## Calculating Course
 
@@ -23,7 +25,7 @@ Once the coordinates have appeared in the "Calculated Course" field, the officer
 
 ## Navigation Core
 
-![Navigation Core](/docs/core_navigation.jpg)
+![Navigation Core](/img/core_navigation.jpg)
 
 The Navigation Core features a few options to configure the flight experience, as well as the controls for sending course coordinates to the navigation station.
 
