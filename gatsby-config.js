@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Thorium',
     description: 'Next Generation Starship Simulator Control Software',
+    siteUrl: `https://thoriumsim.com`,
   },
   plugins: [
     `gatsby-plugin-react-next`,
@@ -51,6 +52,64 @@ module.exports = {
               target: '_self',
               rel: 'nofollow',
             },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [
+                    {
+                      'content:encoded': edge.node.html,
+                    },
+                  ],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  limit: 1000,
+                  sort: { order: DESC, fields: [frontmatter___date] }
+                  filter: { fileAbsolutePath: { glob: "**/blog/**" } }
+                ) {
+                  edges {
+                    node {
+                      fileAbsolutePath
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/blog/feed.xml',
           },
         ],
       },
