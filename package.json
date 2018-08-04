@@ -55,5 +55,13 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/thorium-sim/thoriumsim.com"
+  },
+  "guppy": {
+    "id": "thoriumsim.com",
+    "name": "thoriumsim.com",
+    "type": "gatsby",
+    "color": "#AA00FF",
+    "icon": null,
+    "createdAt": 1531757500189
   }
 }
