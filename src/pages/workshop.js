@@ -37,7 +37,12 @@ const Workshop = () => {
             text-align: center;
           `}
         >
-          Register To Attend
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdHv8heZvvdGejDEC2pv9tbc2a95IFAA4DiQ40s9adHIAIGug/viewform?usp=sf_link"
+            target="_blank"
+          >
+            Register To Attend
+          </a>
         </h2>
         <br />
         <ul>
@@ -95,7 +100,12 @@ const Workshop = () => {
             text-align: center;
           `}
         >
-          Interested? Register Here
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdHv8heZvvdGejDEC2pv9tbc2a95IFAA4DiQ40s9adHIAIGug/viewform?usp=sf_link"
+            target="_blank"
+          >
+            Interested? Register Here
+          </a>
         </h2>
         <h3>Schedule</h3>
         <p>Schedule information will be added soon!</p>
@@ -209,7 +219,15 @@ const Workshop = () => {
           Watch the videos in the overviews doc page so you are familiar with
           how Thorium simulations work. Think of ways that it can be improved.
         </p>
-        <p>Register to attend, so we know how many people are coming.</p>
+        <p>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdHv8heZvvdGejDEC2pv9tbc2a95IFAA4DiQ40s9adHIAIGug/viewform?usp=sf_link"
+            target="_blank"
+          >
+            Register to attend
+          </a>, so we know how many people are coming.
+        </p>
+        <h2>Can't wait to see you there!</h2>
       </Page>
     </div>
   )
