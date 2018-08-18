@@ -22,14 +22,13 @@ const HeaderInner = styled('div')`
   max-width: 960px;
   margin: 0 auto;
   height: 40px;
-  padding: .2rem .0875rem;
+  padding: 0.2rem 0.0875rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   @media only screen and (max-width: 736px) {
     padding: 0;
-
   }
 `
 const HeaderText = styled('h3')`
@@ -37,42 +36,49 @@ const HeaderText = styled('h3')`
   flex: 1;
 `
 const HeaderNav = styled('nav')`
-display: flex;
-justify-content: flex-end;
-align-items: center;
-width: 598px;
-@media only screen and (max-width: 736px) {
-      background-color: #54245F;
-      width: 100%;
-      justify-content: space-between;
-    }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 598px;
+  @media only screen and (max-width: 736px) {
+    background-color: #54245f;
+    width: 100%;
+    justify-content: space-between;
+  }
 `
 const linkStyle = css`
-    border: 0;
-    color: hsla(0,0%,100%,.8);
-    display: flex;
-    margin: 0;
-    font-weight: 300;
-    line-height: 1.2em;
-    padding: 6px 10px;
-    height: 32px;
-    font-size: 1em;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    
-    &:hover {
-      color: white;
-    }
+  border: 0;
+  color: hsla(0, 0%, 100%, 0.8);
+  display: flex;
+  margin: 0;
+  font-weight: 300;
+  line-height: 1.2em;
+  padding: 6px 10px;
+  height: 32px;
+  font-size: 1em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: white;
+  }
 `
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
     <HeaderInner>
-      <HeaderImage
-        src={require('../img/thorium.svg')}
-        alt="Thorium"
-        draggable="false"
-      />
-
+      <Link
+        to="/"
+        style={{
+          color: 'white',
+          textDecoration: 'none',
+        }}
+      >
+        <HeaderImage
+          src={require('../img/thorium.svg')}
+          alt="Thorium"
+          draggable="false"
+        />
+      </Link>
       <HeaderText>
         <Link
           to="/"

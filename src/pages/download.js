@@ -8,7 +8,8 @@ const Download = () => {
         <p>
           Thorium builds are created weekly and are freely available to
           download. The standalone client application download links are
-          available from within Thorium.
+          available from within Thorium. Be sure to unzip the program before
+          running it.
         </p>
         <ul>
           <li>
