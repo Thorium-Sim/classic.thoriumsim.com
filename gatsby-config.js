@@ -114,6 +114,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-json-api',
     {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
