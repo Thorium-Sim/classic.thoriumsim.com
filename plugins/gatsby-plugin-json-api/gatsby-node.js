@@ -45,7 +45,7 @@ const query = `{
 exports.onPostBuild = async ({ graphql }, pluginOptions) => {
   const data = await runQuery(graphql, query)
   const output = {
-    simulators: data.simulators.edges.map(e => e.node),
+    simulators: data.simulators.edges.map(e => e.node.frontmatter),
     missions: data.missions.edges.map(e => e.node.frontmatter),
   }
   ;['simulators', 'missions'].forEach(async e => {
