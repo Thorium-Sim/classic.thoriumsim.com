@@ -77,7 +77,7 @@ collections: # A list of collections the CMS should be able to edit
     folder: 'src/pages/api/simulators'
     create: true
     fields:
-      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Download URL', name: 'url', widget: 'string' }
@@ -88,7 +88,7 @@ collections: # A list of collections the CMS should be able to edit
     folder: 'src/pages/api/missions'
     create: true
     fields:
-      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Author', name: 'author', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Download URL', name: 'url', widget: 'string' }
