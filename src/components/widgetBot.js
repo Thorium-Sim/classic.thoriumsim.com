@@ -13,6 +13,7 @@ class WidgetBot extends Component {
         const crate = new Crate({
           server,
           channel,
+          shard: 'https://cl1.widgetbot.io',
         })
         return
       }
