@@ -4,51 +4,51 @@ import Link from 'gatsby-link'
 import WidgetBot from './widgetBot'
 
 const FooterContainer = styled('footer')`
-background-color: #111;
-color: white;
-display: flex;
-flex-direction: column;
-justify-content:center;
-align-items:center;
-padding: 30px 0;
+  background-color: #111;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
 `
 
 const Section = styled('section')`
-display: flex;
-justify-content: space-between;
-max-width: 100%;
-width: 960px;
-margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 960px;
+  margin: 0 20px;
 `
 const InnerSection = styled('div')`
-flex: 2;
-display: flex;
-flex-direction: column;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
 `
 const linkStyle = css`
-color: rgba(255,255,255,0.6);
-transition: color 0.2s ease;
-text-decoration: none;
-margin-bottom: 5px;
-padding-left: 10px;
-font-weight: 200;
-&:hover {
-  color: rgba(255,255,255,1);
-}
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.2s ease;
+  text-decoration: none;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  font-weight: 200;
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
 `
 const navHome = css`
-flex: 1;
+  flex: 1;
 `
 const logoStyle = css`
-margin: 20px 0;
-opacity: 0.5;
-transition: opacity 0.4s ease;
-&:hover {
-  opacity: 1;
-}
+  margin: 20px 0;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+  &:hover {
+    opacity: 1;
+  }
 `
 const copyStyle = css`
-color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
 `
 
 class Footer extends React.Component {
