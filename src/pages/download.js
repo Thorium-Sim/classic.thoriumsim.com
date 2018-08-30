@@ -1,61 +1,60 @@
 import React from 'react'
+import styled from 'react-emotion'
 import { Page } from '../components/styles'
+
+const FlexContainer = styled('div')`
+  display: flex;
+  justify-content: space-between;
+`
+const DownloadLink = styled('a')`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272229;
+  color: white;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+  width: 25%;
+  padding: 10px;
+  margin: 30px 0px;
+  &:hover {
+    background-color: #3d3541;
+    text-decoration: none;
+  }
+  img {
+    max-height: 80px;
+  }
+`
 const Download = () => {
   return (
     <div className="outerContainer">
       <Page>
         <h1>Download Thorium</h1>
-        <p>
-          Thorium builds are created weekly and are freely available to
-          download. The standalone client application download links are
-          available from within Thorium. Be sure to unzip the program before
-          running it.
-        </p>
-        <ul>
-          <li>
-            Latest Release{' '}
-            <ul>
-              <li>
-                <a href="https://s3.amazonaws.com/thoriumsim/thorium-macos.zip">
-                  macOS
-                </a>
-              </li>
-              <li>
-                <a href="https://s3.amazonaws.com/thoriumsim/thorium-win.exe.zip">
-                  Windows
-                </a>
-              </li>
-              <li>
-                <a href="https://s3.amazonaws.com/thoriumsim/thorium-linux.zip">
-                  Linux
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            Template Simulators<ul>
-              <li>
-                <a href="https://s3.amazonaws.com/thoriumsim/simulators/Voyager.sim">
-                  Voyager
-                </a>
-              </li>
-              <li>
-                <a href="https://s3.amazonaws.com/thoriumsim/simulators/Vanguard.sim">
-                  Vanguard (Jr.)
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            Template Missions<ul>
-              <li>
-                <a href="https://s3.amazonaws.com/thoriumsim/missions/Intolerance.misn">
-                  Intolerance
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <FlexContainer>
+          <DownloadLink href="https://s3.amazonaws.com/thoriumsim/thorium-macos.zip">
+            <img
+              src={require('../img/download-apple.svg')}
+              alt="Download macOS"
+            />
+            macOS
+          </DownloadLink>
+          <DownloadLink href="https://s3.amazonaws.com/thoriumsim/thorium-win.exe.zip">
+            <img
+              src={require('../img/download-windows.svg')}
+              alt="Download Windows"
+            />
+            Windows
+          </DownloadLink>
+          <DownloadLink href="https://s3.amazonaws.com/thoriumsim/thorium-linux.zip">
+            <img
+              src={require('../img/download-linux.svg')}
+              alt="Download Linux"
+            />
+            Linux
+          </DownloadLink>
+        </FlexContainer>
         <p>
           Thorium is Open Source software, and the source code can be downloaded
           and compiled from the{' '}

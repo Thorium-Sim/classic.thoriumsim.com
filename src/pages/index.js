@@ -139,13 +139,13 @@ const IndexPage = () => (
       <SectionText>
         <h3>What is Thorium?</h3>
         <p>
-          Thorium is a platform for running starship bridge simulations.
-          Participants are given roles on the ship, like weapons officer,
-          navigator, or captain. Each role comes with its own computer station
-          and responsibilities. The crew can use the Thorium controls to direct
-          the ship wherever they want in their space mission. A flight director
-          sits behind the scenes to act as a game master, controling what
-          happens inside the simulation.
+          Thorium is a platform for running live-action role-play starship
+          bridge simulations. Participants are given roles on the ship, like
+          weapons officer, navigator, or captain. Each role comes with its own
+          computer station and responsibilities. The crew uses the Thorium
+          controls to direct the ship wherever they want in their space mission.
+          A flight director sits behind the scenes to act as a game master,
+          controling what happens inside the simulation.
         </p>
       </SectionText>
     </Section>
@@ -185,7 +185,8 @@ const IndexPage = () => (
         <p>
           Do you sling divs? Got code chops? All of the code is available, so
           you can see how it works under the hood and even add your own
-          features.
+          features.{' '}
+          <a href="https://github.com/Thorium-Sim/thorium">Check it out!</a>
         </p>
       </SectionText>
       <SectionImage src={require('../img/code.svg')} draggable="false" />
