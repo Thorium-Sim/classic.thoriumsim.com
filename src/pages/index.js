@@ -69,14 +69,27 @@ const SectionInner = styled('div')`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media (max-width: 425px) {
+    flex-wrap: wrap;
+  }
+  & > div {
+    width: 100%;
+  }
 `
 const SectionOuter = styled('section')`
   padding: 3rem;
   background-color: ${props => (props.offset ? '#444' : '#222')};
   color: white;
+  @media (max-width: 425px) {
+    padding: 0;
+  }
 `
 const sectionImageStyle = css`
   flex: 1;
+  @media (max-width: 425px) {
+    margin: 0 auto;
+    text-align: center;
+  }
 `
 const SectionImage = props => (
   <div css={sectionImageStyle}>
@@ -86,6 +99,10 @@ const SectionImage = props => (
 const SectionText = styled('div')`
   flex: 2;
   margin: 0 2rem;
+  @media (max-width: 425px) {
+    width: 100%;
+    flex: unset;
+  }
 `
 const Section = props => (
   <SectionOuter {...props}>
@@ -109,9 +126,12 @@ const IndexPage = () => (
         <Link css={buttonStyle} to="/download">
           Download
         </Link>
-        <Link css={buttonStyle} to="/contribute">
-          Contribute
+        <Link css={buttonStyle} to="/donate">
+          Donate
         </Link>
+        <a css={buttonStyle} href="https://discord.gg/UvxTQZz">
+          Chat
+        </a>
       </ButtonContainer>
     </Hero>
     <Section>

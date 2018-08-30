@@ -11,7 +11,7 @@ export const users = [
   {
     caption: 'Farpoint Space Center',
     image: '/img/farpoint.png',
-    infoLink: 'https://farpointcadets.weebly.com',
+    infoLink: 'https://spacecamputah.org',
   },
   {
     caption: 'Christa McAuliffe Space Education Center',
@@ -39,6 +39,7 @@ const donors = [
 export const A = styled('a')`
   display: block;
   flex: 1;
+  min-width: 40%;
   margin: 1rem;
 `
 export const Img = styled('img')`

@@ -30,6 +30,10 @@ const Contribute = () => {
             <ul>
               <li>Making new features and content for Thorium.</li>
               <li>
+                Holding developer workshops to train new developers on how
+                Thorium works.
+              </li>
+              <li>
                 Teaching middle and high school students in the{' '}
                 <a href="https://github.com/webdev-guild/webdev-guild">
                   WebDev Guild
