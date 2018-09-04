@@ -20,6 +20,18 @@ collections: # A list of collections the CMS should be able to edit
           widget: 'string',
           required: false,
         }
+      - label: 'Category'
+        name: 'category'
+        widget: 'select'
+        required: true
+        options:
+          - { label: 'General Documentation', value: 'docs' }
+          - { label: 'Cards', value: 'cards' }
+          - { label: 'Flight Directing', value: 'flight_directing' }
+          - { label: 'Simulator Configuration', value: 'simulator_config' }
+          - { label: 'Mission Writing', value: 'mission_writing' }
+          - { label: 'Developers', value: 'developers' }
+
       - {
           label: 'Category',
           name: 'category',
