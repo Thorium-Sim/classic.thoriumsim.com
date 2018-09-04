@@ -7,10 +7,10 @@
     "@widgetbot/crate": "^3.1.237",
     "color": "^3.0.0",
     "docsearch.js": "^2.5.2",
-    "emotion": "^9.2.4",
-    "emotion-server": "^9.2.4",
-    "gatsby": "^1.9.247",
-    "gatsby-link": "^1.6.40",
+    "emotion": "^9.2.8",
+    "emotion-server": "^9.2.8",
+    "gatsby": "^1.9.277",
+    "gatsby-link": "^1.6.46",
     "gatsby-plugin-emotion": "^1.1.17",
     "gatsby-plugin-feed": "^1.3.25",
     "gatsby-plugin-manifest": "^1.0.27",
@@ -27,10 +27,10 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "html-react-parser": "^0.4.6",
-    "netlify-cms": "^1.9.3",
-    "react-collapsible": "^2.2.0",
+    "netlify-cms": "^2.0.11",
+    "react-collapsible": "^2.3.1",
     "react-currency-input": "^1.3.6",
-    "react-emotion": "^9.2.4",
+    "react-emotion": "^9.2.8",
     "react-helmet": "^5.2.0",
     "react-input-range": "^1.3.0",
     "react-responsive-carousel": "^3.1.41",
@@ -50,7 +50,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.12.0"
+    "prettier": "^1.14.2"
   },
   "repository": {
     "type": "git",
