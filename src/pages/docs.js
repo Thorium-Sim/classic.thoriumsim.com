@@ -1,4 +1,8 @@
 import React from "react";
-import { Redirect } from "gatsby-link";
-
-export default () => <Redirect to="/docs/overview" />;
+import { navigate } from "gatsby";
+import Layout from "../components/layout";
+export default () => {
+  if (typeof window === "undefined") return null;
+  navigate("/docs/overview");
+  return <Layout />;
+};
