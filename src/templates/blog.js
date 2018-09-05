@@ -1,48 +1,50 @@
-import React from 'react'
-import Link from 'gatsby-link'
-import { Page, FlexArea, FlexAside, FlexSection } from '../components/styles'
-import RecentPosts from '../components/recentPosts'
-import BlogHeader from '../components/blogHeader'
+import React from "react";
+import { graphql } from "gatsby";
+import { Page, FlexArea, FlexAside, FlexSection } from "../components/styles";
+import RecentPosts from "../components/recentPosts";
+import BlogHeader from "../components/blogHeader";
+import Layout from "../components/layout";
 
 const BlogTemplate = ({
   data: {
     markdownRemark: {
-      id,
       fileAbsolutePath,
       html,
-      frontmatter: { author, authorFBID, authorURL, date, title },
+      frontmatter: { author, authorFBID, authorURL, date, title }
     },
-    allMarkdownRemark: { edges },
-  },
+    allMarkdownRemark: { edges }
+  }
 }) => {
-  const regex = /.*\/blog\/(\d{4})-(\d{2})-(\d{2})-(.*)\.md/i
-  const url = fileAbsolutePath.replace(regex, '/blog/$1/$2/$3/$4')
+  const regex = /.*\/blog\/(\d{4})-(\d{2})-(\d{2})-(.*)\.md/i;
+  const url = fileAbsolutePath.replace(regex, "/blog/$1/$2/$3/$4");
   return (
-    <div className="outerContainer">
-      <Page>
-        <FlexSection>
-          <FlexAside>
-            <RecentPosts data={edges} />
-          </FlexAside>
-          <FlexArea>
-            <BlogHeader
-              url={url}
-              title={title}
-              date={date}
-              author={author}
-              authorURL={authorURL}
-              authorFBID={authorFBID}
-            />
+    <Layout>
+      <div className="outerContainer">
+        <Page>
+          <FlexSection>
+            <FlexAside>
+              <RecentPosts data={edges} />
+            </FlexAside>
+            <FlexArea>
+              <BlogHeader
+                url={url}
+                title={title}
+                date={date}
+                author={author}
+                authorURL={authorURL}
+                authorFBID={authorFBID}
+              />
 
-            <article>{require('html-react-parser')(html)}</article>
-          </FlexArea>
-        </FlexSection>
-      </Page>
-    </div>
-  )
-}
+              <article>{require("html-react-parser")(html)}</article>
+            </FlexArea>
+          </FlexSection>
+        </Page>
+      </div>
+    </Layout>
+  );
+};
 
-export default BlogTemplate
+export default BlogTemplate;
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
@@ -71,4 +73,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
