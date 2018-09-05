@@ -22,7 +22,7 @@ module.exports = {
         name: "images"
       }
     },
-    { resolve: `gatsby-plugin-emotion`, options: { autoLabel: true } },
+    //{ resolve: `gatsby-plugin-emotion`, options: { autoLabel: true } },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -116,7 +116,7 @@ module.exports = {
     "gatsby-plugin-json-api",
     {
       resolve: `gatsby-plugin-netlify-cms`
-    },
-    `gatsby-plugin-netlify` // make sure to put last in the array
+    }
+    // `gatsby-plugin-netlify` // make sure to put last in the array
   ]
 };

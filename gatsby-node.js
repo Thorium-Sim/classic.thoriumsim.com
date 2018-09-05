@@ -1,11 +1,17 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
+exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
   if (stage === "build-html") {
-    config.loader("null", {
-      test: /docsearch\.js/,
-      loader: "null-loader"
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /docsearch\.js/,
+            use: loaders.null()
+          }
+        ]
+      }
     });
   }
 };
