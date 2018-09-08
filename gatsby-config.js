@@ -22,7 +22,7 @@ module.exports = {
         name: "images"
       }
     },
-    //{ resolve: `gatsby-plugin-emotion`, options: { autoLabel: true } },
+    { resolve: `gatsby-plugin-emotion`, options: { autoLabel: true } },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
