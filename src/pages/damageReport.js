@@ -219,6 +219,7 @@ class ReportForm extends Component {
     );
   }
 }
+
 const DamageReport = () => {
   return (
     <Layout>

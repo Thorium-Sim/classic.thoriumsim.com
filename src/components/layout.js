@@ -2,7 +2,9 @@ import React from "react";
 import { StaticQuery, graphql } from "gatsby";
 import Helmet from "react-helmet";
 import styled from "react-emotion";
+import { ToastContainer } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.min.css";
 import "./layout.css";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -54,6 +56,17 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <Wrapper>{children}</Wrapper>
         <Footer />
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnVisibilityChange
+          draggable
+          pauseOnHover
+        />
       </Container>
     )}
   />
