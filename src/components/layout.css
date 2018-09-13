@@ -37,5 +37,5 @@ pre {
   background-color: #444;
   padding: 10px;
   border-radius: 5px;
-  white-space: normal;
+  white-space: pre-line;
 }
