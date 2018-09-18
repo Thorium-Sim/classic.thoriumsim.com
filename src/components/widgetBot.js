@@ -9,13 +9,12 @@ class WidgetBot extends Component {
     script.async = true;
     document.body.appendChild(script);
     function checkCrate() {
-      if (window && window.Crate) {
-        const crate = new window.Crate({
+      if (window && window.Crate && !window.crate) {
+        window.crate = new window.Crate({
           server,
           channel,
           shard: "https://cl1.widgetbot.io"
         });
-        return crate;
       }
       setTimeout(checkCrate, 50);
     }
