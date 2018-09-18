@@ -84,12 +84,14 @@ const Issue = ({
   const { upvotes: upvoteArray = [] } = user;
   const upvoteClick = () => {
     if (upvoteArray.indexOf(id) > -1) return;
-    firestore
-      .collection("users")
-      .doc(auth.currentUser.uid)
-      .update({
-        upvotes: [...upvoteArray, id]
-      });
+    if (auth) {
+      firestore
+        .collection("users")
+        .doc(auth.currentUser.uid)
+        .update({
+          upvotes: [...upvoteArray, id]
+        });
+    }
   };
 
   return (
@@ -173,7 +175,7 @@ class Issues extends Component {
                 <h1>Thorium Issues</h1>
                 {signIn && <div>Signing in...</div>}
                 {(() => {
-                  if (auth.currentUser) {
+                  if (auth && auth.currentUser) {
                     return (
                       <div>
                         {issuesWithCount.map(i => (

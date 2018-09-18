@@ -9,6 +9,10 @@ exports.onCreateWebpackConfig = ({ actions, loaders, stage }) => {
           {
             test: /docsearch\.js/,
             use: loaders.null()
+          },
+          {
+            test: /firebase/,
+            use: loaders.null()
           }
         ]
       }
