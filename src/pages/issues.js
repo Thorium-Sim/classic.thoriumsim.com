@@ -162,8 +162,8 @@ class Issues extends Component {
       .sort((a, b) => {
         if (!a.upvoteCount) return 1;
         if (!b.upvoteCount) return -1;
-        if (a.upvoteCount > b.upvoteCount) return 1;
-        if (a.upvoteCount < b.upvoteCount) return -1;
+        if (a.upvoteCount > b.upvoteCount) return -1;
+        if (a.upvoteCount < b.upvoteCount) return 1;
         return 0;
       });
     return (
