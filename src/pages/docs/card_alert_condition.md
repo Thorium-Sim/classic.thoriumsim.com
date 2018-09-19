@@ -1,11 +1,11 @@
 ---
-id: card_alert_condition
 title: Alert Condition
 category: cards
 subcategory: Command
 ---
+![](/img/card_alertsatus.png)
 
-![Alert Condition Card Image](/img/card_alertCondition.jpg)
+
 
 ## Summary
 
@@ -20,7 +20,7 @@ To change Alert Conditions, simply click on the **Alert Condition** you want to
 go to. You can move your mouse over the condition to see a description in the
 **Alert Descriptions Box** of when the condition is applicable.
 
----
+- - -
 
 ## Detailed Description
 
