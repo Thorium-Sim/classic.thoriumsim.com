@@ -1,18 +1,18 @@
-import React from 'react'
-import styled from 'react-emotion'
-import Link from 'gatsby-link'
-const AuthorImg = styled('img')`
+import React from "react";
+import styled from "react-emotion";
+import { Link } from "gatsby";
+const AuthorImg = styled("img")`
   width: 40px;
   margin-left: 15px;
   border-radius: 50%;
-`
-const AuthorHolder = styled('div')`
+`;
+const AuthorHolder = styled("div")`
   display: flex;
   align-items: center;
-`
-const DateBox = styled('p')`
+`;
+const DateBox = styled("p")`
   margin-bottom: 0;
-`
+`;
 
 const BlogHeader = ({ url, title, date, author, authorURL, authorFBID }) => (
   <header>
@@ -51,6 +51,6 @@ const BlogHeader = ({ url, title, date, author, authorURL, authorFBID }) => (
       </AuthorHolder>
     )}
   </header>
-)
+);
 
-export default BlogHeader
+export default BlogHeader;

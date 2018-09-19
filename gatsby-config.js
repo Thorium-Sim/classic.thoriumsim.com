@@ -1,38 +1,37 @@
 module.exports = {
   siteMetadata: {
-    title: 'Thorium',
-    description: 'Next Generation Starship Simulator Control Software',
-    siteUrl: `https://thoriumsim.com`,
+    title: "Thorium",
+    description: "Next Generation Starship Simulator Control Software",
+    siteUrl: `https://thoriumsim.com`
   },
   plugins: [
-    `gatsby-plugin-react-next`,
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-react-helmet",
     // 'gatsby-plugin-manifest',
     // 'gatsby-plugin-offline',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        name: "pages"
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/img`,
-        name: 'images',
-      },
+        name: "images"
+      }
     },
     { resolve: `gatsby-plugin-emotion`, options: { autoLabel: true } },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography.js`,
-      },
+        pathToConfigModule: `src/utils/typography.js`
+      }
     },
-    'gatsby-plugin-sharp',
+    "gatsby-plugin-sharp",
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
@@ -42,19 +41,19 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 960,
-              backgroundColor: '#222',
-            },
+              backgroundColor: "#222"
+            }
           },
           `gatsby-remark-autolink-headers`,
           {
-            resolve: 'gatsby-remark-external-links',
+            resolve: "gatsby-remark-external-links",
             options: {
-              target: '_self',
-              rel: 'nofollow',
-            },
-          },
-        ],
-      },
+              target: "_self",
+              rel: "nofollow"
+            }
+          }
+        ]
+      }
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -81,11 +80,11 @@ module.exports = {
                   guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
                   custom_elements: [
                     {
-                      'content:encoded': edge.node.html,
-                    },
-                  ],
-                })
-              })
+                      "content:encoded": edge.node.html
+                    }
+                  ]
+                });
+              });
             },
             query: `
               {
@@ -109,19 +108,15 @@ module.exports = {
                 }
               }
             `,
-            output: '/blog/feed.xml',
-          },
-        ],
-      },
+            output: "/blog/feed.xml"
+          }
+        ]
+      }
     },
+    "gatsby-plugin-json-api",
     {
-      resolve: `gatsby-plugin-netlify-cms`,
-      options: {
-        // One convention is to place your Netlify CMS customization code in a
-        // `src/cms` directory.
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
-    },
-    `gatsby-plugin-netlify`, // make sure to put last in the array
-  ],
-}
+      resolve: `gatsby-plugin-netlify-cms`
+    }
+    // `gatsby-plugin-netlify` // make sure to put last in the array
+  ]
+};

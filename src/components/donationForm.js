@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
-import { render } from 'react-dom'
-import styled, { css } from 'react-emotion'
-import StripeCheckout from 'react-stripe-checkout'
-import InputRange from 'react-input-range'
-import 'react-input-range/lib/css/index.css'
-import CurrencyInput from 'react-currency-input'
-import Color from 'color'
+import React, { Component } from "react";
+import styled, { css } from "react-emotion";
+import StripeCheckout from "react-stripe-checkout";
+import InputRange from "react-input-range";
+import "react-input-range/lib/css/index.css";
+import CurrencyInput from "react-currency-input";
+import color from "color";
 
 const donationFormStyle = css`
   background-color: rgba(0, 0, 0, 0.5);
@@ -20,21 +19,21 @@ const donationFormStyle = css`
   h2 + p {
     margin-top: 0;
   }
-`
+`;
 const donationInputStyle = css`
   background-color: rgba(0, 0, 0, 0.75);
   border: solid 2px rgba(255, 255, 255, 0.5);
   color: white;
   font-size: 34px;
   width: 100%;
-`
+`;
 const colors = {
-  commercial: '#5fb79a',
-  personal: '#4b6496',
-  educational: '#8f49ad',
-}
+  commercial: "#5fb79a",
+  personal: "#4b6496",
+  educational: "#8f49ad"
+};
 
-const Button = styled('button')`
+const Button = styled("button")`
   -webkit-appearance: none;
   -webkit-user-select: none;
   -moz-appearance: none;
@@ -50,105 +49,104 @@ const Button = styled('button')`
   text-align: center;
   text-decoration: none;
   ${props => `  background-color: ${colors[props.color]};
-  border-color: ${Color(colors[props.color])
+  border-color: ${color(colors[props.color])
     .darken(0.1)
     .toString()};
   &:hover {
-    background-color: ${Color(colors[props.color])
+    background-color: ${color(colors[props.color])
       .darken(0.05)
       .toString()};
   }
   &.active,
   &:active {
-    border: solid 3px ${Color(colors[props.color])
+    border: solid 3px ${color(colors[props.color])
       .lighten(0.1)
       .toString()};
-    background-color: ${Color(colors[props.color])
+    background-color: ${color(colors[props.color])
       .darken(0.15)
       .toString()};
   }`};
-`
+`;
 const inputRangeStyle = css`
   margin: 40px auto;
   span {
     font-size: 16px;
   }
-`
+`;
 class Donation extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      usage: 'personal',
+      usage: "personal",
       simulators: 1,
-      payment: 'once',
-      donation: 30,
-    }
+      payment: "once",
+      donation: 30
+    };
     this.baseDonations = {
       personal: 3000,
       educational: 15000,
-      commercial: 200000,
-    }
+      commercial: 200000
+    };
     this.setUsage = evt => {
       this.setState({
         usage: evt.target.value,
         donation:
-          this.baseDonations[evt.target.value] *
-          this.state.simulators *
-          (this.state.payment === 'multiple' ? 1 / 24 : 1) /
-          100,
-      })
-    }
+          (this.baseDonations[evt.target.value] *
+            this.state.simulators *
+            (this.state.payment === "multiple" ? 1 / 24 : 1)) /
+          100
+      });
+    };
     this.setSimulators = value => {
       this.setState({
         simulators: value,
         donation:
-          this.baseDonations[this.state.usage] *
-          value *
-          (this.state.payment === 'multiple' ? 1 / 24 : 1) /
-          100,
-      })
-    }
+          (this.baseDonations[this.state.usage] *
+            value *
+            (this.state.payment === "multiple" ? 1 / 24 : 1)) /
+          100
+      });
+    };
     this.setPayment = evt => {
       this.setState({
         payment: evt.target.value,
         donation:
-          this.baseDonations[this.state.usage] *
-          this.state.simulators *
-          (evt.target.value === 'multiple' ? 1 / 24 : 1) /
-          100,
-      })
-    }
+          (this.baseDonations[this.state.usage] *
+            this.state.simulators *
+            (evt.target.value === "multiple" ? 1 / 24 : 1)) /
+          100
+      });
+    };
     this.updateDonation = evt => {
       this.setState({
-        donation: parseFloat(evt.target.value.replace('$', '')),
-      })
-    }
+        donation: parseFloat(evt.target.value.replace("$", ""))
+      });
+    };
     this.onToken = charge => {
-      const url = this.state.payment === 'multiple' ? 'subscribe' : 'charge'
-      this.setState({ processing: true })
+      const url = this.state.payment === "multiple" ? "subscribe" : "charge";
+      this.setState({ processing: true });
       fetch(`https://stripe-checkout-cednztddti.now.sh/${url}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json"
         },
-        mode: 'cors',
+        mode: "cors",
         body: JSON.stringify({
           stripeToken: charge.id,
           stripeEmail: charge.email,
           amount: Math.round(this.state.donation * 100),
           usage: this.state.usage,
-          simulators: this.state.simulators,
-        }),
-      })
-        .catch(err => {
-          console.error('Error:', err)
-          alert(
-            'Sorry, There was an error processing your payment. Please try again.'
-          )
+          simulators: this.state.simulators
         })
-        .then(res => this.setState({ donated: true, processing: false }))
-    }
+      })
+        .catch(() => {
+          alert(
+            "Sorry, There was an error processing your payment. Please try again."
+          );
+        })
+        .then(() => this.setState({ donated: true, processing: false }));
+    };
   }
   render() {
     if (this.state.donated) {
@@ -161,31 +159,31 @@ class Donation extends Component {
             download Thorium
           </p>
         </div>
-      )
+      );
     }
     if (this.state.processing) {
       return (
         <div className={donationFormStyle}>
           <h1> Processing your donation...</h1>
         </div>
-      )
+      );
     }
     return (
       <div className={donationFormStyle}>
         <div>
           <h2>Usage:</h2>
           <Button
-            color={'personal'}
-            className={this.state.usage === 'personal' ? 'active' : ''}
+            color={"personal"}
+            className={this.state.usage === "personal" ? "active" : ""}
             onClick={this.setUsage}
             name="usage"
             value="personal"
           >
             Personal
-          </Button>{' '}
+          </Button>{" "}
           <Button
-            color={'educational'}
-            className={this.state.usage === 'educational' ? 'active' : ''}
+            color={"educational"}
+            className={this.state.usage === "educational" ? "active" : ""}
             onClick={this.setUsage}
             name="usage"
             value="educational"
@@ -194,7 +192,7 @@ class Donation extends Component {
           </Button>
           <Button
             color="commercial"
-            className={this.state.usage === 'commercial' ? 'active' : ''}
+            className={this.state.usage === "commercial" ? "active" : ""}
             onClick={this.setUsage}
             name="usage"
             value="commercial"
@@ -203,29 +201,31 @@ class Donation extends Component {
           </Button>
         </div>
         <div>
-          {this.state.usage === 'personal' && (
+          {this.state.usage === "personal" && (
             <p>
-              <strong>Personal: </strong>You plan on using Thorium every now and
-              then with a few friends to do some bridge simulation or 'Space
-              LARP-ing'. You don't charge money or advertise - you just want to
-              have a good time.
+              <strong>Personal: </strong>
+              You plan on using Thorium every now and then with a few friends to
+              do some bridge simulation or 'Space LARP-ing'. You don't charge
+              money or advertise - you just want to have a good time.
             </p>
           )}
-          {this.state.usage === 'educational' && (
+          {this.state.usage === "educational" && (
             <p>
-              <strong>Educational: </strong>You are a school or educator that
-              wants to use Thorium to give your students a Space Edventure! You
-              might run field trips for other schools and might charge for the
-              cost of the flights, but you don't advertise or run paid flights
-              for private parties. You just want to see your students excel!
+              <strong>Educational: </strong>
+              You are a school or educator that wants to use Thorium to give
+              your students a Space Edventure! You might run field trips for
+              other schools and might charge for the cost of the flights, but
+              you don't advertise or run paid flights for private parties. You
+              just want to see your students excel!
             </p>
           )}
-          {this.state.usage === 'commercial' && (
+          {this.state.usage === "commercial" && (
             <p>
-              <strong>Commercial: </strong>You run flights of all kinds -
-              birthday parties, corporate training, family reunions, summer
-              camps - the whole gamut. You want to give your customers the most
-              exciting, inspiring experience possible (for an affordable price).
+              <strong>Commercial: </strong>
+              You run flights of all kinds - birthday parties, corporate
+              training, family reunions, summer camps - the whole gamut. You
+              want to give your customers the most exciting, inspiring
+              experience possible (for an affordable price).
             </p>
           )}
         </div>
@@ -248,7 +248,7 @@ class Donation extends Component {
           <h2>Payments: </h2>
           <Button
             color="educational"
-            className={this.state.payment === 'once' ? 'active' : ''}
+            className={this.state.payment === "once" ? "active" : ""}
             onClick={this.setPayment}
             value="once"
           >
@@ -256,7 +256,7 @@ class Donation extends Component {
           </Button>
           <Button
             color="commercial"
-            className={this.state.payment === 'multiple' ? 'active' : ''}
+            className={this.state.payment === "multiple" ? "active" : ""}
             onClick={this.setPayment}
             value="multiple"
           >
@@ -265,8 +265,8 @@ class Donation extends Component {
         </div>
         <div>
           <h2>
-            Suggested {this.state.payment === 'multiple' ? 'Monthly' : ''}{' '}
-            Donation:{' '}
+            Suggested {this.state.payment === "multiple" ? "Monthly" : ""}{" "}
+            Donation:{" "}
           </h2>
           <CurrencyInput
             decimalSeparator="."
@@ -277,7 +277,7 @@ class Donation extends Component {
             onChangeEvent={this.updateDonation}
           />
           <small>
-            You can change your donation to any amount. Donations are{' '}
+            You can change your donation to any amount. Donations are{" "}
             <em>not</em> tax exempt.
           </small>
         </div>
@@ -289,7 +289,7 @@ class Donation extends Component {
             name="Thorium Donation"
             description="Fyreworks LLC"
             panelLabel={`Donate ${
-              this.state.payment === 'multiple' ? 'Monthly' : ''
+              this.state.payment === "multiple" ? "Monthly" : ""
             }:`}
             currency="USD"
             amount={Math.round(this.state.donation * 100)}
@@ -300,8 +300,8 @@ class Donation extends Component {
           </StripeCheckout>
         )}
       </div>
-    )
+    );
   }
 }
 
-export default Donation
+export default Donation;

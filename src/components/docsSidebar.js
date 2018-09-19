@@ -1,17 +1,16 @@
-import React, { Component, Fragment } from 'react'
-import Collapsible from 'react-collapsible'
-import { css } from 'react-emotion'
-import * as Emotion from 'react-emotion'
-import Link from 'gatsby-link'
+import React, { Component, Fragment } from "react";
+import Collapsible from "react-collapsible";
+import { css } from "react-emotion";
+import { Link } from "gatsby";
 
 const categoryOrder = [
-  { id: 'docs', name: 'General Documentation' },
-  { id: 'cards', name: 'Cards' },
-  { id: 'flight_directing', name: 'Flight Directing' },
-  { id: 'simulator_config', name: 'Simulator Configuration' },
-  { id: 'mission_writing', name: 'Mission Writing' },
-  { id: 'developers', name: 'Developers' },
-]
+  { id: "docs", name: "General Documentation" },
+  { id: "cards", name: "Cards" },
+  { id: "flight_directing", name: "Flight Directing" },
+  { id: "simulator_config", name: "Simulator Configuration" },
+  { id: "mission_writing", name: "Mission Writing" },
+  { id: "developers", name: "Developers" }
+];
 const mainStyle = css`
   color: #aaa;
   font-size: 1.2rem;
@@ -21,53 +20,53 @@ const mainStyle = css`
   &:hover {
     color: #eee;
   }
-`
+`;
 const offsetStyle = css`
   margin-left: 1rem;
   font-size: 1.1rem;
   font-weight: 300;
-`
+`;
 const linkStyle = css`
   display: block;
   margin-left: 1rem;
   font-size: 1rem;
   font-weight: 200;
-`
+`;
 const activeStyle = css`
   font-weight: 600;
   text-decoration: underline;
-`
+`;
 const positionSort = (a, b) => {
-  if (!a.node.frontmatter.position && b.node.frontmatter.position) return 1
-  if (a.node.frontmatter.position > b.node.frontmatter.position) return 1
-  if (a.node.frontmatter.position < b.node.frontmatter.position) return -1
+  if (!a.node.frontmatter.position && b.node.frontmatter.position) return 1;
+  if (a.node.frontmatter.position > b.node.frontmatter.position) return 1;
+  if (a.node.frontmatter.position < b.node.frontmatter.position) return -1;
 
-  return 0
-}
+  return 0;
+};
 const linkMap = (c, props) => {
   return (
     <Link
       to={c.node.fields && c.node.fields.slug}
-      css={`
-        ${linkStyle} ${props.id === c.node.id ? activeStyle : ''};
+      className={`
+        ${linkStyle} ${props.id === c.node.id ? activeStyle : ""};
       `}
       key={c.node.id}
     >
       {c.node.frontmatter.sidebar_label || c.node.frontmatter.title}
     </Link>
-  )
-}
+  );
+};
 class DocsSidebar extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       openSidebar: props.category,
-      openSubSidebar: props.subcategory,
-    }
+      openSubSidebar: props.subcategory
+    };
   }
   render() {
-    const { openSidebar, openSubSidebar } = this.state
-    const { data, id } = this.props
+    const { openSidebar, openSubSidebar } = this.state;
+    const { data } = this.props;
     return (
       <Fragment>
         {categoryOrder.map(({ id, name }) => {
@@ -75,14 +74,14 @@ class DocsSidebar extends Component {
             .filter(a => a.node.frontmatter.category === id)
             .map(d => d.node.frontmatter.subcategory)
             .filter((a, i, arr) => arr.indexOf(a) === i && a)
-            .sort()
+            .sort();
           const noSubCat = data
             .filter(
               a =>
                 a.node.frontmatter.category === id &&
                 !a.node.frontmatter.subcategory
             )
-            .sort(positionSort)
+            .sort(positionSort);
           return (
             <Collapsible
               key={id}
@@ -123,10 +122,10 @@ class DocsSidebar extends Component {
                 </Collapsible>
               ))}
             </Collapsible>
-          )
+          );
         })}
       </Fragment>
-    )
+    );
   }
 }
-export default DocsSidebar
+export default DocsSidebar;

@@ -3,44 +3,16 @@
   "description": "Thoriumsim.com website. Made with Gatsbyjs",
   "version": "1.0.0",
   "author": "Alex Anderson <alexanderson1993@gmail.com>",
-  "dependencies": {
-    "@widgetbot/crate": "^3.1.237",
-    "color": "^3.0.0",
-    "docsearch.js": "^2.5.2",
-    "emotion": "^9.2.4",
-    "emotion-server": "^9.2.4",
-    "gatsby": "^1.9.247",
-    "gatsby-link": "^1.6.40",
-    "gatsby-plugin-emotion": "^1.1.17",
-    "gatsby-plugin-feed": "^1.3.25",
-    "gatsby-plugin-manifest": "^1.0.27",
-    "gatsby-plugin-netlify": "^1.0.21",
-    "gatsby-plugin-netlify-cms": "^2.0.1",
-    "gatsby-plugin-offline": "^1.0.18",
-    "gatsby-plugin-react-helmet": "^2.0.10",
-    "gatsby-plugin-react-next": "^1.0.11",
-    "gatsby-plugin-sharp": "^1.6.48",
-    "gatsby-plugin-typography": "^1.7.19",
-    "gatsby-remark-autolink-headers": "^1.4.19",
-    "gatsby-remark-external-links": "0.0.4",
-    "gatsby-remark-images": "^1.5.67",
-    "gatsby-source-filesystem": "^1.5.39",
-    "gatsby-transformer-remark": "^1.7.44",
-    "html-react-parser": "^0.4.6",
-    "netlify-cms": "^1.9.3",
-    "react-collapsible": "^2.2.0",
-    "react-currency-input": "^1.3.6",
-    "react-emotion": "^9.2.4",
-    "react-helmet": "^5.2.0",
-    "react-input-range": "^1.3.0",
-    "react-responsive-carousel": "^3.1.41",
-    "react-stripe-checkout": "^2.6.3",
-    "typography-theme-bootstrap": "^0.16.7"
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thorium-Sim/thoriumsim.com.git"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Thorium-Sim/thoriumsim.com/issues"
+  },
+  "homepage": "https://github.com/Thorium-Sim/thoriumsim.com#readme",
   "scripts": {
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -50,10 +22,41 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.12.0"
+    "prettier": "^1.14.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/thorium-sim/thoriumsim.com"
+  "dependencies": {
+    "change-case": "^3.0.2",
+    "docsearch.js": "^2.5.2",
+    "emotion": "^9.2.8",
+    "emotion-server": "^9.2.8",
+    "firebase": "^5.5.0",
+    "gatsby": "^2.0.0-rc.10",
+    "gatsby-plugin-emotion": "^2.0.0-rc.1",
+    "gatsby-plugin-feed": "^1.3.25",
+    "gatsby-plugin-netlify": "^1.0.21",
+    "gatsby-plugin-netlify-cms": "^3.0.0-rc.1",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-plugin-sharp": "^1.6.48",
+    "gatsby-plugin-typography": "^1.7.19",
+    "gatsby-remark-autolink-headers": "^1.4.19",
+    "gatsby-remark-external-links": "0.0.4",
+    "gatsby-remark-images": "^1.5.67",
+    "gatsby-source-filesystem": "^1.5.39",
+    "gatsby-transformer-remark": "^1.7.44",
+    "html-react-parser": "^0.4.6",
+    "netlify-cms": "^2.0.11",
+    "react": "^16.4.2",
+    "react-collapsible": "^2.3.1",
+    "react-currency-input": "^1.3.6",
+    "react-dom": "^16.4.2",
+    "react-emotion": "^9.2.8",
+    "react-helmet": "^5.2.0",
+    "react-input-range": "^1.3.0",
+    "react-responsive-carousel": "^3.1.41",
+    "react-stripe-checkout": "^2.6.3",
+    "react-toastify": "^4.3.0",
+    "react-typography": "^0.16.13",
+    "typography": "^0.16.17",
+    "typography-theme-bootstrap": "^0.16.7"
   }
 }

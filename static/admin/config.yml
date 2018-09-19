@@ -2,8 +2,6 @@ backend:
   name: git-gateway
   branch: develop
 
-publish_mode: editorial_workflow
-
 media_folder: static/img
 public_folder: /img
 
@@ -14,12 +12,37 @@ collections: # A list of collections the CMS should be able to edit
     folder: "src/pages/docs" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Sidebar Label", name: "sidebar_label", widget: "string", required: false}
-      - {label: "Category", name: "category", widget: "category", required: true}
-      - {label: "Sub-Category", name: "subcategory", widget: "string", required: false}
-      - {label: "Position", name: "position", widget: "number", required: false}
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Sidebar Label",
+          name: "sidebar_label",
+          widget: "string",
+          required: false,
+        }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        required: true
+        options:
+          - { label: "General Documentation", value: "docs" }
+          - { label: "Cards", value: "cards" }
+          - { label: "Flight Directing", value: "flight_directing" }
+          - { label: "Simulator Configuration", value: "simulator_config" }
+          - { label: "Mission Writing", value: "mission_writing" }
+          - { label: "Developers", value: "developers" }
+      - {
+          label: "Sub-Category",
+          name: "subcategory",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Position",
+          name: "position",
+          widget: "number",
+          required: false,
+        }
   - name: "blog"
     label: "Blog"
     label_singular: "Blog Post"
@@ -27,10 +50,49 @@ collections: # A list of collections the CMS should be able to edit
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     create: true
     fields:
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
-      - {label: "Author", name: "author", widget: "string", default: "Alex Anderson"}
-      - {label: "Author Link", name: "authorURL", widget: "string", default: "http://twitter.com/ralex1993", required: false}
-      - {label: "Author Facebook ID (For Profile Picture)", name: "authorFBID", widget: "number", default: 764853781, required: false}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - {
+          label: "Author",
+          name: "author",
+          widget: "string",
+          default: "Alex Anderson",
+        }
+      - {
+          label: "Author Link",
+          name: "authorURL",
+          widget: "string",
+          default: "http://twitter.com/ralex1993",
+          required: false,
+        }
+      - {
+          label: "Author Facebook ID (For Profile Picture)",
+          name: "authorFBID",
+          widget: "number",
+          default: 764853781,
+          required: false,
+        }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+  - name: "simulators"
+    label: "Simulators"
+    label_singular: "Simulator"
+    folder: "src/pages/api/simulators"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Download URL", name: "url", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+  - name: "missions"
+    label: "Missions"
+    label_singular: "Mission"
+    folder: "src/pages/api/missions"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Download URL", name: "url", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
