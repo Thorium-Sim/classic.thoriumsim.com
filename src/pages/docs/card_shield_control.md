@@ -9,7 +9,7 @@ The Shield Control screen is used to manage the ship's defenses.
 
 ![Shield Control Card](/img/card_shieldcontrol.png)
 
-The crew members can use this screen to raise or lower the shields, or to change the shield frequency. This screen will change based on the shielding system you select in the simulator config. The image above is using the 6 section shield option. The single, 4, or 8 sector shield configuration works similarly to the one shown above. 
+The crew members can use this screen to raise or lower the shields, or to change the shield frequency. This screen will change based on the shielding system you select in the simulator config. The image above is using the 6 section shield option. The single, or 4 sector shield configuration works similarly to the one shown above. 
 
 Shield integrity can be monitored using the top percentage under the shield name. Under the integrity, is the shield frequency. The frequency can be raised / lowered using the arrows to the left and right of the frequency. The frequency has a minimum of 100MHz, and a maximum of 350Mhz. Adjusting frequency can be used during a mission to deflect phasers, prevent radiation from entering the ship, ETC. 
 
