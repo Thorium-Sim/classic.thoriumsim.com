@@ -61,6 +61,11 @@ const Download = () => {
             Note: Be sure to extract the Thorium executable from the .zip
             archive before running.
           </p>
+          <h3>Thorium Mobile</h3>
+          <p>
+            Stay tuned for links to a Thorium companion mobile application. In
+            the meantime, make sure you are running Thorium 1.0.17.
+          </p>
           <p>
             Thorium is Open Source software, and the source code can be
             downloaded and compiled from the{" "}
