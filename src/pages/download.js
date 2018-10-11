@@ -78,8 +78,35 @@ const Download = () => {
             />
           </a>
           <p>
-            Thorium Mobile for Android is still in development. In the meantime,
-            make sure you are running Thorium 1.0.17.
+            Thorium Mobile for Android isn't on the Google Play store yet, but
+            you can still run it. Follow these instructions:
+          </p>
+          <ol>
+            <li>
+              <a
+                href="https://expo.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download the Expo app.
+              </a>
+            </li>
+            <li>
+              Search for "Thorium Mobile" or access the app's page{" "}
+              <a
+                href="https://expo.io/@alexanderson1993/thorium-mobile"
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+              here.
+            </li>
+          </ol>
+          <p>
+            Alternatively, you can scan this QR code in the Expo app:{" "}
+            <img
+              src={require("../img/thoriumMobile.png")}
+              alt="Thorium Mobile QR Code"
+            />
           </p>
           <p>
             Thorium is Open Source software, and the source code can be
