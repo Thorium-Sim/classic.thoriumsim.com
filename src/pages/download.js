@@ -63,8 +63,23 @@ const Download = () => {
           </p>
           <h3>Thorium Mobile</h3>
           <p>
-            Stay tuned for links to a Thorium companion mobile application. In
-            the meantime, make sure you are running Thorium 1.0.17.
+            Thorium Mobile is a custom application designed to run on iOS and
+            Android devices. It does not replace Thorium for desktop, but
+            supplements and augments it.
+          </p>
+          <a
+            href="https://itunes.apple.com/us/app/thorium-mobile/id1438244424"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={require("../img/appstore.svg")}
+              alt="Download on the App Store"
+            />
+          </a>
+          <p>
+            Thorium Mobile for Android is still in development. In the meantime,
+            make sure you are running Thorium 1.0.17.
           </p>
           <p>
             Thorium is Open Source software, and the source code can be

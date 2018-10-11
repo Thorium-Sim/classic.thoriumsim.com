@@ -48,6 +48,7 @@ const Download = () => {
                 <a
                   href="https://firebase.google.com/policies/analytics"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Firebase Analytics
                 </a>
