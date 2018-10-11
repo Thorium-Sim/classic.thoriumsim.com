@@ -15,8 +15,8 @@ export const users = [
     infoLink: "https://spacecamputah.org"
   },
   {
-    caption: "Christa McAuliffe Space Education Center",
-    image: "/img/cmsec.png",
+    caption: "Christa McAuliffe Space Center",
+    image: "/img/cmsc.png",
     infoLink: "https://spacecenter.alpineschools.org"
   },
   {

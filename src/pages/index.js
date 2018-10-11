@@ -203,11 +203,10 @@ const IndexPage = () => (
       <SectionText>
         <h3>Multi-Platform</h3>
         <p>
-          Thorium Server works on Windows, macOS, Linux, and the controls work
-          with anything that runs a modern web browser. They'll even operate on
-          a electrical switch panel! And, since Thorium is built with Web
-          technologies, your client computers can be anything that runs a modern
-          web browser.
+          Thorium Server works on Windows, macOS, and Linux and the controls can be
+          run on any modern web browser. Since Thorium is built using Web
+          technologies, your client computers could be anything. They'll even
+          operate on an electrical switch panel!
         </p>
       </SectionText>
     </Section>
