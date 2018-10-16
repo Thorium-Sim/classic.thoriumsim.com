@@ -67,20 +67,30 @@ const Download = () => {
             Android devices. It does not replace Thorium for desktop, but
             supplements and augments it.
           </p>
-          <a
-            href="https://itunes.apple.com/us/app/thorium-mobile/id1438244424"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={require("../img/appstore.svg")}
-              alt="Download on the App Store"
-            />
-          </a>
-          <p>
-            Thorium Mobile for Android isn't on the Google Play store yet, but
-            you can still run it. Follow these instructions:
-          </p>
+          <div style={{ display: "flex" }}>
+            <a
+            style={{marginRight:20}}
+              href="https://itunes.apple.com/us/app/thorium-mobile/id1438244424"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={require("../img/appstore.svg")}
+                alt="Download on the App Store"
+              />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=us.fyreworks.thoriumMobile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={require("../img/playstore.svg")}
+                alt="Download on the Play Store"
+              />
+            </a>
+          </div>
+          <p>You can also run it on Expo. Follow these instructions:</p>
           <ol>
             <li>
               <a
@@ -103,11 +113,12 @@ const Download = () => {
           </ol>
           <p>
             Alternatively, you can scan this QR code in the Expo app:{" "}
-            <img
+            
+          </p>
+          <img
               src={require("../img/thoriumMobile.png")}
               alt="Thorium Mobile QR Code"
             />
-          </p>
           <p>
             Thorium is Open Source software, and the source code can be
             downloaded and compiled from the{" "}
