@@ -2,6 +2,7 @@ import React from "react";
 import styled, { css } from "react-emotion";
 import { Link } from "gatsby";
 import WidgetBot from "./widgetBot";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const FooterContainer = styled("footer")`
   background-color: #111;
@@ -84,33 +85,36 @@ class Footer extends React.Component {
             <Link className={linkStyle} to="/users">
               User Showcase
             </Link>
-            <a className={linkStyle} href="https://discord.gg/UvxTQZz">
+            <OutboundLink
+              className={linkStyle}
+              href="https://discord.gg/UvxTQZz"
+            >
               Project Chat
-            </a>
-            <a
+            </OutboundLink>
+            <OutboundLink
               className={linkStyle}
               href="https://twitter.com/thoriumsim"
               target="_blank"
               rel="noopener noreferrer"
             >
               Twitter
-            </a>
+            </OutboundLink>
           </InnerSection>
           <InnerSection>
             <h4>More</h4>
             <Link className={linkStyle} to="/blog">
               Blog
             </Link>
-            <a
+            <OutboundLink
               className={linkStyle}
               href="https://github.com/thorium-sim/thorium"
             >
               GitHub
-            </a>
+            </OutboundLink>
           </InnerSection>
         </Section>
 
-        <a
+        <OutboundLink
           className={`fbOpenSource ${logoStyle}`}
           href="https://fyreworks.us/"
           target="_blank"
@@ -122,7 +126,7 @@ class Footer extends React.Component {
             width="170"
             height="45"
           />
-        </a>
+        </OutboundLink>
         <section className={copyStyle}>
           Copyright &copy; {currentYear} Fyreworks LLC.
         </section>

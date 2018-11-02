@@ -4,6 +4,8 @@ import { Page } from "../components/styles";
 import Layout from "../components/layout";
 import { auth, firestore, google } from "../utils/firebase";
 import createUser from "../utils/createUser";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+
 const Button = styled("button")`
   text-decoration: none;
   color: #b99bd8;
@@ -110,9 +112,9 @@ const Issue = ({
         <span>{upvoteCount}</span>
       </div>
       <h4>
-        <a href={htmlUrl} target="_blank" rel="noopener noreferrer">
+        <OutboundLink href={htmlUrl} target="_blank" rel="noopener noreferrer">
           {title}
-        </a>{" "}
+        </OutboundLink>{" "}
         {user &&
           user.roles &&
           user.roles.admin &&

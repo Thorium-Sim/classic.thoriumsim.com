@@ -2,6 +2,7 @@ import React from "react";
 import styled from "react-emotion";
 import { Page } from "../components/styles";
 import Layout from "../components/layout";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const FlexContainer = styled("div")`
   display: flex;
@@ -68,8 +69,8 @@ const Download = () => {
             supplements and augments it.
           </p>
           <div style={{ display: "flex" }}>
-            <a
-            style={{marginRight:20}}
+            <OutboundLink
+              style={{ marginRight: 20 }}
               href="https://itunes.apple.com/us/app/thorium-mobile/id1438244424"
               target="_blank"
               rel="noopener noreferrer"
@@ -78,8 +79,8 @@ const Download = () => {
                 src={require("../img/appstore.svg")}
                 alt="Download on the App Store"
               />
-            </a>
-            <a
+            </OutboundLink>
+            <OutboundLink
               href="https://play.google.com/store/apps/details?id=us.fyreworks.thoriumMobile"
               target="_blank"
               rel="noopener noreferrer"
@@ -88,22 +89,22 @@ const Download = () => {
                 src={require("../img/playstore.svg")}
                 alt="Download on the Play Store"
               />
-            </a>
+            </OutboundLink>
           </div>
           <p>You can also run it on Expo. Follow these instructions:</p>
           <ol>
             <li>
-              <a
+              <OutboundLink
                 href="https://expo.io"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Download the Expo app.
-              </a>
+              </OutboundLink>
             </li>
             <li>
               Search for "Thorium Mobile" or access the app's page{" "}
-              <a
+              <OutboundLink
                 href="https://expo.io/@alexanderson1993/thorium-mobile"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -111,24 +112,26 @@ const Download = () => {
               here.
             </li>
           </ol>
-          <p>
-            Alternatively, you can scan this QR code in the Expo app:{" "}
-            
-          </p>
+          <p>Alternatively, you can scan this QR code in the Expo app: </p>
           <img
-              src={require("../img/thoriumMobile.png")}
-              alt="Thorium Mobile QR Code"
-            />
+            src={require("../img/thoriumMobile.png")}
+            alt="Thorium Mobile QR Code"
+          />
           <p>
             Thorium is Open Source software, and the source code can be
             downloaded and compiled from the{" "}
-            <a href="https://github.com/thorium-sim/thorium">code repository</a>
+            <OutboundLink href="https://github.com/thorium-sim/thorium">
+              code repository
+            </OutboundLink>
             . Instructions to build Thorium are included in the repository.
             Assets and content can be collected separately from third-parties.
           </p>
-          <a href="https://github.com/thorium-sim/thorium" className="button">
+          <OutboundLink
+            href="https://github.com/thorium-sim/thorium"
+            className="button"
+          >
             Get the Code
-          </a>
+          </OutboundLink>
         </Page>
       </div>
     </Layout>

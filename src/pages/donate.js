@@ -2,6 +2,7 @@ import React from "react";
 import { Page, FlexArea, FlexSection, FlexAside } from "../components/styles";
 import Donation from "../components/donationForm";
 import Layout from "../components/layout";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const Contribute = () => {
   return (
@@ -38,9 +39,9 @@ const Contribute = () => {
                 </li>
                 <li>
                   Teaching middle and high school students in the{" "}
-                  <a href="https://github.com/webdev-guild/webdev-guild">
+                  <OutboundLink href="https://github.com/webdev-guild/webdev-guild">
                     WebDev Guild
-                  </a>{" "}
+                  </OutboundLink>{" "}
                   how to code.
                 </li>
               </ul>
@@ -52,7 +53,10 @@ const Contribute = () => {
               <p>
                 If you have any problems with your donation, need to cancel your
                 subscription or want to request a refund, please{" "}
-                <a href="mailto:alex@fyreworks.us">contact us</a>.
+                <OutboundLink href="mailto:alex@fyreworks.us">
+                  contact us
+                </OutboundLink>
+                .
               </p>
             </FlexArea>
             <FlexAside style={{ flex: 2, marginLeft: "10px" }}>

@@ -4,6 +4,7 @@ import styled from "react-emotion";
 import { Page } from "../components/styles";
 import Layout from "../components/layout";
 import { toast } from "react-toastify";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const Button = styled("button")`
   text-decoration: none;
@@ -196,14 +197,14 @@ class Form extends Component {
             {type === "Feature" || type === "Bug Fix" ? (
               <small>
                 Please include an{" "}
-                <a
+                <OutboundLink
                   href="https://github.com/Thorium-Sim/thorium/issues"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   issue number from Github
-                </a>
-                .
+                </OutboundLink>{" "}
+                if applicable.
               </small>
             ) : null}
           </label>
@@ -260,13 +261,13 @@ const Service = () => {
           <h4>What if I don't want to pay for my feature or bug?</h4>
           <p>
             As always, you can submit an issue through{" "}
-            <a
+            <OutboundLink
               href="https://github.com/Thorium-Sim/thorium/issues/new"
               target="_blank"
               rel="noreferrer noopener"
             >
               Github's issue tracker
-            </a>{" "}
+            </OutboundLink>{" "}
             or Thorium's built-in issue tracker. Those issues are handled based
             on the project's roadmap and developer availability. There is no
             guarantee that features and bug reports submitted through the issue
