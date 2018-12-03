@@ -30,6 +30,7 @@ const DownloadLink = styled("a")`
   }
 `;
 class Download extends React.Component {
+  state = {};
   componentDidMount() {
     fetch("https://api.github.com/repos/thorium-sim/thorium-kiosk/releases")
       .then(res => res.json())
