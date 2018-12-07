@@ -12,6 +12,7 @@ const FooterContainer = styled("footer")`
   justify-content: center;
   align-items: center;
   padding: 30px 0;
+  z-index: 1;
 `;
 
 const Section = styled("section")`
