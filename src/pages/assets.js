@@ -153,7 +153,6 @@ class RemoteFiles extends Component {
       ...f,
       objects: objects.filter(o => o.folderPath === f.fullPath)
     }));
-    console.log(objects);
     return (
       <Fragment>
         {uploading && <Uploading>Uploading...</Uploading>}
