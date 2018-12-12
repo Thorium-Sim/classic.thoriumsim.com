@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["https://thoriumsim.com", "http://localhost:8000"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]
