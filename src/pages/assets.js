@@ -38,7 +38,7 @@ const Uploading = styled("div")`
   bottom: 0;
   right: 0;
 `;
-const storageRef = storage.ref();
+const storageRef = storage && storage.ref();
 class RemoteFiles extends Component {
   state = { folders: [], objects: [] };
   async componentDidMount() {
