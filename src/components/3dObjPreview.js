@@ -3,7 +3,9 @@ import * as THREE from "three";
 import objLoaderWrapper from "three-obj-loader";
 
 objLoaderWrapper(THREE);
-window.THREE = THREE;
+if (window) {
+  window.THREE = THREE;
+}
 
 function degtorad(deg) {
   return deg * (Math.PI / 180);
@@ -43,25 +45,27 @@ class ObjPreview extends Component {
   componentDidMount() {
     const { src } = this.props;
     const meshSrc = (src || "").replace(/http(s|):\/\/.*:[0-9]{4}/gi, "");
-    const objLoader = new window.THREE.OBJLoader();
-    this.material = new THREE.MeshLambertMaterial({
-      // wireframe: true,
-      color: parseInt("0088ff", 16)
-    });
-
-    objLoader.load(meshSrc, obj => {
-      obj.scale.set(0.3, 0.3, 0.3);
-      obj.children.forEach(child => {
-        child.material = this.material;
+    if (window) {
+      const objLoader = new window.THREE.OBJLoader();
+      this.material = new THREE.MeshLambertMaterial({
+        // wireframe: true,
+        color: parseInt("0088ff", 16)
       });
 
-      this.objectGroup.add(obj);
+      objLoader.load(meshSrc, obj => {
+        obj.scale.set(0.3, 0.3, 0.3);
+        obj.children.forEach(child => {
+          child.material = this.material;
+        });
 
-      const rot = new THREE.Euler(degtorad(0), degtorad(45), degtorad(0));
-      this.objectGroup.rotation.setFromVector3(rot);
+        this.objectGroup.add(obj);
 
-      this.renderer.render(this.scene, this.camera);
-    });
+        const rot = new THREE.Euler(degtorad(0), degtorad(45), degtorad(0));
+        this.objectGroup.rotation.setFromVector3(rot);
+
+        this.renderer.render(this.scene, this.camera);
+      });
+    }
     this.myRef.current.appendChild(this.renderer.domElement);
   }
   render() {
