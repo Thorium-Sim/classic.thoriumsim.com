@@ -135,6 +135,7 @@ class Download extends React.Component {
                 href="https://play.google.com/store/apps/details?id=us.fyreworks.thoriumMobile"
                 target="_blank"
                 rel="noopener noreferrer"
+                style={{ minWidth: "135px" }}
               >
                 <img
                   src={require("../img/playstore.svg")}
