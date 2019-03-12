@@ -3,6 +3,9 @@ title: Frequently Asked Questions
 category: docs
 subcategory: An Overview
 ---
+## What browsers are compatible with Thorium?
+
+Thorium was built to run in Chrome. Safari and Firefox are compatible in most cases. For the best experience, we suggest running your host machine and all client machines on Chrome.
 
 ## What are the best screen resolutions to run Thorium on?
 
