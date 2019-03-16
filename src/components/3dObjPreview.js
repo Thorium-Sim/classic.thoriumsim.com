@@ -48,7 +48,6 @@ class ObjPreview extends Component {
       // wireframe: true,
       color: parseInt("0088ff", 16)
     });
-    console.log(meshSrc);
     objLoader.load(meshSrc, obj => {
       obj.scale.set(0.3, 0.3, 0.3);
       obj.children.forEach(child => {
