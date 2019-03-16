@@ -1,6 +1,7 @@
 ---
 title: Systems Core
-category: cards
+category: docs
+subcategory: Cores
 ---
 The systems core allows you to add or remove systems mid-flight. The FD is also able to change the behaviors of these systems here.
 
