@@ -4,6 +4,7 @@ import styled from "react-emotion";
 import { Page } from "../components/styles";
 import Layout from "../components/layout";
 import { toast } from "react-toastify";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const Button = styled("button")`
   text-decoration: none;
@@ -46,17 +47,17 @@ const Select = Input.withComponent("select");
 
 const priorityOptions = {
   Feature: [
-    "Low - Complete the feature within one month. $15/hr",
-    "Medium - Complete the feature within two weeks. $25/hr",
-    "High - Complete the feature within one week. $50/hr"
+    "Low - Complete the feature within one month. $20/hr",
+    "Medium - Complete the feature within two weeks. $30/hr",
+    "High - Complete the feature within one week. $60/hr"
   ],
   "Bug Fix": [
-    "Low - Fix the bug within one week. $15/hr",
-    "Medium - Fix the bug within one day. $25/hr",
-    "High - Fix the bug within four hours. $50/hr"
+    "Low - Fix the bug within one week. $25/hr",
+    "Medium - Fix the bug within one day. $35/hr",
+    "High - Fix the bug within four hours. $65/hr"
   ],
   "On-Site Visit": [
-    "Low - Arrive at the location within one week. Good for getting Thorium set up. $25/hr",
+    "Low - Arrive at the location within one week. Good for getting Thorium set up. $30/hr",
     "Medium - Arrive at the location within two working days. $50/hr",
     "High - Arrive at the location within two hours. Mission-critical issues. $100/hr"
   ]
@@ -196,14 +197,14 @@ class Form extends Component {
             {type === "Feature" || type === "Bug Fix" ? (
               <small>
                 Please include an{" "}
-                <a
+                <OutboundLink
                   href="https://github.com/Thorium-Sim/thorium/issues"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   issue number from Github
-                </a>
-                .
+                </OutboundLink>{" "}
+                if applicable.
               </small>
             ) : null}
           </label>
@@ -235,6 +236,16 @@ const Service = () => {
             to come on site to help you get everything working right? Then fill
             out this form, and we'll make it happen!
           </p>
+          <p>
+            <strong>Note:</strong>
+            <em>
+              As of January 2019, the rates for the service request have
+              changed. Please review the options before submitting a request. If
+              you have any questions or want to work out a custom rate, please
+              reach out at{" "}
+              <a href="mailto:alex@fyreworks.us">alex@fyreworks.us</a>
+            </em>
+          </p>
           <Form />
           <h2>Frequently Asked Questions</h2>
           <h4>What is this?</h4>
@@ -260,13 +271,13 @@ const Service = () => {
           <h4>What if I don't want to pay for my feature or bug?</h4>
           <p>
             As always, you can submit an issue through{" "}
-            <a
+            <OutboundLink
               href="https://github.com/Thorium-Sim/thorium/issues/new"
               target="_blank"
               rel="noreferrer noopener"
             >
               Github's issue tracker
-            </a>{" "}
+            </OutboundLink>{" "}
             or Thorium's built-in issue tracker. Those issues are handled based
             on the project's roadmap and developer availability. There is no
             guarantee that features and bug reports submitted through the issue

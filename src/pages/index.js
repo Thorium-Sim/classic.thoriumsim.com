@@ -1,19 +1,32 @@
 import React from "react";
 import Layout from "../components/layout";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import styled from "react-emotion";
 import Carousel from "../components/carousel";
-import { users, A, Img } from "./users";
+import { users, A } from "./users";
 import { FlexSection } from "../components/styles";
+import { default as GImg } from "gatsby-image";
+
+const BgImage = styled(GImg)`
+  position: fixed !important;
+  top: 50px !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: -1 !important;
+  height: 100vh; // or whatever
+
+  // Adjust image positioning (if image covers area with defined height) and add font-family for polyfill
+  & > img {
+    object-fit: cover !important; // or whatever
+    object-position: 0% 0% !important; // or whatever
+    font-family: "object-fit: cover !important; object-position: 0% 0% !important;"; // needed for IE9+ polyfill
+  } */
+`;
 
 const Hero = styled("div")`
   width: 100%;
   height: 90vh;
   padding-top: 50px;
-  background-image: url(${require("../img/hero.jpg")});
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -111,9 +124,11 @@ const Section = props => (
     <SectionInner {...props} />
   </SectionOuter>
 );
-const IndexPage = () => (
+
+const IndexPage = ({ data }) => (
   <Layout>
     <Hero>
+      <BgImage fixed={data.hero.childImageSharp.fixed} />
       <HeroImage
         src={require("../img/thorium.svg")}
         alt="Thorium"
@@ -129,7 +144,7 @@ const IndexPage = () => (
       </ButtonContainer>
     </Hero>
     <Section>
-      <SectionImage src={require("../img/ship.png")} draggable="false" />
+      <GImg fixed={data.ship.childImageSharp.fixed} />
       <SectionText>
         <h3>What is Thorium?</h3>
         <p>
@@ -139,12 +154,12 @@ const IndexPage = () => (
           computer station and responsibilities. The crew uses the Thorium
           controls to direct the ship wherever they want in their space mission.
           A flight director sits behind the scenes to act as a game master,
-          controling what happens inside the simulation.
+          controlling what happens inside the simulation.
         </p>
       </SectionText>
     </Section>
     <Section>
-      <Carousel />
+      <Carousel images={data.carousel.edges} />
     </Section>
 
     <Section offset="true">
@@ -203,11 +218,10 @@ const IndexPage = () => (
       <SectionText>
         <h3>Multi-Platform</h3>
         <p>
-          Thorium Server works on Windows, macOS, Linux, and the controls work
-          with anything that runs a modern web browser. They'll even operate on
-          a electrical switch panel! And, since Thorium is built with Web
-          technologies, your client computers can be anything that runs a modern
-          web browser.
+          Thorium Server works on Windows, macOS, and Linux and the controls can
+          be run on any modern web browser. Since Thorium is built using Web
+          technologies, your client computers could be anything. They'll even
+          operate on an electrical switch panel!
         </p>
       </SectionText>
     </Section>
@@ -215,16 +229,24 @@ const IndexPage = () => (
       <SectionText>
         <h3>Sponsoring Organizations</h3>
         <FlexSection>
-          {users.map(u => (
-            <A
-              href={u.infoLink}
-              key={u.caption}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              <Img alt={u.caption} src={u.image} />
-            </A>
-          ))}
+          {users.map(u => {
+            const image = data.sponsors.edges.find(
+              s => s.node.name === u.image
+            );
+            return (
+              <A
+                href={u.infoLink}
+                key={u.caption}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <GImg
+                  alt={u.caption}
+                  fluid={image && image.node.childImageSharp.fluid}
+                />
+              </A>
+            );
+          })}
         </FlexSection>
       </SectionText>
     </Section>
@@ -232,3 +254,57 @@ const IndexPage = () => (
 );
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    hero: file(relativePath: { eq: "hero.jpg" }) {
+      childImageSharp {
+        fixed(width: 1440, quality: 90) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+    ship: file(relativePath: { eq: "ship.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fixed(width: 300) {
+          ...GatsbyImageSharpFixed_withWebp_tracedSVG
+        }
+      }
+    }
+    carousel: allFile(filter: { dir: { glob: "**/carousel" } }) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            fluid(
+              quality: 70
+              maxWidth: 1000
+              traceSVG: { background: "black", color: "#333" }
+            ) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+    }
+    sponsors: allFile(filter: { dir: { glob: "**/sponsors" } }) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            fluid(
+              maxWidth: 300
+              traceSVG: { background: "black", color: "#333" }
+            ) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+    }
+  }
+`;

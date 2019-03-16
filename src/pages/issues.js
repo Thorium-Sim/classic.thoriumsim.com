@@ -4,6 +4,8 @@ import { Page } from "../components/styles";
 import Layout from "../components/layout";
 import { auth, firestore, google } from "../utils/firebase";
 import createUser from "../utils/createUser";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+
 const Button = styled("button")`
   text-decoration: none;
   color: #b99bd8;
@@ -20,6 +22,11 @@ const Button = styled("button")`
   border: solid 1px #b99bd8;
   border-radius: 5px;
   padding: 2px 15px;
+`;
+const ProfilePicture = styled("img")`
+  width: 20px;
+  border-radius: 50%;
+  margin: 0 5px;
 `;
 
 const wait = func => {
@@ -79,6 +86,7 @@ const Issue = ({
   title,
   html_url: htmlUrl,
   user = {},
+  users = [],
   upvoteCount = 0
 }) => {
   const { upvotes: upvoteArray = [] } = user;
@@ -93,7 +101,6 @@ const Issue = ({
         });
     }
   };
-
   return (
     <div className={issue}>
       <div className={upvote}>
@@ -105,9 +112,19 @@ const Issue = ({
         <span>{upvoteCount}</span>
       </div>
       <h4>
-        <a href={htmlUrl} target="_blank" rel="noopener noreferrer">
+        <OutboundLink href={htmlUrl} target="_blank" rel="noopener noreferrer">
           {title}
-        </a>
+        </OutboundLink>{" "}
+        {user &&
+          user.roles &&
+          user.roles.admin &&
+          users.map(u => (
+            <ProfilePicture
+              key={`${id}-${u.id}`}
+              src={u.photoURL}
+              title={u.displayName}
+            />
+          ))}
       </h4>
     </div>
   );
@@ -184,6 +201,9 @@ class Issues extends Component {
                             key={`issue-${i.id}`}
                             user={users.find(
                               u => u.id === auth.currentUser.uid
+                            )}
+                            users={users.filter(
+                              u => u.upvotes && u.upvotes.indexOf(i.id) > -1
                             )}
                           />
                         ))}

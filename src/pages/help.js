@@ -2,6 +2,7 @@ import React from "react";
 import { Page, FlexSection, FlexAside } from "../components/styles";
 import { Link } from "gatsby";
 import Layout from "../components/layout";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 const Help = () => (
   <Layout>
@@ -27,9 +28,9 @@ const Help = () => (
               Thorium hopes to be a community-based project, which is why we
               have a Discord channel. This allows you to get help, learn tips,
               and be involved with all of the other Thorium users.{" "}
-              <a href="https://discord.gg/UvxTQZz">
+              <OutboundLink href="https://discord.gg/UvxTQZz">
                 Ask questions about the documentation and project on Discord.
-              </a>
+              </OutboundLink>
             </p>
           </FlexAside>
           <FlexAside>

@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "react-emotion";
 import { Link } from "gatsby";
+import { OutboundLink } from "gatsby-plugin-google-analytics";
+
 const AuthorImg = styled("img")`
   width: 40px;
   margin-left: 15px;
@@ -24,9 +26,13 @@ const BlogHeader = ({ url, title, date, author, authorURL, authorFBID }) => (
       <AuthorHolder>
         <p>
           {authorURL ? (
-            <a href={authorURL} target="_blank" rel="noreferrer noopener">
+            <OutboundLink
+              href={authorURL}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               {author}
-            </a>
+            </OutboundLink>
           ) : (
             author
           )}
@@ -34,12 +40,16 @@ const BlogHeader = ({ url, title, date, author, authorURL, authorFBID }) => (
         {authorFBID && (
           <div>
             {authorURL ? (
-              <a href={authorURL} target="_blank" rel="noreferrer noopener">
+              <OutboundLink
+                href={authorURL}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <AuthorImg
                   src={`https://graph.facebook.com/${authorFBID}/picture/?height=200&width=200`}
                   alt={author}
                 />
-              </a>
+              </OutboundLink>
             ) : (
               <AuthorImg
                 src={`https://graph.facebook.com/${authorFBID}/picture/?height=200&width=200`}

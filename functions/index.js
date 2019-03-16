@@ -1,10 +1,15 @@
 const functions = require("firebase-functions");
 const nodemailer = require("nodemailer");
 const cors = require("cors")({ origin: true });
+const { firestore, storage } = require("./helpers/firebase");
 
 // // Configure the email transport using the default SMTP transport and a GMail account.
-const gmailEmail = functions.config().gmail.email;
-const gmailPassword = functions.config().gmail.password;
+const gmailEmail = functions.config().gmail
+  ? functions.config().gmail.email
+  : "";
+const gmailPassword = functions.config().gmail
+  ? functions.config().gmail.password
+  : "";
 const mailTransport = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -47,4 +52,65 @@ exports.serviceRequest = functions.https.onRequest((request, response) => {
   return mailTransport.sendMail(mailOptions).then(() => {
     return response.send("Done");
   });
+});
+
+exports.assets = functions.https.onRequest((request, response) => {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  response.header("Content-Type", "application/json");
+
+  if (request.method !== "GET")
+    return response.send(JSON.stringify({ error: "Invalid Method" }));
+  Promise.all([
+    firestore
+      .collection("folders")
+      .get()
+      .then(res => {
+        console.log("Got Folders");
+
+        return res.docs.map(d => {
+          const data = d.data();
+          return Object.assign({}, data, { id: d.id });
+        });
+      }),
+    firestore
+      .collection("objects")
+      .get()
+      .then(res => {
+        console.log("Got Objects");
+        return Promise.all(
+          res.docs.map(d => {
+            return storage
+              .bucket()
+              .file(`objects/${d.id}`)
+              .getMetadata()
+              .then(metadata => {
+                return Object.assign(
+                  {},
+                  {
+                    contentType: metadata[0].contentType
+                  },
+                  d.data(),
+                  { id: d.id }
+                );
+              });
+          })
+        );
+      })
+  ])
+    .then(([folders, objects]) => {
+      const mergedFolders = folders.map(f =>
+        Object.assign(f, {
+          objects: objects.filter(o => o.folderPath === f.fullPath)
+        })
+      );
+      return response.end(JSON.stringify(mergedFolders));
+    })
+    .catch(error => {
+      console.error(error);
+      return response.end(JSON.stringify({ error: error.message }));
+    });
 });

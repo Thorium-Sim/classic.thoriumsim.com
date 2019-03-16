@@ -18,6 +18,7 @@ const Wrapper = styled("div")`
   margin-top: 50px;
   flex: 1;
   background-color: #333;
+  z-index: 1;
 `;
 // const Content = styled('div')`
 //   margin: 0 auto;
