@@ -2,7 +2,7 @@
 title: Core Layouts
 category: docs
 subcategory: Cores
-position: '1'
+position: '2'
 ---
 
 Thorium supports the ability to switch between multiple core layouts. This
