@@ -1,10 +1,8 @@
 ---
-id: fd_briefing
 title: Flight Directing — Briefing
 sidebar_label: Briefing
 category: flight_directing
 ---
-
 Before a mission can begin, the crew has to know what their mission is in the
 first place! At very least, they should be given an explanation of what they are
 going to be doing. Explaining what capabilities their ship has, which country
@@ -23,7 +21,7 @@ what they are doing.
 If possible, the mission briefing should very clearly outline the mission
 objectives. These are the key, critical points of the mission which must be
 acomplished for the crew to complete the mission successfully. By outlining the
-points of the mission one by one, teh crew is much more likely to remember what
+points of the mission one by one, the crew is much more likely to remember what
 they are supposed to do during their mission.
 
 This time should also be devoted to assigning the crew their positions. The
