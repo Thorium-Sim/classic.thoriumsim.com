@@ -38,6 +38,7 @@ const activeStyle = css`
 `;
 const positionSort = (a, b) => {
   if (!a.node.frontmatter.position && b.node.frontmatter.position) return 1;
+  if (a.node.frontmatter.position && !b.node.frontmatter.position) return -1;
   if (a.node.frontmatter.position > b.node.frontmatter.position) return 1;
   if (a.node.frontmatter.position < b.node.frontmatter.position) return -1;
 

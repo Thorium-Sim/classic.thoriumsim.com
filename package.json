@@ -64,6 +64,7 @@
     "react-stripe-checkout": "^2.6.3",
     "react-toastify": "^4.4.3",
     "react-typography": "^0.16.18",
+    "sharp": "^0.21.3",
     "three": "^0.99.0",
     "three-obj-loader": "^1.1.3",
     "typography": "^0.16.18",

@@ -1,8 +1,8 @@
 ---
-id: core_layouts
 title: Core Layouts
 category: docs
 subcategory: Cores
+position: 2
 ---
 
 Thorium supports the ability to switch between multiple core layouts. This
@@ -32,15 +32,15 @@ Every core layout has a header with the following controls:
 
 ## Layouts
 
-* [Next](#)
-* [Default](#)
-* [IIFX](#)
-* [Dynamic](#)
-* [Jr](#)
-* [Viewscreen](#)
-* [Tactical Maps](#)
-* [Panels](#)
-* [Messages](#)
+- [Next](#)
+- [Default](#)
+- [IIFX](#)
+- [Dynamic](#)
+- [Jr](#)
+- [Viewscreen](#)
+- [Tactical Maps](#)
+- [Panels](#)
+- [Messages](#)
 
 ## Function Key Popups
 
@@ -49,56 +49,56 @@ and hold the key to view the core components related to that key. Double press
 the key to have the core components stay on the screen. Press again to make them
 go away.
 
-* **F1** - Generic Components
-  * Actions
-  * Extras
-  * Remote
-  * Messaging
-  * Clients
-* **F2** - Ship Components
-  * Ship
-  * Decks
-  * Cargo
-  * Crew
-  * Heat
-  * Self Destruct
-* **F3** - Flight
-  * Engine Control
-  * Thruster
-  * Navigation
-  * Docking
-* **F4** - Weapons
-  * Targeting
-  * Phaser
-  * Torpedo
-  * Shield Control
-* **F5** - Damage
-  * Systems
-  * Damage Reports
-  * Damage Teams
-* **F6** - Sensors
-  * Sensors Grid
-  * Sensors
-  * Probe Control
-  * Probe Network
-* **F7** - Comm
-  * Short Range Comm
-  * Decoding
-  * Long Range Comm
-  * Internal Comm
-  * Signal Jammer
-  * Code Cyphers
-  * Interception
-  * Short Range Signals
-* **F8** - Engineer
-  * Reactor Control
-  * Exocomps
-* **F9** - Security
-  * Security Decks
-  * Security Teams
-  * Crew
-* **F10** - Operations
-  * Transporter
-  * Stealth Field
-  * Tractor Beam
-  * Shuttles
+- **F1** - Generic Components
+  - Actions
+  - Extras
+  - Remote
+  - Messaging
+  - Clients
+- **F2** - Ship Components
+  - Ship
+  - Decks
+  - Cargo
+  - Crew
+  - Heat
+  - Self Destruct
+- **F3** - Flight
+  - Engine Control
+  - Thruster
+  - Navigation
+  - Docking
+- **F4** - Weapons
+  - Targeting
+  - Phaser
+  - Torpedo
+  - Shield Control
+- **F5** - Damage
+  - Systems
+  - Damage Reports
+  - Damage Teams
+- **F6** - Sensors
+  - Sensors Grid
+  - Sensors
+  - Probe Control
+  - Probe Network
+- **F7** - Comm
+  - Short Range Comm
+  - Decoding
+  - Long Range Comm
+  - Internal Comm
+  - Signal Jammer
+  - Code Cyphers
+  - Interception
+  - Short Range Signals
+- **F8** - Engineer
+  - Reactor Control
+  - Exocomps
+- **F9** - Security
+  - Security Decks
+  - Security Teams
+  - Crew
+- **F10** - Operations
+  - Transporter
+  - Stealth Field
+  - Tractor Beam
+  - Shuttles
