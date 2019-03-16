@@ -2,7 +2,7 @@
 title: Glossary
 category: docs
 subcategory: An Overview
-position: ""
+position: 2
 ---
 
 - **Thorium:**A powerful modular software allowing cast and crew to embark on an

@@ -2,7 +2,7 @@
 title: Core Overview
 category: docs
 subcategory: Cores
-position: '1'
+position: 1
 ---
 
 What is the core? It is the main control screen for the entire simulator. The
