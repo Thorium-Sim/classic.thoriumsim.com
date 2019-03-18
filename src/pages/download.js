@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 import styled from "react-emotion";
 import { Page } from "../components/styles";
 import Layout from "../components/layout";
@@ -78,6 +79,10 @@ class Download extends React.Component {
             <p>
               Note: Be sure to extract the Thorium executable from the .zip
               archive before running.
+            </p>
+            <p>
+              If you are running Thorium on a Linux computer, check out the{" "}
+              <Link to="/docs/linux_launch_script/">launch script doc.</Link>
             </p>
 
             <h1>Download Thorium Kiosk</h1>
