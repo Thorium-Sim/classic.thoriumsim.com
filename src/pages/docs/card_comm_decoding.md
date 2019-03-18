@@ -1,16 +1,14 @@
 ---
-id: card_comm_decoding
 title: Comm Decoding
 category: cards
 subcategory: Communications
 ---
-
 ![Comm Decoding](/img/card_commEncoding.jpg)
 
 This is where incoming long range messages are decoded. Unless specified on the
 Core, every message sent will have to be decoded.
 
-On the right side of the screen is a list of message that have arrived,
+On the right side of the screen is a list of messages that have arrived,
 including a (faux) stardate and the name of the message sender. Clicking on the
 message will make the encoded message appear in the box at the bottom, along
 with activating the decoding matrix.
