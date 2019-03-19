@@ -23,13 +23,12 @@ position: 2
   stations, decks, rooms, and crew.
 - **Station**: A station is a collection of screens which control the simulator.
   Stations are typically organized by function; engines and thrusters belong to
-  the Flight Control station, weapons and shields belong to the Tactical <<<<<<<
-  HEAD station, etc.
+  the Flight Control station, weapons and shields belong to the Tactical
+  station, etc. Thorium groups sets of stations into station-sets, allowing you
+  to customize how many crew participate in your simulation.
 - **Client**: A client is a single computer running a station. To run Thorium,
   you must have at least one client for every station in the simulation, but you
   could have multiple clients running the same station on larger simulator sets.
-  ======= station, etc. Thorium groups sets of stations into station-sets,
-  allowing you to customize how many crew participate in your simulation.
 - **Client**: A client is a single computer running a station. To run Thorium,
   you must have at least one client for every station in the simulation, but you
   could have multiple clients running the same station on larger simulator sets.
@@ -38,15 +37,13 @@ position: 2
   send messages to the server to update data. Clients can also subscribe to
   specific information from the server. When new information is processed by the
   server, it sends those updates to the subscribed clients.
-  > > > > > > > 3d97356bb020684abb6826941cff97e7e0ae490c
 - **Set**: A set is the physical space where a simulation happens. It could be
   permanent and include a bridge, desks for the computers, a sickbay and
   engineering room, hallways, transporter doors, etc. Or it could be your living
   room and computers for every participant. There is no set definition of what
-  <<<<<<< HEAD your spaceship has to look like! ======= your spaceship has to
-  look like! Thorium allows you to map the clients in your physical set to
-  simulators and station-sets so you can easily start the ship before a flight.
-  > > > > > > > 3d97356bb020684abb6826941cff97e7e0ae490c
+  your spaceship has to look like! Thorium allows you to map the clients in your
+  physical set to simulators and station-sets so you can easily start the ship
+  before a flight.
 - **Mission**: A mission is the set storyline which will be followed during a
   specific simulation. Missions follow a timeline of events, and can provide
   some level of automation for the Flight Director.

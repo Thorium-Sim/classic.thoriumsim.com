@@ -9,7 +9,8 @@ const categoryOrder = [
   { id: "flight_directing", name: "Flight Directing" },
   { id: "simulator_config", name: "Simulator Configuration" },
   { id: "mission_writing", name: "Mission Writing" },
-  { id: "developers", name: "Developers" }
+  { id: "developers", name: "Developers" },
+  { id: "space_edventures", name: "Space EdVentures" }
 ];
 const mainStyle = css`
   color: #aaa;

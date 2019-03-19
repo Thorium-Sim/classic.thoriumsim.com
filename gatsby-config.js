@@ -22,6 +22,18 @@ module.exports = {
         name: "images"
       }
     },
+    {
+      resolve: `@mosch/gatsby-source-github`,
+      options: {
+        repository: "thorium",
+        tree: true,
+        releases: true,
+        user: "thorium-sim",
+        secrets: {
+          token: "1ffc475d1c93ec76d7923f353f506508be861adb"
+        }
+      }
+    },
     { resolve: `gatsby-plugin-emotion`, options: { autoLabel: true } },
     {
       resolve: `gatsby-plugin-typography`,

@@ -94,7 +94,7 @@ const Header = ({ siteTitle }) => (
         <Search />
         <HeaderLink to="/docs/overview">Docs</HeaderLink>
         <HeaderLink to="/help">Help</HeaderLink>
-        <HeaderLink to="/issues">Issues</HeaderLink>
+        <HeaderLink to="/releaseNotes">Release Notes</HeaderLink>
         <HeaderLink to="/blog">Blog</HeaderLink>
       </HeaderNav>
     </HeaderInner>

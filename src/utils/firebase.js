@@ -25,8 +25,7 @@ export const google = new firebase.auth.GoogleAuthProvider();
 // export const twitter = new firebase.auth.TwitterAuthProvider();
 
 export let firestore = firebase.firestore();
-const settings = { timestampsInSnapshots: true };
-firestore.settings(settings);
+firestore.settings({});
 
 export const storage = firebase.storage();
 
