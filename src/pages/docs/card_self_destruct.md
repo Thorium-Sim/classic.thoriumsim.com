@@ -21,6 +21,4 @@ Use the countdown fields to input the number of hours, minutes, and seconds befo
 
 The "Auto" check-box sets the ship to automatically black-out all screens when the self-destruct countdown reaches zero.
 
-The yellow "Code" box is not yet fully implemented--watch for that new feature coming soon!
-
 The second box (yellow, listing 00:00:00 if Self-Destruct is not activated) will turn red and display the time to detonation when the Self-Destruct botton has been activated.
