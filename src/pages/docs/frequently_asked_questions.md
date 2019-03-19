@@ -24,3 +24,11 @@ With the recent upgrade to Chrome 71, audio autoplay is now blocked before user 
 4. Restart Chrome
 
 This is not necessary for the dedicated Thorium Client application.
+
+
+
+Some frequently asked questions were answered in the following demonstration:
+
+```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-5hnBiHjKFo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+```
