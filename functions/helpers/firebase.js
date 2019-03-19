@@ -8,8 +8,7 @@ admin.initializeApp({
 const firestore = admin.firestore();
 const auth = admin.auth();
 const storage = admin.storage();
-const settings = { timestampsInSnapshots: true };
-firestore.settings(settings);
+firestore.settings({});
 
 module.exports.firestore = firestore;
 module.exports.auth = auth;
