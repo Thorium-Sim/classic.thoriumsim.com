@@ -1,7 +1,7 @@
 ---
 title: "Lessons Learned - A New Perspective"
 author: Justin Hammond
-# authorURL: "http://twitter.com/ralex1993"
+authorURL: "http://justinpaulhammond.com"
 authorFBID: 100004083934540
 date: "2019-04-01T09:25:39-06:00"
 ---
