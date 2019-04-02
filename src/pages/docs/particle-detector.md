@@ -7,8 +7,6 @@ The particle detector is used in conjunction with the sensor card. It allows the
 
 ![](/img/screen-shot-2019-04-01-at-9.16.06-pm.png)
 
-
-
 The FD will need to use the "AlternativeSensorsCore" to interact with the particle detector card.
 
 ![](/img/screen-shot-2019-04-01-at-9.16.18-pm.png)
