@@ -166,6 +166,12 @@ const IndexPage = ({ data }) => (
       <SectionText>
         <h3>Offering Support Service</h3>
         <p>
+          Thorium is a Community Support project.{" "}
+          <Link to="/blog/2019/04/13/community-support">
+            Find out what that means.
+          </Link>
+        </p>
+        <p>
           Thorium now offers personal support on a non-contract basis. Need a
           bug squashed? Need a special feature completed yesterday? Need someone
           to walk you through set-up and help you get everything working right?
