@@ -139,7 +139,9 @@ const IndexPage = ({ data }) => (
       <ButtonContainer>
         <Button to="/docs/overview">Get Started</Button>
         <Button to="/download">Download</Button>
-        <Button to="/donate">Donate</Button>
+        <ButtonLink href="https://www.patreon.com/thoriumsim" target="_blank">
+          Donate
+        </ButtonLink>
         <ButtonLink href="https://discord.gg/UvxTQZz">Chat</ButtonLink>
       </ButtonContainer>
     </Hero>
