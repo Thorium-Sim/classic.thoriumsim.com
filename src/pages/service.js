@@ -47,19 +47,19 @@ const Select = Input.withComponent("select");
 
 const priorityOptions = {
   Feature: [
-    "Low - Complete the feature within one month. $20/hr",
-    "Medium - Complete the feature within two weeks. $30/hr",
-    "High - Complete the feature within one week. $60/hr"
+    "Low - Complete the feature eventually. The feature will have higher priority than regular issues. $25/hr",
+    "Medium - Complete the feature within one month. $35/hr",
+    "High - Complete the feature within two weeks. $70/hr"
   ],
   "Bug Fix": [
-    "Low - Fix the bug within one week. $25/hr",
-    "Medium - Fix the bug within one day. $35/hr",
-    "High - Fix the bug within four hours. $65/hr"
+    "Low - Fix the bug within one week. $30/hr",
+    "Medium - Fix the bug within one day. $40/hr",
+    "High - Fix the bug within four hours. $75/hr"
   ],
   "On-Site Visit": [
     "Low - Arrive at the location within one week. Good for getting Thorium set up. $30/hr",
     "Medium - Arrive at the location within two working days. $50/hr",
-    "High - Arrive at the location within two hours. Mission-critical issues. $100/hr"
+    "High - Arrive at the location within two hours. Mission-critical issues. $120/hr"
   ]
 };
 
@@ -305,11 +305,11 @@ const Service = () => {
           </p>
           <h4>How will payment be handled?</h4>
           <p>
-            Within a month of any service being provided, you will be sent an
-            invoice with the service charges. You will be expected to provide
-            payment within one month from the invoice. Failure to do so will
-            result in refusal of all future service requests until the invoice
-            is paid.
+            Within a month of any service being provided or upon completion of a
+            feature or bug fix, you will be sent an invoice with the service
+            charges. You will be expected to provide payment within one month
+            from the invoice. Failure to do so will result in refusal of all
+            future service requests until the invoice is paid.
           </p>
           <h4>Will you visit my space center without a service request?</h4>
           <p>
