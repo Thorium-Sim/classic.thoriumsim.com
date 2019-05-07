@@ -18,9 +18,9 @@ const BgImage = styled(GImg)`
   // Adjust image positioning (if image covers area with defined height) and add font-family for polyfill
   & > img {
     object-fit: cover !important; // or whatever
-    object-position: 0% 0% !important; // or whatever
+    object-position: bottom; // or whatever
     font-family: "object-fit: cover !important; object-position: 0% 0% !important;"; // needed for IE9+ polyfill
-  } */
+  }
 `;
 
 const Hero = styled("div")`
@@ -51,6 +51,7 @@ const ButtonContainer = styled("div")`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 20%;
 `;
 const Button = styled(Link)`
   font-size: 1.5rem;
@@ -96,7 +97,7 @@ const SectionOuter = styled("section")`
   background-color: ${props => (props.offset ? "#444" : "#222")};
   color: white;
   @media (max-width: 425px) {
-    padding: 0;
+    padding: 3rem 0;
   }
 `;
 const SectionImageBlock = styled("div")`
