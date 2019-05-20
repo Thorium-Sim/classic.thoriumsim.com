@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Page } from "../components/styles";
 import Layout from "../components/layout";
+import showdown from "showdown";
+const converter = new showdown.Converter();
 
 function useFetch(url) {
   const [data, setDataState] = useState(null);
@@ -8,7 +10,7 @@ function useFetch(url) {
   useEffect(() => {
     setLoadingState(true);
     fetch(url)
-      .then(j => j.json())
+      .then(j => j.text())
       .then(d => {
         setDataState(d);
         setLoadingState(false);
@@ -19,41 +21,18 @@ function useFetch(url) {
 
 const ReleaseNotes = () => {
   const { data, loading } = useFetch(
-    "https://raw.githubusercontent.com/Thorium-Sim/thorium/develop/client/src/releaseNotes.json"
+    "https://raw.githubusercontent.com/Thorium-Sim/thorium/master/CHANGELOG.md"
   );
+  const html = converter.makeHtml(data);
   if (loading) return "Loading...";
   if (data) {
+    console.log(data);
     return (
       <Layout>
         <div className={`outerContainer`}>
           <Page>
             <h1>Release Notes</h1>
-            {Object.entries(data).map(([key, value]) => (
-              <div key={key}>
-                <h2>{key}</h2>
-                {value.features && value.features.length > 0 && (
-                  <>
-                    <h4>Features</h4>
-                    <ul>
-                      {value.features.map((f, i) => (
-                        <li key={`${key}-feature-${i}`}>{f}</li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-                {value.fixes && value.fixes.length > 0 && (
-                  <>
-                    <h4>Bug Fixes</h4>
-                    <ul>
-                      {value.fixes.map((f, i) => (
-                        <li key={`${key}-fixes-${i}`}>{f}</li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-                <hr />
-              </div>
-            ))}
+            <div dangerouslySetInnerHTML={{ __html: html }} />
           </Page>
         </div>
       </Layout>

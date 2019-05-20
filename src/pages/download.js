@@ -37,61 +37,34 @@ class Download extends React.Component {
       .then(res => res.json())
       .then(res => {
         const release = res[0];
-        const mac = release.assets.find(a => a.name.indexOf("mac.zip") > -1)
+        const macKiosk = release.assets.find(a => a.name.indexOf("mac.zip") > -1)
           .browser_download_url;
-        const win = release.assets.find(a => a.name.indexOf(".exe") > -1)
+        const winKiosk = release.assets.find(a => a.name.indexOf(".exe") > -1)
           .browser_download_url;
-        const linux = release.assets.find(a => a.name.indexOf("AppImage") > -1)
+        const linuxKiosk = release.assets.find(a => a.name.indexOf("AppImage") > -1)
+          .browser_download_url;
+        this.setState({ macKiosk, winKiosk, linuxKiosk });
+      });
+      fetch("https://api.github.com/repos/thorium-sim/thorium/releases")
+      .then(res => res.json())
+      .then(res => {
+        const release = res[0];
+        const mac = release.assets.find(a => a.name.indexOf("thorium-macos") > -1)
+          .browser_download_url;
+        const win = release.assets.find(a => a.name.indexOf("thorium-win.exe") > -1)
+          .browser_download_url;
+        const linux = release.assets.find(a => a.name.indexOf("thorium-linux") > -1)
           .browser_download_url;
         this.setState({ mac, win, linux });
       });
   }
   render() {
-    const { mac, win, linux } = this.state;
+    const { mac, win, linux, macKiosk, winKiosk, linuxKiosk } = this.state;
     return (
       <Layout>
         <div className="outerContainer">
           <Page>
             <h1>Download Thorium</h1>
-            <FlexContainer>
-              <DownloadLink href="https://s3.amazonaws.com/thoriumsim/thorium-macos.zip">
-                <img
-                  src={require("../img/download-apple.svg")}
-                  alt="Download macOS"
-                />
-                macOS
-              </DownloadLink>
-              <DownloadLink href="https://s3.amazonaws.com/thoriumsim/thorium-win.exe.zip">
-                <img
-                  src={require("../img/download-windows.svg")}
-                  alt="Download Windows"
-                />
-                Windows
-              </DownloadLink>
-              <DownloadLink href="https://s3.amazonaws.com/thoriumsim/thorium-linux.zip">
-                <img
-                  src={require("../img/download-linux.svg")}
-                  alt="Download Linux"
-                />
-                Linux
-              </DownloadLink>
-            </FlexContainer>
-            <p>
-              Note: Be sure to extract the Thorium executable from the .zip
-              archive before running.
-            </p>
-            <p>
-              If you are running Thorium on a Linux computer, check out the{" "}
-              <Link to="/docs/linux_launch_script/">launch script doc.</Link>
-            </p>
-
-            <h1>Download Thorium Kiosk</h1>
-            <p>
-              A kiosk application for running Thorium with a locked down user
-              interface. Supports special commands like shutting down computers
-              or quitting the program from Core.
-            </p>
-
             {mac && (
               <FlexContainer>
                 <DownloadLink href={mac}>
@@ -109,6 +82,47 @@ class Download extends React.Component {
                   Windows
                 </DownloadLink>
                 <DownloadLink href={linux}>
+                  <img
+                    src={require("../img/download-linux.svg")}
+                    alt="Download Linux"
+                  />
+                  Linux
+                </DownloadLink>
+              </FlexContainer>
+            )}
+            <p>
+              Note: Be sure to extract the Thorium executable from the .zip
+              archive before running.
+            </p>
+            <p>
+              If you are running Thorium on a Linux computer, check out the{" "}
+              <Link to="/docs/linux_launch_script/">launch script doc.</Link>
+            </p>
+
+            <h1>Download Thorium Kiosk</h1>
+            <p>
+              A kiosk application for running Thorium with a locked down user
+              interface. Supports special commands like shutting down computers
+              or quitting the program from Core.
+            </p>
+
+            {macKiosk && (
+              <FlexContainer>
+                <DownloadLink href={macKiosk}>
+                  <img
+                    src={require("../img/download-apple.svg")}
+                    alt="Download macOS"
+                  />
+                  macOS
+                </DownloadLink>
+                <DownloadLink href={winKiosk}>
+                  <img
+                    src={require("../img/download-windows.svg")}
+                    alt="Download Windows"
+                  />
+                  Windows
+                </DownloadLink>
+                <DownloadLink href={linuxKiosk}>
                   <img
                     src={require("../img/download-linux.svg")}
                     alt="Download Linux"
