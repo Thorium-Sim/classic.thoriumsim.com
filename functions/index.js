@@ -114,3 +114,34 @@ exports.assets = functions.https.onRequest((request, response) => {
       return response.end(JSON.stringify({ error: error.message }));
     });
 });
+
+exports.logEvent = functions.https.onRequest((request, response) => {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  const { body, method, headers } = request;
+  if (headers.authorization !== "Bearer thorium-secret-key-062458")
+    return response.send(JSON.stringify({ error: "Access denied" }));
+  if (method !== "POST")
+    return response.send(JSON.stringify({ error: "Invalid Method" }));
+  // const { name, contact, location, priority, type, description } = body;
+
+  Promise.all(
+    body
+      .filter(b => b.thoriumVersion !== "1.11.0")
+      .map(event =>
+        firestore
+          .collection("events")
+          .add(Object.assign(event, { timestamp: new Date() }))
+      )
+  )
+    .then(() => {
+      response.send(JSON.stringify({ message: "Success!" }));
+      return;
+    })
+    .catch(err => {
+      JSON.stringify({ error: err.message });
+    });
+});
