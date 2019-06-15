@@ -115,11 +115,67 @@ exports.assets = functions.https.onRequest((request, response) => {
     });
 });
 
+const ignoredEvents = [
+  // Exclude events that might include sensitive information
+  "addCoreFeed",
+  "addLog",
+  "clientLogin",
+  "clientSetStation",
+  "clientConnect",
+  "toggleAutoUpdate",
+  "triggerAutoUpdate",
+  "setTrackingPreference",
+  "importTaskTemplates",
+  "setSpaceEdventuresToken",
+  "assignSpaceEdventuresFlightRecord",
+  "assignSpaceEdventuresBadge",
+  "assignSpaceEdventuresMission",
+  "getSpaceEdventuresLogin",
+  "googleSheetsAuthorize",
+  "googleSheetsCompleteAuthorize",
+  "googleSheetsRevoke",
+  "googleSheetsFileSearch",
+  "googleSheetsAppendData",
+
+  // Exclude events that don't mean much and happen a lot.
+  "addHeat",
+  "reactorBatteryChargeLevel",
+  "directionUpdate",
+  "setPhaserBeamCharge",
+  "engineCool",
+  "setPhaserBeamHeat",
+  "shieldFrequencySet",
+  "cancelCoolantTransfer",
+  "updateCommandLine",
+  "updateTimelineStepItem",
+  "rotationUpdate",
+  "rotationSet",
+  "stopPhaserBeams",
+  "updateTacticalMapItem",
+  "triggerKeyboardAction",
+  "triggerMacros",
+  "playSound",
+  "updateMacroActions",
+  "clientSetTraining",
+  "setSimulatorTimelineStep",
+  "removeTimelineStepItem",
+  "ignoreCoreFeed",
+  "clientDisconnect",
+  "crmSetAcceleration",
+  "coolPhaserBeam",
+  "applyCoolant",
+  "chargeThx",
+  "createSensorContact",
+  "setTransportCharge",
+  "changePower",
+  "updateSensorContacts"
+];
+
 exports.logEvent = functions.https.onRequest((request, response) => {
   response.header("Access-Control-Allow-Origin", "*");
   response.header(
     "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   const { body, method, headers } = request;
   if (headers.authorization !== "Bearer thorium-secret-key-062458")
@@ -130,7 +186,7 @@ exports.logEvent = functions.https.onRequest((request, response) => {
 
   Promise.all(
     body
-      .filter(b => b.thoriumVersion !== "1.11.0")
+      .filter(b => !ignoredEvents.includes(b.event))
       .map(event =>
         firestore
           .collection("events")
@@ -145,3 +201,56 @@ exports.logEvent = functions.https.onRequest((request, response) => {
       JSON.stringify({ error: err.message });
     });
 });
+
+exports.downloadEvents = functions.https.onRequest((request, response) => {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  );
+  const { body, method, headers } = request;
+  if (headers.authorization !== "Bearer thorium-secret-key-010193")
+    return response.send(JSON.stringify({ error: "Access denied" }));
+  if (method !== "POST")
+    return response.send(JSON.stringify({ error: "Invalid Method" }));
+  const { event } = body;
+  const start = new Date(body.start);
+  const end = new Date(body.end);
+  // Fetch the data
+  let query = firestore
+    .collection("events")
+    .where("timestamp", ">=", start)
+    .where("timestamp", "<=", end);
+  if (event !== "all") {
+    query = query.where("event", "==", event);
+  }
+  return query
+    .get()
+    .then(res => {
+      return response.send(
+        JSON.stringify({
+          message: "Success!",
+          size: res.size,
+          queryTime: res.readTime,
+          data: res.docs.map(d => d.data())
+        })
+      );
+    })
+    .catch(err => response.send(JSON.stringify({ error: err.message })));
+});
+
+// fetch("http://localhost:5000/thorium-sim/us-central1/downloadEvents", {
+//   method: "post",
+//   body: JSON.stringify({
+//     start: new Date() - 1000 * 60 * 60 * 24,
+//     end: new Date() + 1000 * 60 * 60 * 24,
+//     event: "sendMessage"
+//   }),
+//   headers: {
+//     "content-type": "application/json",
+//     authorization: "Bearer thorium-secret-key-010193"
+//   }
+// })
+//   .then(res => res.json())
+//   .then(res => console.log(res))
+//   .catch(err => console.error(err));
