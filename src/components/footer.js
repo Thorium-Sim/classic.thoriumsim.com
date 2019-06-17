@@ -106,6 +106,9 @@ class Footer extends React.Component {
             <Link className={linkStyle} to="/blog">
               Blog
             </Link>
+            <Link className={linkStyle} to="/privacy">
+              Privacy Policy
+            </Link>
             <OutboundLink
               className={linkStyle}
               href="https://github.com/thorium-sim/thorium"

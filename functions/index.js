@@ -2,6 +2,7 @@ const functions = require("firebase-functions");
 const nodemailer = require("nodemailer");
 const cors = require("cors")({ origin: true });
 const { firestore, storage } = require("./helpers/firebase");
+const uuid = require("uuid");
 
 // // Configure the email transport using the default SMTP transport and a GMail account.
 const gmailEmail = functions.config().gmail
@@ -168,7 +169,27 @@ const ignoredEvents = [
   "createSensorContact",
   "setTransportCharge",
   "changePower",
-  "updateSensorContacts"
+  "updateSensorContacts",
+  "applyPhaserCoolant",
+  "updateDilithiumStress",
+  "clientOfflineState",
+  "restartComputerCoreTerminal",
+  "transferCoolant",
+  "firePhaserBeam",
+  "triggerAction",
+  "updateCurrentDamageStep",
+  "nudgeSensorContacts",
+  "crmFirePhaser",
+  "crmStopPhaser",
+  "crmSetPhaserCharge",
+  "chargePhaserBeam",
+  "updateViewscreenComponent",
+  "setAutoMovement",
+  "updateLongRangeDecodedMessage",
+  "updateDeconOffset",
+  "loadRailgun",
+  "crmLoadTorpedo",
+  "fireRailgun"
 ];
 
 exports.logEvent = functions.https.onRequest((request, response) => {
@@ -178,7 +199,7 @@ exports.logEvent = functions.https.onRequest((request, response) => {
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   const { body, method, headers } = request;
-  if (headers.authorization !== "Bearer thorium-secret-key-062458")
+  if (headers.authorization === "Bearer thorium-secret-key-062458")
     return response.send(JSON.stringify({ error: "Access denied" }));
   if (method !== "POST")
     return response.send(JSON.stringify({ error: "Invalid Method" }));
@@ -201,56 +222,3 @@ exports.logEvent = functions.https.onRequest((request, response) => {
       JSON.stringify({ error: err.message });
     });
 });
-
-exports.downloadEvents = functions.https.onRequest((request, response) => {
-  response.header("Access-Control-Allow-Origin", "*");
-  response.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  const { body, method, headers } = request;
-  if (headers.authorization !== "Bearer thorium-secret-key-010193")
-    return response.send(JSON.stringify({ error: "Access denied" }));
-  if (method !== "POST")
-    return response.send(JSON.stringify({ error: "Invalid Method" }));
-  const { event } = body;
-  const start = new Date(body.start);
-  const end = new Date(body.end);
-  // Fetch the data
-  let query = firestore
-    .collection("events")
-    .where("timestamp", ">=", start)
-    .where("timestamp", "<=", end);
-  if (event !== "all") {
-    query = query.where("event", "==", event);
-  }
-  return query
-    .get()
-    .then(res => {
-      return response.send(
-        JSON.stringify({
-          message: "Success!",
-          size: res.size,
-          queryTime: res.readTime,
-          data: res.docs.map(d => d.data())
-        })
-      );
-    })
-    .catch(err => response.send(JSON.stringify({ error: err.message })));
-});
-
-// fetch("http://localhost:5000/thorium-sim/us-central1/downloadEvents", {
-//   method: "post",
-//   body: JSON.stringify({
-//     start: new Date() - 1000 * 60 * 60 * 24,
-//     end: new Date() + 1000 * 60 * 60 * 24,
-//     event: "sendMessage"
-//   }),
-//   headers: {
-//     "content-type": "application/json",
-//     authorization: "Bearer thorium-secret-key-010193"
-//   }
-// })
-//   .then(res => res.json())
-//   .then(res => console.log(res))
-//   .catch(err => console.error(err));

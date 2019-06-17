@@ -56,6 +56,17 @@ const Download = () => {
             </ul>
           </div>
           <p>
+            <strong>Sharing of Information</strong>
+          </p>
+          <p>
+            At the discretion of Fyreworks, we may share information share with
+            us with third parties. The information that is shared with third
+            parties is opt-in, and you can opt-out at anytime through the
+            Thorium software. This information is used to improve the services
+            which Fyreworks provides and inspire other products to serve our
+            customers.
+          </p>
+          <p>
             <strong>Log Data</strong>
           </p>
           <p>
@@ -131,11 +142,13 @@ const Download = () => {
           <p>
             These Services do not address anyone under the age of 13. We do not
             knowingly collect personally identifiable information from children
-            under 13. In the case we discover that a child under 13 has provided
-            us with personal information, we immediately delete this from our
-            servers. If you are a parent or guardian and you are aware that your
-            child has provided us with personal information, please contact us
-            so that we will be able to do necessary actions.
+            under 13. Most information that we do collect from anyone under the
+            age of 13 is anonymous and non-identifying. However, in the case we
+            discover that a child under 13 has provided us with personal
+            information, we immediately delete this from our servers. If you are
+            a parent or guardian and you are aware that your child has provided
+            us with personal information, please contact us so that we will be
+            able to do necessary actions.
           </p>
           <p>
             <strong>Changes to This Privacy Policy</strong>
