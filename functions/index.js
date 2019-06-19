@@ -199,19 +199,19 @@ exports.logEvent = functions.https.onRequest((request, response) => {
     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
   );
   const { body, method, headers } = request;
-  if (headers.authorization === "Bearer thorium-secret-key-062458")
-    return response.send(JSON.stringify({ error: "Access denied" }));
-  if (method !== "POST")
+  if (method !== "POST") {
+    console.log("Invalid Method");
     return response.send(JSON.stringify({ error: "Invalid Method" }));
+  }
+  console.log("Recording");
   // const { name, contact, location, priority, type, description } = body;
-
   Promise.all(
     body
       .filter(b => !ignoredEvents.includes(b.event))
       .map(event =>
         firestore
           .collection("events")
-          .add(Object.assign(event, { timestamp: new Date() }))
+          .add(Object.assign({}, event, { timestamp: new Date() }))
       )
   )
     .then(() => {
@@ -219,6 +219,7 @@ exports.logEvent = functions.https.onRequest((request, response) => {
       return;
     })
     .catch(err => {
-      JSON.stringify({ error: err.message });
+      console.log("Error", err.message);
+      response.send(JSON.stringify({ error: err.message }));
     });
 });

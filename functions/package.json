@@ -15,7 +15,7 @@
   "dependencies": {
     "cors": "^2.8.4",
     "firebase-admin": "^8.1.0",
-    "firebase-functions": "^2.0.3",
+    "firebase-functions": "^3.0.1",
     "nodemailer": "^4.6.8"
   },
   "devDependencies": {
