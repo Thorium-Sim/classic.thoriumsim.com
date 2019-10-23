@@ -1,9 +1,8 @@
 ---
-id: developers
 title: Guide for Developers
 category: developers
-
 ---
+**Note: Development is starting for Thorium 2.0. If you are interested in participating, please reach out in the Thorium Discord server, here:** [**https://discord.gg/UvxTQZz**](https://discord.gg/UvxTQZz)****
 
 Thorium is built on a number of technologies and tools:
 
@@ -16,7 +15,6 @@ Be sure to learn about these technologies before diving in too deep.
 
 Thorium also uses a number of patterns, such as:
 
-* [Event Sourcing](https://dev.to/barryosull/event-sourcing-what-it-is-and-why-its-awesome)
 * Subscriptions and PubSub - this provides reactive updates to the frontend
   views.
 * Dynamic frontend views which change and respond to backend data. This is what
@@ -52,7 +50,7 @@ Thorium uses a unique vocabulary:
   login name, the offline state, etc. Also tracks the **Flight**, **Simulator**,
   and **Station** assigned to the client.
 * **Flight**: an individual instance of a simulated experience. Flights have at
-  least one **Simulator** (which you select a **StationSet** and [optionally] a
+  least one **Simulator** (which you select a **StationSet** and \[optionally] a
   **Mission** on).
 * **Set**: a representation of a physical configuration of **Client** computers.
   Used to quickly and automatically set up the **Clients** with information
@@ -63,31 +61,3 @@ Thorium uses a unique vocabulary:
   Images, Comm Images, etc.
 
 _Please open an issue if you find another term that needs a definition_
-
-## Event Sourcing
-
-For the backend data, Thorium uses Event Sourcing to track data throughout the
-simulations. An event describes something which happened in the simulation.
-Events have arguments which describe how the event happened. Examples include
-'Phaser Fired', 'Warp Engines Activated at Warp 3', 'Navigation System Damaged'.
-
-Events are queued either through GraphQL mutations or internal processes.
-Typically, mutations just queue events without any kind of processing. Mutations
-also do not return any data. Events are fired async.
-
-Events are stored in a log of events which can be audited at any time in the
-future. Events are triggered immediately after they have been queued. The event
-handlers then perform any actions necessary, such as updating information in an
-in-memory data store or sending notifications to a client.
-
-The most important aspect of the event handler is the subscription publication.
-This sends an update to a specific channel about updates to the data which were
-caused by the event. Clients subscribe to specific channels with arguments about
-what data they want (for example, scoping the data to a specific simulator). The
-publish function takes the provided data, filters it for the arguments supplied
-by the clients, and then sends the data to the clients over WebSockets. The
-clients then update based on the new data.
-
-Here is a diagram depicting this process:
-
-![Thorium Data](https://image.ibb.co/gjYaKF/Thorium_Data.png)
