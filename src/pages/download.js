@@ -82,9 +82,17 @@ class Download extends React.Component {
               Note: Be sure to extract the Thorium executable from the .zip
               archive before running.
             </p>
+
             <p>
-              If you are running Thorium on a Linux computer, check out the{" "}
-              <Link to="/docs/linux_launch_script/">launch script doc.</Link>
+              Looking for older versions of Thorium? Check out the{" "}
+              <OutboundLink
+                href="https://github.com/Thorium-Sim/thorium/releases"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Releases page
+              </OutboundLink>
+              .
             </p>
 
             <h3>Thorium Mobile</h3>
