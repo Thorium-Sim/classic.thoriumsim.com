@@ -9,25 +9,28 @@ export const users = [
   {
     caption: "The Lion's Gate Center",
     image: "tlgc",
-    infoLink: "https://thelionsgatecenter.com"
+    infoLink: "https://thelionsgatecenter.com",
   },
   {
     caption: "Farpoint Space Center",
     image: "farpoint",
-    infoLink: "https://spacecamputah.org"
+    infoLink: "https://spacecamputah.org",
   },
   {
     caption: "Christa McAuliffe Space Center",
     image: "cmsc",
-    infoLink: "https://spacecenter.alpineschools.org"
+    infoLink: "https://spacecenter.alpineschools.org",
   },
   {
     caption: "Telos Discovery Space Center",
     image: "tdsc",
-    infoLink: "https://discoveryspacecenter.com"
-  }
+    infoLink: "https://discoveryspacecenter.com",
+  },
 ];
 
+export const patrons = [
+  { image: "ostlerTechLogo", caption: "Ostler Technology", infoLink: "#" },
+];
 const donors = [
   "Thomas Delclite 🇧🇪",
   "Chuck Smith 🇺🇸",
@@ -36,7 +39,7 @@ const donors = [
   "Maeson Busk 🇺🇸",
   "The Christa McAuliffe Space Education Center 🛰",
   "Victor Williamson 👽",
-  "The Telos Discovery Space Center 🌌"
+  "The Telos Discovery Space Center 🌌",
 ];
 
 export const A = styled("a")`
@@ -65,9 +68,9 @@ const Users = ({ data }) => {
           </p>
           <h2>Organizations</h2>
           <FlexSection>
-            {users.map(u => {
+            {users.map((u) => {
               const image = data.sponsors.edges.find(
-                s => s.node.name === u.image
+                (s) => s.node.name === u.image
               );
               return (
                 <A
@@ -86,7 +89,7 @@ const Users = ({ data }) => {
           </FlexSection>
           <h2>Donors</h2>
           <ul>
-            {donors.map(d => (
+            {donors.map((d) => (
               <li key={d}>{d}</li>
             ))}
           </ul>

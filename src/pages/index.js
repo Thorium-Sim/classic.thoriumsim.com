@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import { Link, graphql } from "gatsby";
 import styled from "react-emotion";
 import Carousel from "../components/carousel";
-import { users, A } from "./users";
+import { users, A, patrons } from "./users";
 import { FlexSection } from "../components/styles";
 import { default as GImg } from "gatsby-image";
 
@@ -241,6 +241,31 @@ const IndexPage = ({ data }) => (
     </Section>
     <Section>
       <SectionText>
+        <h3>Donors</h3>
+        <FlexSection>
+          {patrons.map((u) => {
+            const image = data.donors.edges.find(
+              (s) => s.node.name === u.image
+            );
+            return (
+              <A
+                href={u.infoLink}
+                key={u.caption}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <GImg
+                  alt={u.caption}
+                  fluid={image && image.node.childImageSharp.fluid}
+                />
+              </A>
+            );
+          })}
+        </FlexSection>
+      </SectionText>
+    </Section>
+    <Section>
+      <SectionText>
         <h3>Sponsoring Organizations</h3>
         <FlexSection>
           {users.map((u) => {
@@ -305,6 +330,22 @@ export const query = graphql`
       }
     }
     sponsors: allFile(filter: { dir: { glob: "**/sponsors" } }) {
+      edges {
+        node {
+          id
+          name
+          childImageSharp {
+            fluid(
+              maxWidth: 300
+              traceSVG: { background: "black", color: "#333" }
+            ) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
+      }
+    }
+    donors: allFile(filter: { dir: { glob: "**/donors" } }) {
       edges {
         node {
           id

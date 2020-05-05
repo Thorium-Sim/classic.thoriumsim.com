@@ -168,6 +168,8 @@ I won't tell you how to set up your DMX system, but I can give some suggestions.
 
 - Feel free to create multiple DMX Configs and change them mid-flight using the lighting core or a macro to change the mood at certain times during the mission.
 
+- Use Triggers to have your passive lights automatically respond to things that happen with the active lights. For example, you could have strobe lights that only turn on when the "shake" effect is active by creating a trigger that turns them on when the "Lighting: Shake Lights" macro is run and turns them off when the "Lighting: Set Effect" macro sets the lights to anything other than shake.
+
 ## Troubleshooting
 
 Are your lights not working? Try these tips:

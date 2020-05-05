@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "react-emotion";
 
-export const Wrapper = props => <div {...props} />;
+export const Wrapper = (props) => <div {...props} />;
 
 export const Page = styled("div")`
   max-width: 960px;
@@ -14,6 +14,9 @@ export const FlexSection = styled("section")`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  & > * {
+    max-width: calc(50% - 4px);
+  }
 `;
 export const FlexAside = styled("aside")`
   flex: 1;
