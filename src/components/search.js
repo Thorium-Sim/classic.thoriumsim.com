@@ -5,6 +5,7 @@ import styled from "react-emotion";
 import "docsearch.js/dist/cdn/docsearch.css";
 
 const SearchWrapper = styled("span")`
+  margin-top: 0.125rem;
   position: relative;
   display: inline-block;
   @media only screen and (max-width: 736px) {
@@ -60,7 +61,7 @@ class Search extends Component {
       apiKey: "215cc1c55f0d508b47d27f3ae089c7e0",
       indexName: "thoriumsim",
       inputSelector: `#search-ref`,
-      debug: false // Set debug to true if you want to inspect the dropdown
+      debug: false, // Set debug to true if you want to inspect the dropdown
     });
   }
   render() {

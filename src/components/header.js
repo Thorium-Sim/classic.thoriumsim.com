@@ -63,6 +63,10 @@ const HeaderLink = styled(Link)`
     color: white;
   }
 `;
+const HeaderLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 const Header = ({ siteTitle }) => (
   <HeaderContainer>
     <HeaderInner>
@@ -70,7 +74,7 @@ const Header = ({ siteTitle }) => (
         to="/"
         style={{
           color: "white",
-          textDecoration: "none"
+          textDecoration: "none",
         }}
       >
         <HeaderImage
@@ -84,7 +88,7 @@ const Header = ({ siteTitle }) => (
           to="/"
           style={{
             color: "white",
-            textDecoration: "none"
+            textDecoration: "none",
           }}
         >
           {siteTitle}
@@ -92,10 +96,12 @@ const Header = ({ siteTitle }) => (
       </HeaderText>
       <HeaderNav>
         <Search />
-        <HeaderLink to="/docs/overview">Docs</HeaderLink>
-        <HeaderLink to="/help">Help</HeaderLink>
-        <HeaderLink to="/releaseNotes">Release Notes</HeaderLink>
-        <HeaderLink to="/blog">Blog</HeaderLink>
+        <HeaderLinks>
+          <HeaderLink to="/docs/overview">Docs</HeaderLink>
+          <HeaderLink to="/help">Help</HeaderLink>
+          <HeaderLink to="/releaseNotes">Release Notes</HeaderLink>
+          <HeaderLink to="/blog">Blog</HeaderLink>
+        </HeaderLinks>
       </HeaderNav>
     </HeaderInner>
   </HeaderContainer>

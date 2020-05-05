@@ -1,24 +1,31 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { default as GImg } from "gatsby-image";
+import styled from "react-emotion";
 
+const ImageHolder = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`;
+const ImageNode = styled.div`
+  width: calc(50% - 4rem);
+  text-align: center;
+  margin: 2rem;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    width: calc(100% - 2rem);
+  }
+`;
 const CarouselEl = ({ images }) => {
   return (
-    <Carousel
-      showThumbs={false}
-      infiniteLoop
-      autoPlay
-      useKeyboardArrows
-      emulateTouch
-    >
-      {images.map(i => (
-        <div key={i.node.id}>
+    <ImageHolder>
+      {images.map((i) => (
+        <ImageNode key={i.node.id}>
           <GImg fluid={i.node.childImageSharp.fluid} alt={i.node.name} />
           <p className="legend">{i.node.name}</p>
-        </div>
+        </ImageNode>
       ))}
-    </Carousel>
+    </ImageHolder>
   );
 };
 

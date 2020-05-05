@@ -25,7 +25,7 @@ const BgImage = styled(GImg)`
 
 const Hero = styled("div")`
   width: 100%;
-  height: 90vh;
+  min-height: 90vh;
   padding-top: 50px;
   display: flex;
   align-items: center;
@@ -77,7 +77,8 @@ const Button = styled(Link)`
 `;
 const ButtonLink = Button.withComponent("a");
 const SectionInner = styled("div")`
-  max-width: 960px;
+  max-width: ${({ fluid }) => (fluid ? "100%" : "960px")};
+  ${({ fluid }) => (fluid ? "padding: 0 4rem" : "")}
   width: 100%;
   margin: 0 auto;
   line-height: 1.7;
@@ -85,8 +86,12 @@ const SectionInner = styled("div")`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media (max-width: 425px) {
-    flex-wrap: wrap;
+  padding: 0 1rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    & > div {
+      margin: 2rem 0;
+    }
   }
   & > div {
     width: 100%;
@@ -94,7 +99,7 @@ const SectionInner = styled("div")`
 `;
 const SectionOuter = styled("section")`
   padding: 3rem;
-  background-color: ${props => (props.offset ? "#444" : "#222")};
+  background-color: ${(props) => (props.offset ? "#444" : "#222")};
   color: white;
   @media (max-width: 425px) {
     padding: 3rem 0;
@@ -107,7 +112,7 @@ const SectionImageBlock = styled("div")`
     text-align: center;
   }
 `;
-const SectionImage = props => (
+const SectionImage = (props) => (
   <SectionImageBlock>
     <img style={{ maxHeight: "10rem" }} {...props} alt="Section" />
   </SectionImageBlock>
@@ -120,9 +125,9 @@ const SectionText = styled("div")`
     flex: unset;
   }
 `;
-const Section = props => (
+const Section = ({ fluid, ...props }) => (
   <SectionOuter {...props}>
-    <SectionInner {...props} />
+    <SectionInner fluid={fluid} {...props} />
   </SectionOuter>
 );
 
@@ -161,7 +166,7 @@ const IndexPage = ({ data }) => (
         </p>
       </SectionText>
     </Section>
-    <Section>
+    <Section fluid>
       <Carousel images={data.carousel.edges} />
     </Section>
 
@@ -238,9 +243,9 @@ const IndexPage = ({ data }) => (
       <SectionText>
         <h3>Sponsoring Organizations</h3>
         <FlexSection>
-          {users.map(u => {
+          {users.map((u) => {
             const image = data.sponsors.edges.find(
-              s => s.node.name === u.image
+              (s) => s.node.name === u.image
             );
             return (
               <A
