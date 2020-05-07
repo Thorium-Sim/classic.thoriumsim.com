@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "react-emotion";
 import { Page } from "../components/styles";
 import Layout from "../components/layout";
@@ -34,20 +33,21 @@ class Download extends React.Component {
   state = {};
   componentDidMount() {
     fetch("https://api.github.com/repos/thorium-sim/thorium/releases")
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
         const release = res[0];
-        const mac = release.assets.find(a => a.name.indexOf("mac.zip") > -1)
+        const mac = release.assets.find((a) => a.name.indexOf("mac.zip") > -1)
           .browser_download_url;
-        const win = release.assets.find(a => a.name.indexOf(".exe") > -1)
+        const win = release.assets.find((a) => a.name.indexOf(".exe") > -1)
           .browser_download_url;
-        const linux = release.assets.find(a => a.name.indexOf("AppImage") > -1)
-          .browser_download_url;
+        const linux = release.assets.find(
+          (a) => a.name.indexOf("AppImage") > -1
+        ).browser_download_url;
         this.setState({ mac, win, linux });
       });
   }
   render() {
-    const { mac, win, linux, macKiosk, winKiosk, linuxKiosk } = this.state;
+    const { mac, win, linux } = this.state;
     return (
       <Layout>
         <div className="outerContainer">

@@ -23,6 +23,8 @@ A DMX fixture which is a device with three RGB channels with a starting channel 
 
 For a DMX message to be sent from a computer to lights, it has to go through a controller. There are a number of DMX controllers out there, including ENTTEC USB Pro, ARTNET, and sACN (e1.31). USB controllers require a USB connection to a computer; ARTNET and sACN operate over the network and only require the controller to be on the same network subnet as the computer.
 
+Since DMX only allows 512 channels, it also allows for multiple sets of 512 channels to be used simultaneously. Each channel set is called a universe. Some DMX Controllers have support for multiple universes running on the same controller.
+
 Thorium's DMX allow these things to be configured. You can do this from the "DMX" link in the settings sidebar.
 
 ## Devices
@@ -52,7 +54,7 @@ If you have a DMX device with other DMX channel value types, file an issue to ge
 
 ![DMX Fixtures](/img/dmx-2-sets-and-fixtures.jpg)
 
-Once our DMX Device definitions are done, we can create a set and put fixtures into that set. The set represents the literal physical space where the lights are; each fixture represents an individual DMX light.
+Once our DMX Device definitions are done, we can create a set and put fixtures into that set. The set represents the literal physical space where the lights are; each fixture represents an individual DMX light. DMX Sets can be duplicated, imported, and exported. When you export a DMX set, it also exports all of the DMX fixture definitions in that set.
 
 In the image above, we've created a DMX set for our simulator, the USS Voyager. It has two fixtures: Bridge right, and Par Can. When you create a new DMX fixture, you must choose the DMX device of that fixture from the dropdown.
 
@@ -70,27 +72,37 @@ DMX fixtures can also be assigned tags, which can be used in macros/timeline act
 
 The final special tag is "no-effects". This make it so the light won't respond to lighting effects, like shake, strobe, oscillate, or fade.
 
-## Adding a lighting set to a simulator set
-
-![Set Config](/img/dmx-4-set-config.jpg)
-
-We need a way to tell Thorium which lighting set we want to use for our flight; we do that by putting our DMX set in a set config. (I know, naming this is hard.)
-
-After choosing your Set, you can pick the DMX set at the bottom of the list of simulators. Then, when you start your flight, click on the set config you want to use; the DMX set you assigned to that set will be applied to your simulator.
-
 ## Configs
 
 ![DMX Configs](/img/dmx-3-config.jpg)
 
 DMX Configs allow you to control how your fixtures behave under certain circumstance. Currently, the only circumstances that can be configured are alert conditions. If you have an idea for other times you want your lights to automatically change, file an issue and it can be added.
 
-Configs are named, and allow you to set the channel values for your fixtures that have certain tags. You can set different settings for each alert condition. For example, you can set the "accent" lights' color to red when at Alert Condition 1, and blue at Alert Condition 5. And you can keep your "main" lights white at all alert conditions. You can even turn all your lights off except for the ultra-violet lights while the ship is cloaked or stealthed (Alert Condition p).
+Configs are named, and allow you to set the channel values for your fixtures that have certain tags. You can set different settings for each alert condition. For example, you can set the "accent" lights' color to red when at Alert Condition 1, and blue at Alert Condition 5. And you can keep your "main" lights white at all alert conditions. You can even turn all your lights off except for the ultra-violet lights while the ship is cloaked or stealthed (Alert Condition p). There is also a special "alert condition" which is only used for when the lights should be totally dark without turning all the lights of.
 
 Then, during your flight, when at Alert Condition 1, your "accent" tagged lights will be red, while your "main" tagged lights will be white. The lights will automatically change based on the alert condition based on how you configured it.
 
 Of course, this only applied to "active" mode lights; passive mode lights are not affected by configs.
 
+Configs also allow you to set an "Action Strength" which is the maximum strength an effect, like shake or oscillate, can have. You can use this to create a config for light-sensitive crew members.
+
 Configs can be changed mid-flight with a macro, so feel free to create multiple configs for your different needs.
+
+Configs can be duplicated, exported, and imported.
+
+## Assigning Lighting Clients
+
+![Client Config](/img/dmx-4-client-config.jpg)
+
+Once you start a flight, you need to assign your lighting set (the one with all the fixtures) to the client you want to control those fixtures. This is done like Keyboards. On the client configuration screen, just choose the lighting set you want from the list of stations. This can easily be configured on a Client Set as well.
+
+![Keyboard Client](/img/dmx-4-keyboard-sound-player.jpg)
+
+Alternatively, you can use lighting on any Keyboard or Sound Player client. If you have a DMX set configured, you can choose it from the list which appears on the Keyboard or Sound Player client, and then activate the lighting. This can help reduce the number of computers you need for your simulation. If you choose to do lighting through a Keyboard or Sound Player client, the lighting set you choose will be remembered by the client, so you don't have to pick it every time.
+
+On Kiosk clients, it can automatically activate your lighting too!
+
+Finally, you don't have to run the Lighting client in the foreground; it works just fine in the background. So you can run the client in a separate window and run the core or crew stations in the foreground.
 
 ## Lighting Core
 
@@ -101,6 +113,7 @@ The lighting core is built into Next Core and is available as a core on Dynamic 
 The mode lets you set the current mode of the ship. Modes include.
 
 - Normal - Regular lighting based on configs.
+- Darken - Lights are dimmed. Passive lights aren't affected.
 - Blackout - All lights are turned off, including passive lights.
 - Work - All lights are turned on. This only affects lighting channels, like red, green, blue, amber, white, uv, and intensity. Properly configured smoke machines aren't affected.
 - Fade - Smoothly transitions light intensity.
@@ -110,7 +123,7 @@ The mode lets you set the current mode of the ship. Modes include.
 
 Below that is where you can change the current config.
 
-The buttons below that allow you to quickly change between Normal, Blackout, and Work modes, as well as a Darken button that immediately sets the intensity to 30%.
+The buttons below that allow you to quickly change between Normal, Darken, Blackout, and Work modes.
 
 Effect strength changes how Oscillate, Strobe, and Shake work. Low strength only makes the light intensity change a little bit; high strength makes the light intensity change a lot.
 
@@ -126,7 +139,7 @@ All of these settings can be changed with the Lighting macros.
 
 ## Assigning a Client and Starting the Controller
 
-Once you've started your flight, you can assign any client to serve as your DMX controller. Just choose "Lighting" from the station dropdown. You must be aware of a few things though.
+Once you've started your flight, you can assign any client to serve as your DMX controller. Just choose the lighting set from the station dropdown. You must be aware of a few things though.
 
 - If you are running Thorium in a browser, and not using the Thorium Kiosk, the browser must be Google Chrome. You also must use HTTPS when running your server.
 - If you are using Thorium Kiosk as your client, you can use a number of different USB and network-based controllers.
@@ -150,11 +163,12 @@ If you are using the Thorium Kiosk, you'll need to do a bit of configuration.
 
 The right dropdown lets you choose what kind of controller you are using. The top controllers are USB based and you must have a USB controller plugged into the computer before trying to configure it. The available controllers are shown on the right side.
 
+![Kiosk Setup IPAddress](/img/dmx-8-kiosk-config-ipaddress.jpg)
 If you choose "ARTNET" or "sACN", you'll have to type the IP Address of the controller into the field on the right.
 
 In the middle, you can specify what universe number you want to operate in. DMX controllers can be assigned different universes, allowing you to access more than 512 DMX devices at the same time.
 
-Click the activate button, and your lights should respond.
+Click the activate button, and your lights should respond. You can also check "Auto-Activate" which will make your lighting automatically activate with whatever settings you used last.
 
 ## How can I best use DMX?
 
