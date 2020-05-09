@@ -36,8 +36,10 @@ class Download extends React.Component {
       .then((res) => res.json())
       .then((res) => {
         const release = res[0];
-        const mac = release.assets.find((a) => a.name.indexOf("mac.zip") > -1)
-          .browser_download_url;
+        const mac = release.assets.find(
+          (a) =>
+            a.name.indexOf(".dmg") > -1 && a.name.indexOf(".blockmap") === -1
+        ).browser_download_url;
         const win = release.assets.find((a) => a.name.indexOf(".exe") > -1)
           .browser_download_url;
         const linux = release.assets.find(
