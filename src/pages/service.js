@@ -47,20 +47,20 @@ const Select = Input.withComponent("select");
 
 const priorityOptions = {
   Feature: [
-    "Low - Complete the feature eventually. The feature will have higher priority than regular issues. $25/hr",
-    "Medium - Complete the feature within one month. $35/hr",
-    "High - Complete the feature within two weeks. $70/hr"
+    "Low - Complete the feature eventually. The feature will have higher priority than regular issues. $30/hr",
+    "Medium - Complete the feature within one month. $50/hr",
+    "High - Complete the feature within two weeks. $100/hr",
   ],
   "Bug Fix": [
-    "Low - Fix the bug within one week. $30/hr",
-    "Medium - Fix the bug within one day. $40/hr",
-    "High - Fix the bug within four hours. $75/hr"
+    "Low - Fix the bug within one week. $50/hr",
+    "Medium - Fix the bug within one day. $75/hr",
+    "High - Fix the bug within four hours. $100/hr",
   ],
   "On-Site Visit": [
-    "Low - Arrive at the location within one week. Good for getting Thorium set up. $30/hr",
-    "Medium - Arrive at the location within two working days. $50/hr",
-    "High - Arrive at the location within two hours. Mission-critical issues. $120/hr"
-  ]
+    "Low - Arrive at the location within one week. Good for getting Thorium set up. $50/hr",
+    "Medium - Arrive at the location within two working days. $100/hr",
+    "High - Arrive at the location within two hours. Mission-critical issues. $200/hr",
+  ],
 };
 
 const toastOptions = {
@@ -69,7 +69,7 @@ const toastOptions = {
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: true,
-  draggable: true
+  draggable: true,
 };
 class Form extends Component {
   state = {};
@@ -82,8 +82,8 @@ class Form extends Component {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: {
-        "content-type": "application/json"
-      }
+        "content-type": "application/json",
+      },
     })
       .then(() => {
         toast("Service request sent!", toastOptions);
@@ -94,7 +94,7 @@ class Form extends Component {
           priority: null,
           location: null,
           type: null,
-          description: null
+          description: null,
         });
       })
       .catch(() => {
@@ -114,7 +114,7 @@ class Form extends Component {
       priority,
       type,
       description,
-      loading
+      loading,
     } = this.state;
     if (loading) return <h1>Processing your request...</h1>;
     return (
@@ -129,7 +129,7 @@ class Form extends Component {
         <Select
           value={type || "nothing"}
           required
-          onChange={e => this.setState({ type: e.target.value })}
+          onChange={(e) => this.setState({ type: e.target.value })}
         >
           <option value="nothing" disabled>
             Choose One
@@ -145,7 +145,7 @@ class Form extends Component {
           type="text"
           value={name || ""}
           required
-          onChange={e => this.setState({ name: e.target.value })}
+          onChange={(e) => this.setState({ name: e.target.value })}
         />
         <FormLabel>
           <label>Contact (Email/Phone)</label>
@@ -154,7 +154,7 @@ class Form extends Component {
           type="text"
           value={contact || ""}
           required
-          onChange={e => this.setState({ contact: e.target.value })}
+          onChange={(e) => this.setState({ contact: e.target.value })}
         />
         {type === "On-Site Visit" && (
           <Fragment>
@@ -168,7 +168,7 @@ class Form extends Component {
               type="text"
               value={location || ""}
               required
-              onChange={e => this.setState({ location: e.target.value })}
+              onChange={(e) => this.setState({ location: e.target.value })}
             />
           </Fragment>
         )}
@@ -179,13 +179,13 @@ class Form extends Component {
           disabled={!type}
           value={priority || "nothing"}
           required
-          onChange={e => this.setState({ priority: e.target.value })}
+          onChange={(e) => this.setState({ priority: e.target.value })}
         >
           <option value="nothing" disabled>
             Choose {!type ? "a Service Type" : "One"}
           </option>
           {type &&
-            priorityOptions[type].map(t => (
+            priorityOptions[type].map((t) => (
               <option key={t} value={t}>
                 {t}
               </option>
@@ -213,7 +213,7 @@ class Form extends Component {
           type="text"
           value={description || ""}
           required
-          onChange={e => this.setState({ description: e.target.value })}
+          onChange={(e) => this.setState({ description: e.target.value })}
         />
         <Button type="submit" disabled={!this.verify()}>
           Submit
