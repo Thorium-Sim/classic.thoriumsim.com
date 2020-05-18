@@ -42,6 +42,6 @@ The Task Flow core looks like this.
 
 ![Task Flow Core](/img/task-flow-4-core.jpg)
 
-On the left are all of the task flows that have been activated. At the bottom is a dropdown menu which you can use to activate a new task flow. Be sure to not activate the same task flow twice; otherwise the crew would see more or less duplicate tasks.
+On the left are all of the task flows that have been activated. Completed flows will fall to the bottom of the list and turn green. At the bottom is a dropdown menu which you can use to activate a new task flow. Be sure to not activate the same task flow twice; otherwise the crew would see more or less duplicate tasks.
 
 On the right is information about the currently selected task flow, including what step the flow is currently on, how many of the step's tasks have been completed, and what stations the tasks are assigned to.
