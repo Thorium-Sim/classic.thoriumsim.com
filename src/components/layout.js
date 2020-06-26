@@ -15,7 +15,7 @@ const Container = styled("div")`
   flex-direction: column;
 `;
 const Wrapper = styled("div")`
-  margin-top: 50px;
+  margin-top: 100px;
   flex: 1;
   background-color: #333;
   z-index: 1;
@@ -38,20 +38,20 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <Container>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
             {
               name: "description",
-              content: data.site.siteMetadata.description
+              content: data.site.siteMetadata.description,
             },
             {
               name: "keywords",
               content:
-                "thorium, simulator, starship, controls, space, edventure, education, learning, wonder"
-            }
+                "thorium, simulator, starship, controls, space, edventure, education, learning, wonder",
+            },
           ]}
         />
         <Header siteTitle={data.site.siteMetadata.title} />
