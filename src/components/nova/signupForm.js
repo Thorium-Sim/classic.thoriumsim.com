@@ -12,9 +12,12 @@ const Form = styled.form`
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
   max-width: 700px;
-  width: calc(100vw - 4rem);
+  width: calc(100vw - 1rem);
   position: relative;
   overflow: hidden;
+  @media (min-width: 420px) {
+    width: calc(100vw - 4rem);
+  }
   & > .minimal {
     padding: 20px;
     width: 100%;
@@ -40,6 +43,7 @@ const Button = styled.button`
   padding: 0;
   position: relative;
   vertical-align: middle;
+  flex-grow: 1;
   background: linear-gradient(
     135deg,
     rgba(198, 54, 189, 1) 0%,
@@ -66,6 +70,7 @@ const Input = styled.input`
   border: 1px solid #888;
   line-height: 1.4;
   width: 100%;
+  min-width: 200px;
   transition: all ease-out 200ms;
   color: #333;
   &:focus {
@@ -93,10 +98,16 @@ const PoweredBy = styled.a`
 const Fields = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (min-width: 420px) {
+    flex-wrap: nowrap;
+  }
 `;
 const Field = styled.div`
-  flex: 1;
-  margin-right: 1rem;
+  flex: 2;
+  margin-bottom: 0.5rem;
+  @media (min-width: 420px) {
+    margin-right: 1rem;
+  }
 `;
 
 const SignupForm = () => {

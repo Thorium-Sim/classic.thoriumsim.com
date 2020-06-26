@@ -16,8 +16,11 @@ const Container = styled("div")`
       Droid Sans, Helvetica Neue, Fira Sans, sans-serif !important;
   }
   p {
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: left;
+    @media (min-width: 420px) {
+      font-size: 1.3rem;
+    }
   }
   h1,
   h2,
@@ -33,7 +36,7 @@ const Container = styled("div")`
 `;
 
 const Wrapper = styled("div")`
-  padding-top: 5rem;
+  padding-top: 1rem;
   flex: 1;
   background-color: #fff;
   z-index: 1;
@@ -43,41 +46,48 @@ const Wrapper = styled("div")`
   position: relative;
   color: white;
   text-align: center;
+  @media (min-width: 420px) {
+    padding-top: 5rem;
+  }
 `;
 
 const HeaderImage = styled.img`
   max-width: 100%;
   padding: 0 2rem;
-  width: 300px;
+  width: 200px;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 1));
+  @media (min-width: 420px) {
+    width: 300px;
+  }
 `;
 
 const Header = styled.h1`
   margin: 0;
-  font-size: 6rem;
   font-weight: 800;
   color: white;
   line-height: 1.15;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+  font-size: 3rem;
   @media (min-width: 420px) {
-    font-size: 4rem;
+    font-size: 6rem;
   }
 `;
 
 const Subheader = styled.h2`
   margin: 0;
-  margin-top: 1rem;
-  font-size: 3rem;
+  margin-top: 0.5rem;
+  font-size: 2rem;
   color: white;
   line-height: 1.15;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
   @media (min-width: 420px) {
-    font-size: 2.5rem;
+    margin-top: 1rem;
+    font-size: 3rem;
   }
 `;
 const StaticBackground = styled.div`
   width: 105%;
-  height: 80vh;
+  height: 95vh;
   overflow: hidden;
   position: absolute;
   top: 0;
@@ -88,7 +98,13 @@ const StaticBackground = styled.div`
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
   & > * {
     opacity: 0.4;
+    height: 95vh;
+  }
+  @media (min-width: 420px) {
     height: 80vh;
+    & > * {
+      height: 80vh;
+    }
   }
 `;
 
@@ -98,16 +114,19 @@ const InlineImage = styled.figure`
 `;
 const Section = styled.section`
   max-width: 960px;
-  width: calc(100% - 4rem);
-  padding: 3rem;
+  width: calc(100% - 2rem);
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem;
   background-color: #fff;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
   color: #111;
+  @media (min-width: 420px) {
+    width: calc(100% - 4rem);
+    padding: 3rem;
+  }
   p {
     width: 620px;
     max-width: 100%;
@@ -125,7 +144,10 @@ const Section = styled.section`
     list-style: none;
     padding: 0.5rem 0;
     position: relative;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    @media (min-width: 420px) {
+      font-size: 1.1rem;
+    }
     &:before {
       content: "";
       display: block;
@@ -136,7 +158,10 @@ const Section = styled.section`
       border-radius: 50%;
       margin-right: 0.5rem;
       margin-top: 0.33rem;
-      margin-bottom: 1rem;
+      margin-bottom: 3rem;
+      @media (min-width: 420px) {
+        margin-bottom: 1rem;
+      }
       border: solid 3px rgba(198, 54, 189, 1);
     }
   }
@@ -329,7 +354,7 @@ const Nova = () => (
           <Section>
             <h2>Frequently Asked Questions</h2>
             <p>
-              <strong>What is going to happen to Thorium Classic</strong>
+              <strong>What is going to happen to Thorium Classic?</strong>
             </p>
             <p>
               Thorium Classic will still be available and maintained for the
@@ -383,8 +408,8 @@ const Nova = () => (
             </p>
             <p>
               Thorium Classic being open-source is one of my favorite parts
-              about it. I love that anyone can see and contribute to a robust
-              set of simulator controls.
+              about it. I love that anyone can examine and contribute to a
+              robust set of simulator controls.
             </p>
             <p>
               That said, it doesn't have a sustainable business model. Donations
@@ -404,9 +429,9 @@ const Nova = () => (
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Thorium Patreon page, then I will consider open-sourcing Thorium
-                Nova.
+                Thorium Patreon page
               </a>
+              , then I will consider open-sourcing Thorium Nova.
             </p>
           </Section>
           <Bio />

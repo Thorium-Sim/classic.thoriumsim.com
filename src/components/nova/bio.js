@@ -31,13 +31,20 @@ const InnerContent = styled.div`
   width: 700px;
   max-width: calc(100% - 4rem);
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  @media (min-width: 740px) {
+    flex-wrap: nowrap;
+  }
 `;
 
 const ImageWrapper = styled.div`
-  margin-right: 3rem;
   & > * {
     border-radius: 50%;
+  }
+  @media (min-width: 740px) {
+    margin-right: 3rem;
   }
 `;
 const Bio = () => {
