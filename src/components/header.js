@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "react-emotion";
 import Search from "./search";
 
-const Banner = styled(Link)`
+const Banner = styled.a`
   text-align: center;
   font-size: 1.5rem;
   font-weight: 500;
@@ -89,7 +89,7 @@ const HeaderLinks = styled.div`
 `;
 const Header = ({ siteTitle }) => (
   <>
-    <Banner to="/nova">
+    <Banner href="https://nova.thoriumsim.com">
       Announcing Thorium Nova - Bridge Simulation Reimagined
     </Banner>
     <HeaderContainer>
