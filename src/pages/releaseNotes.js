@@ -10,8 +10,8 @@ function useFetch(url) {
   useEffect(() => {
     setLoadingState(true);
     fetch(url)
-      .then(j => j.text())
-      .then(d => {
+      .then((j) => j.text())
+      .then((d) => {
         setDataState(d);
         setLoadingState(false);
       });
@@ -21,7 +21,7 @@ function useFetch(url) {
 
 const ReleaseNotes = () => {
   const { data, loading } = useFetch(
-    "https://raw.githubusercontent.com/Thorium-Sim/thorium/master/CHANGELOG.md"
+    "https://raw.githubusercontent.com/Thorium-Sim/thorium/main/CHANGELOG.md"
   );
   const html = converter.makeHtml(data);
   if (loading) return "Loading...";
