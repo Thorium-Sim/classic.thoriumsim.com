@@ -6,6 +6,7 @@ import Carousel from "../components/carousel";
 import { users, A, patrons } from "./users";
 import { FlexSection } from "../components/styles";
 import { default as GImg } from "gatsby-image";
+import { FaDiscord } from "react-icons/fa";
 
 const BgImage = styled(GImg)`
   position: fixed !important;
@@ -63,7 +64,8 @@ const Button = styled(Link)`
   background-color: transparent;
   margin: 4px;
   border-radius: 3px;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   font-weight: 400;
   line-height: 1.2em;
   padding: 10px;
@@ -131,6 +133,9 @@ const Section = ({ fluid, ...props }) => (
   </SectionOuter>
 );
 
+const DiscordIcon = styled(FaDiscord)`
+  margin-left: 0.5rem;
+`;
 const IndexPage = ({ data }) => (
   <Layout>
     <Hero>
@@ -148,7 +153,9 @@ const IndexPage = ({ data }) => (
         <ButtonLink href="https://www.patreon.com/thoriumsim" target="_blank">
           Donate
         </ButtonLink>
-        <ButtonLink href="https://discord.gg/UvxTQZz">Chat</ButtonLink>
+        <ButtonLink href="https://discord.gg/UvxTQZz">
+          Discord <DiscordIcon size="1.7rem" />
+        </ButtonLink>
       </ButtonContainer>
     </Hero>
     <Section>
