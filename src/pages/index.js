@@ -177,25 +177,6 @@ const IndexPage = ({ data }) => (
       <Carousel images={data.carousel.edges} />
     </Section>
 
-    <Section offset="true">
-      <SectionText>
-        <h3>Offering Support Service</h3>
-        <p>
-          Thorium is a Community Support project.{" "}
-          <Link to="/blog/2019/04/13/community-support">
-            Find out what that means.
-          </Link>
-        </p>
-        <p>
-          Thorium now offers personal support on a non-contract basis. Need a
-          bug squashed? Need a special feature completed yesterday? Need someone
-          to walk you through set-up and help you get everything working right?
-          Just fill out a form and a Thorium expert will take care of whatever
-          needs you have. If we live close, we'll even come on site!
-        </p>
-        <Button to="/service">Request Support</Button>
-      </SectionText>
-    </Section>
     <Section>
       <SectionText>
         <h3>Flexible Simulator Configs</h3>
